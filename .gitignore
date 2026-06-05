@@ -1,0 +1,6 @@
+public/assets/*.mp4
+node_modules
+dist
+.vscode
+.env
+.env.local
