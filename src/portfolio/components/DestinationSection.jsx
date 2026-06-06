@@ -2,8 +2,14 @@ import { ArrowUpRight } from 'lucide-react';
 import { destinations } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
 
-export default function DestinationSection({ visible }) {
+export default function DestinationSection({ visible, onImageClick }) {
   if (!visible) return null;
+
+  const destinationImages = destinations.map((d) => ({
+    src: d.image,
+    alt: `${d.name} destination wedding`,
+    tag: `${d.name}, ${d.country}`
+  }));
 
   return (
     <section className="pf-section pf-destinations" id="portfolio-destinations">
@@ -24,7 +30,14 @@ export default function DestinationSection({ visible }) {
       <div className="pf-destination-track">
         {destinations.map((place, index) => (
           <Reveal key={place.name} className="pf-destination-card" delay={index * 60} as="article">
-            <img src={place.image} alt={`${place.name} destination wedding`} loading="lazy" />
+            <button
+              type="button"
+              className="pf-lightbox-trigger"
+              onClick={() => onImageClick && onImageClick(destinationImages, index)}
+              aria-label={`View ${place.name} wedding`}
+            >
+              <img src={place.image} alt={`${place.name} destination wedding`} loading="lazy" />
+            </button>
             <div className="pf-destination-meta">
               <strong>{place.name}</strong>
               <span>{place.country}</span>
@@ -35,3 +48,4 @@ export default function DestinationSection({ visible }) {
     </section>
   );
 }
+

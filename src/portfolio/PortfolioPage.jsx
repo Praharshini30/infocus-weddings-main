@@ -13,13 +13,41 @@ import FilmsSection from './components/FilmsSection.jsx';
 import Testimonials from './components/Testimonials.jsx';
 import PortfolioCTA from './components/PortfolioCTA.jsx';
 import PortfolioFooter from './components/PortfolioFooter.jsx';
+import Lightbox from './components/Lightbox.jsx';
 import './portfolio-page.css';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [lightbox, setLightbox] = useState({ isOpen: false, images: [], currentIndex: 0 });
 
   const showCategory = (category) => activeCategory === 'all' || activeCategory === category;
   const showExtras = activeCategory === 'all';
+
+  const handleImageClick = (imagesList, index) => {
+    setLightbox({
+      isOpen: true,
+      images: imagesList,
+      currentIndex: index,
+    });
+  };
+
+  const handleClose = () => {
+    setLightbox((prev) => ({ ...prev, isOpen: false }));
+  };
+
+  const handlePrev = () => {
+    setLightbox((prev) => ({
+      ...prev,
+      currentIndex: (prev.currentIndex - 1 + prev.images.length) % prev.images.length,
+    }));
+  };
+
+  const handleNext = () => {
+    setLightbox((prev) => ({
+      ...prev,
+      currentIndex: (prev.currentIndex + 1) % prev.images.length,
+    }));
+  };
 
   return (
     <div className="portfolio-page">
@@ -27,18 +55,29 @@ export default function PortfolioPage() {
       <main>
         <Hero />
         <CategoryFilter activeCategory={activeCategory} onChange={setActiveCategory} />
-        <WeddingSection visible={showCategory('wedding')} />
-        <PreWeddingSection visible={showCategory('pre-wedding')} />
-        <EngagementSection visible={showCategory('engagement')} />
-        <BabyShowerSection visible={showCategory('baby-shower')} />
-        <HaldiSection visible={showCategory('haldi')} />
-        <ReceptionSection visible={showCategory('reception')} />
+        <WeddingSection visible={showCategory('wedding')} onImageClick={handleImageClick} />
+        <PreWeddingSection visible={showCategory('pre-wedding')} onImageClick={handleImageClick} />
+        <EngagementSection visible={showCategory('engagement')} onImageClick={handleImageClick} />
+        <BabyShowerSection visible={showCategory('baby-shower')} onImageClick={handleImageClick} />
+        <HaldiSection visible={showCategory('haldi')} onImageClick={handleImageClick} />
+        <ReceptionSection visible={showCategory('reception')} onImageClick={handleImageClick} />
         <FilmsSection visible={showCategory('wedding-films')} />
-        {showExtras && <DestinationSection visible />}
+        {showExtras && <DestinationSection visible onImageClick={handleImageClick} />}
         {showExtras && <Testimonials visible />}
         <PortfolioCTA />
       </main>
       <PortfolioFooter />
+
+      {lightbox.isOpen && (
+        <Lightbox
+          images={lightbox.images}
+          currentIndex={lightbox.currentIndex}
+          onClose={handleClose}
+          onPrev={handlePrev}
+          onNext={handleNext}
+        />
+      )}
     </div>
   );
 }
+

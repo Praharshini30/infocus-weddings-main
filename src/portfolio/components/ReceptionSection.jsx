@@ -1,7 +1,7 @@
 import { receptionGallery } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
 
-export default function ReceptionSection({ visible }) {
+export default function ReceptionSection({ visible, onImageClick }) {
   if (!visible) return null;
 
   return (
@@ -20,11 +20,19 @@ export default function ReceptionSection({ visible }) {
       <div className="pf-cinema-row">
         {receptionGallery.map((item, index) => (
           <Reveal key={item.src} className="pf-cinema-card" delay={index * 80} as="article">
-            <img src={item.src} alt={item.alt} loading="lazy" />
-            <span className="pf-cinema-tag">{item.tag}</span>
+            <button
+              type="button"
+              className="pf-lightbox-trigger"
+              onClick={() => onImageClick && onImageClick(receptionGallery, index)}
+              aria-label={`View reception moment`}
+            >
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              <span className="pf-cinema-tag">{item.tag}</span>
+            </button>
           </Reveal>
         ))}
       </div>
     </section>
   );
 }
+

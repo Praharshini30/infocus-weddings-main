@@ -1,7 +1,7 @@
 import { weddingGallery } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
 
-export default function WeddingSection({ visible }) {
+export default function WeddingSection({ visible, onImageClick }) {
   if (!visible) return null;
 
   return (
@@ -24,7 +24,12 @@ export default function WeddingSection({ visible }) {
             delay={index * 70}
             as="article"
           >
-            <button type="button" className="pf-lightbox-trigger" aria-label={`View ${item.tag}`}>
+            <button 
+              type="button" 
+              className="pf-lightbox-trigger" 
+              aria-label={`View ${item.tag}`}
+              onClick={() => onImageClick && onImageClick(weddingGallery, index)}
+            >
               <img src={item.src} alt={item.alt} loading="lazy" />
               <span className="pf-image-overlay">
                 <span className="pf-badge">{item.tag}</span>
@@ -36,3 +41,4 @@ export default function WeddingSection({ visible }) {
     </section>
   );
 }
+

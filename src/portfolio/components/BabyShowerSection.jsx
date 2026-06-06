@@ -1,8 +1,10 @@
 import { babyShowerGallery } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
 
-export default function BabyShowerSection({ visible }) {
+export default function BabyShowerSection({ visible, onImageClick }) {
   if (!visible) return null;
+
+  const babyShowerImages = [babyShowerGallery.hero, ...babyShowerGallery.images];
 
   return (
     <section className="pf-section pf-baby-shower" id="portfolio-baby-shower">
@@ -18,11 +20,25 @@ export default function BabyShowerSection({ visible }) {
 
         <div className="pf-soft-grid">
           <Reveal className="pf-soft-hero">
-            <img src={babyShowerGallery.hero.src} alt={babyShowerGallery.hero.alt} loading="lazy" />
+            <button
+              type="button"
+              className="pf-lightbox-trigger"
+              onClick={() => onImageClick && onImageClick(babyShowerImages, 0)}
+              aria-label={`View baby shower moment`}
+            >
+              <img src={babyShowerGallery.hero.src} alt={babyShowerGallery.hero.alt} loading="lazy" />
+            </button>
           </Reveal>
           {babyShowerGallery.images.map((item, index) => (
             <Reveal key={item.src} className="pf-soft-side" delay={90 + index * 70}>
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <button
+                type="button"
+                className="pf-lightbox-trigger"
+                onClick={() => onImageClick && onImageClick(babyShowerImages, index + 1)}
+                aria-label={`View baby shower detail`}
+              >
+                <img src={item.src} alt={item.alt} loading="lazy" />
+              </button>
             </Reveal>
           ))}
         </div>
@@ -30,3 +46,4 @@ export default function BabyShowerSection({ visible }) {
     </section>
   );
 }
+

@@ -1,7 +1,7 @@
 import { haldiGallery } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
 
-export default function HaldiSection({ visible }) {
+export default function HaldiSection({ visible, onImageClick }) {
   if (!visible) return null;
 
   return (
@@ -20,10 +20,18 @@ export default function HaldiSection({ visible }) {
       <div className="pf-collage">
         {haldiGallery.map((item, index) => (
           <Reveal key={item.src} className={`pf-collage-item pf-collage-${item.size}`} delay={index * 60}>
-            <img src={item.src} alt={item.alt} loading="lazy" />
+            <button
+              type="button"
+              className="pf-lightbox-trigger"
+              onClick={() => onImageClick && onImageClick(haldiGallery, index)}
+              aria-label={`View haldi moment`}
+            >
+              <img src={item.src} alt={item.alt} loading="lazy" />
+            </button>
           </Reveal>
         ))}
       </div>
     </section>
   );
 }
+

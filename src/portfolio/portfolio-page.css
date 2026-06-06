@@ -949,3 +949,142 @@
     align-items: stretch;
   }
 }
+
+/* Lightbox Modal */
+.pf-lightbox-modal {
+  align-items: center;
+  background: rgba(5, 5, 5, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  height: 100%;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+  animation: pfFadeIn 0.3s ease forwards;
+}
+
+.pf-lightbox-close {
+  background: none;
+  border: none;
+  color: var(--pf-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 100000;
+}
+
+.pf-lightbox-close:hover {
+  color: var(--pf-gold);
+  transform: scale(1.1);
+}
+
+.pf-lightbox-nav {
+  background: rgba(12, 12, 12, 0.6);
+  border: 1px solid var(--pf-border);
+  border-radius: 50%;
+  color: var(--pf-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  z-index: 100000;
+}
+
+.pf-lightbox-nav:hover {
+  background: rgba(12, 12, 12, 0.85);
+  border-color: var(--pf-gold);
+  color: var(--pf-gold);
+}
+
+.pf-lightbox-nav-left {
+  left: 2rem;
+}
+
+.pf-lightbox-nav-right {
+  right: 2rem;
+}
+
+.pf-lightbox-content {
+  position: relative;
+  max-width: calc(100% - 10rem);
+  max-height: calc(100% - 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pfScaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.pf-lightbox-img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(251, 235, 206, 0.15);
+}
+
+.pf-lightbox-tag-badge {
+  background: rgba(12, 12, 12, 0.9);
+  border: 1px solid var(--pf-gold);
+  color: var(--pf-gold);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.45rem 0.85rem;
+  position: absolute;
+  bottom: -2.5rem;
+  text-transform: uppercase;
+}
+
+@keyframes pfFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pfScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .pf-lightbox-content {
+    max-width: calc(100% - 2rem);
+    max-height: calc(100% - 10rem);
+  }
+
+  .pf-lightbox-nav {
+    height: 48px;
+    width: 48px;
+  }
+
+  .pf-lightbox-nav-left {
+    left: 0.5rem;
+  }
+
+  .pf-lightbox-nav-right {
+    right: 0.5rem;
+  }
+
+  .pf-lightbox-close {
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
