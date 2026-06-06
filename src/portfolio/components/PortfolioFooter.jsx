@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Brand } from '../../Navbar.jsx';
 
 const footerLinks = [
@@ -28,7 +29,7 @@ export default function PortfolioFooter() {
         <div>
           <h4>Quick Links</h4>
           {footerLinks.map(({ label, href }) => (
-            <a key={label} href={href}>{label}</a>
+            <Link key={label} to={href}>{label}</Link>
           ))}
         </div>
         <div>

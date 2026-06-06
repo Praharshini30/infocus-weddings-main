@@ -1214,7 +1214,7 @@ h1 span {
   }
 
   .hero-section {
-    min-height: 760px;
+    min-height: 80svh;
   }
 
   .hero-copy {
@@ -1311,26 +1311,102 @@ h1 span {
     padding-inline: 14px;
   }
 
+  .watch-reel {
+    display: none;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .story-card,
+  .story-card-one,
+  .story-card-two,
+  .story-card-three,
+  .story-card-four,
+  .story-card-five {
+    grid-column: auto;
+    grid-row: auto;
+    height: 225px;
+  }
+
+  .story-card-two {
+    grid-column: 1 / -1;
+    height: 310px;
+  }
+
+  .film-frame {
+    aspect-ratio: 16 / 8.8;
+  }
+
+  .stats-row,
+  .process-line {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-line::before {
+    display: none;
+  }
+
+  .reel-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reel-layout article,
+  .reel-layout .active {
+    height: 230px;
+    margin: 0;
+  }
+
+  .final-layout {
+    grid-template-columns: 1fr;
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell,
+  .film-frame {
+    width: min(calc(100% - 28px), var(--max));
+  }
+
+  .site-header {
+    height: 68px;
+    padding-inline: 14px;
+  }
+
   .brand span {
     font-size: 1.05rem;
   }
 
   .hero-section {
-    align-items: end;
-    min-height: 720px;
+    align-items: center;
+    min-height: 85svh;
   }
 
   .hero-content {
-    padding: 96px 0 5.5rem;
+    padding: 80px 0 3.5rem;
+  }
+
+  .hero-copy {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    justify-content: center;
   }
 
   h1 {
-    font-size: clamp(2.85rem, 13vw, 4rem);
+    font-size: clamp(2.1rem, 10vw, 3rem);
     line-height: 0.94;
   }
 
   .hero-text {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 1.25rem auto 1.5rem;
     max-width: 96%;
   }
 
@@ -1338,7 +1414,6 @@ h1 span {
     min-height: 50px;
     width: 100%;
   }
-
   .section {
     padding: 3.6rem 0;
   }
@@ -1354,12 +1429,25 @@ h1 span {
     font-size: clamp(2rem, 11vw, 3rem);
   }
 
-  .hero-actions,
-  .trust-row,
   .film-label,
   .reel-layout div {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .hero-actions {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .trust-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
   }
 
   .story-grid,

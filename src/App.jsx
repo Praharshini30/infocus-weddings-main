@@ -2,7 +2,8 @@ import PortfolioPage from './portfolio/PortfolioPage.jsx';
 import ServicesPage from './ServicesPage.jsx';
 import BuildYourCrew from './BuildYourCrew.jsx';
 import Navbar, { Brand } from './Navbar.jsx';
-import { Route, Routes } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop.jsx';
+import { Link, Route, Routes } from 'react-router-dom';
 import {
   CalendarCheck,
   Camera,
@@ -179,7 +180,7 @@ function HomePage() {
             </div>
 
             <div className="center-action">
-              <a className="btn btn-outline" href="#portfolio">View Full Portfolio</a>
+              <Link className="btn btn-outline" to="/portfolio">View Full Portfolio</Link>
             </div>
           </div>
         </section>
@@ -275,7 +276,7 @@ function HomePage() {
             </div>
 
             <div className="services-cta">
-              <a className="services-explore-btn" href="/services">Explore More</a>
+              <Link className="services-explore-btn" to="/services">Explore More</Link>
             </div>
           </div>
         </section>
@@ -392,12 +393,15 @@ function HomePage() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/services" element={<ServicesPage />} />
-      <Route path="/portfolio" element={<PortfolioPage />} />
-      <Route path="/build-your-crew" element={<BuildYourCrew />} />
-      <Route path="*" element={<HomePage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/build-your-crew" element={<BuildYourCrew />} />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </>
   );
 }

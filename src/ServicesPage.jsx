@@ -196,7 +196,7 @@ export default function ServicesPage() {
               <img src={src} alt="" key={src} />
             ))}
           </div>
-          <a className="services-outline-btn" href="/#portfolio">Explore Portfolio</a>
+          <Link className="services-outline-btn" to="/portfolio">Explore Portfolio</Link>
         </section>
 
         <section className="services-trust">
