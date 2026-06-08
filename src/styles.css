@@ -1191,6 +1191,7 @@ h1 span {
   }
 
   .hero-content {
+    margin: 0 auto;
     padding-left: 0;
     padding-top: 78px;
     width: min(calc(100% - 32px), var(--max));
