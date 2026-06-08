@@ -58,7 +58,7 @@ a {
   height: 90px;
   inset: 0 0 auto;
   justify-content: space-between;
-  padding: 0 max(56px, calc((100vw - 1680px) / 2));
+  padding: 0 max(5%, calc((100% - 1680px) / 2));
   position: fixed;
   z-index: 20;
 }
@@ -263,7 +263,7 @@ a {
 
 .hero-content {
   margin: 0;
-  padding-left: max(72px, calc((100vw - 1680px) / 2 + 72px));
+  padding-left: max(5%, calc((100% - 1680px) / 2 + 5%));
   padding-top: 92px;
   position: relative;
   width: 100%;
@@ -311,7 +311,7 @@ h3 {
 h1 {
   color: #f7f1e7;
   font-family: var(--display);
-  font-size: clamp(4.3rem, 5.75vw, 6.55rem);
+  font-size: clamp(2.8rem, 5.75vw, 6.55rem);
   font-weight: 500;
   letter-spacing: 0;
   line-height: 0.92;
@@ -397,7 +397,7 @@ h1 span {
   display: flex;
   gap: 0.7rem;
   position: absolute;
-  right: max(36px, calc((100vw - var(--max)) / 2));
+  right: max(36px, calc((100% - var(--max)) / 2));
   z-index: 3;
 }
 
@@ -432,7 +432,7 @@ h1 span {
 .values-copy h2,
 .about-copy h2,
 .final-layout h2 {
-  font-size: clamp(2rem, 3.4vw, 3.65rem);
+  font-size: clamp(1.75rem, 3.4vw, 3.65rem);
   margin-top: 0.25rem;
 }
 
