@@ -119,12 +119,7 @@ a {
   white-space: nowrap;
 }
 
-.nav-cta {
-  font-size: 0.76rem;
-  min-height: 54px;
-  min-width: 254px;
-  padding: 0.9rem 1.7rem;
-}
+
 
 .mobile-menu-toggle {
   align-items: center;
