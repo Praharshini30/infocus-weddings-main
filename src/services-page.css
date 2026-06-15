@@ -1,26 +1,24 @@
 .services-page {
   --services-bg: #030303;
   --services-panel: #080807;
-  --services-gold: var(--gold, #c99b56);
-  --services-gold-soft: var(--gold-soft, #e4c17e);
-  --services-gold-dark: var(--gold-dark, #765127);
-  --services-text: var(--text, #fff6e8);
-  --services-muted: rgba(255, 246, 232, 0.72);
-  --services-line: rgba(201, 155, 86, 0.34);
-  --services-serif: var(--serif, "Cormorant Garamond", Georgia, serif);
-  --services-sans: var(--sans, "Inter", Arial, sans-serif);
+  --services-gold: #C99B56;
+  --services-gold-soft: #C99B56;
+  --services-gold-dark: #A76D0D;
+  --services-text: var(--text-secondary);
+  --services-muted: var(--text-muted);
+  --services-line: rgba(232, 169, 26, 0.18);
+
   background:
     radial-gradient(circle at 50% 4%, rgba(201, 155, 86, 0.08), transparent 33rem),
     linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     var(--services-bg);
   background-size: auto, 8px 8px, auto;
   color: var(--services-text);
-  font-family: var(--services-sans);
+  font-family: var(--sans);
   min-height: 100vh;
 }
 
 .services-page a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -46,7 +44,7 @@
 
 .services-brand span {
   color: #f5eee3;
-  font-family: var(--services-serif);
+  font-family: var(--serif);
   font-size: 1.75rem;
   font-weight: 500;
   letter-spacing: 0.38em;
@@ -63,7 +61,7 @@
 .services-main-nav {
   align-items: center;
   display: flex;
-  gap: clamp(1.2rem, 2.7vw, 3rem);
+  gap: clamp(1rem, 2vw, 2rem);
   justify-content: center;
 }
 
@@ -110,6 +108,12 @@
   display: none;
 }
 
+.sp-values {
+  padding: 6rem 5%;
+  background: transparent;
+  border-top: 1px solid var(--border-gold);
+}
+
 .services-hero {
   background: #020202;
   border-bottom: 1px solid var(--services-line);
@@ -123,7 +127,7 @@
 .services-hero::after {
   background:
     linear-gradient(90deg, #030303 0%, rgba(3, 3, 3, 0.98) 32%, rgba(3, 3, 3, 0.78) 44%, rgba(3, 3, 3, 0.28) 62%, rgba(3, 3, 3, 0.08) 100%),
-    radial-gradient(circle at 68% 18%, rgba(228, 193, 126, 0.18), transparent 18rem);
+    radial-gradient(circle at 68% 18%, rgba(212, 175, 55, 0.18), transparent 18rem);
   content: "";
   inset: 0;
   pointer-events: none;
@@ -154,8 +158,8 @@
 
 .services-hero h1 {
   color: #efe9dc;
-  font-family: var(--services-serif);
-  font-size: clamp(4.4rem, 5.8vw, 6.35rem);
+  font-family: var(--serif);
+  font-size: clamp(3rem, 4.5vw, 4.8rem);
   font-weight: 400;
   line-height: 0.98;
   margin: 0;
@@ -174,7 +178,7 @@
   width: 92px;
 }
 
-.services-hero-copy > p:not(.services-eyebrow) {
+.services-hero-copy>p:not(.services-eyebrow) {
   color: rgba(255, 246, 232, 0.74);
   font-size: 1rem;
   font-weight: 500;
@@ -192,7 +196,7 @@
 .services-gold-btn {
   align-items: center;
   background: linear-gradient(135deg, #966425, #d6aa60 54%, #986326);
-  border: 1px solid rgba(228, 193, 126, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.5);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 16px 42px rgba(0, 0, 0, 0.32);
   color: #fff7e9;
   display: inline-flex;
@@ -266,15 +270,14 @@
   min-width: 0;
 }
 
-.services-stats article + article {
+.services-stats article+article {
   border-left: 1px solid var(--services-line);
 }
 
 .services-stats strong {
   color: var(--services-gold-soft);
   display: block;
-  font-family: var(--services-serif);
-  font-size: 2.45rem;
+  font-family: var(--serif);
   font-weight: 400;
   line-height: 1;
 }
@@ -282,7 +285,6 @@
 .services-stats span {
   color: rgba(255, 246, 232, 0.84);
   display: block;
-  font-size: 0.72rem;
   font-weight: 850;
   line-height: 1.25;
   margin-top: 0.45rem;
@@ -303,8 +305,8 @@
 .services-carousel h2,
 .services-portfolio h2 {
   color: #ded7cb;
-  font-family: var(--services-serif);
-  font-size: clamp(2.45rem, 3.35vw, 3.55rem);
+  font-family: var(--serif);
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
   font-weight: 400;
   line-height: 1.08;
   margin: -0.55rem 0 1.65rem;
@@ -350,7 +352,7 @@
 
 .services-pricing-card h3 {
   color: var(--services-gold);
-  font-family: var(--services-serif);
+  font-family: var(--serif);
   font-size: 1.48rem;
   font-weight: 600;
   margin: 0;
@@ -375,7 +377,7 @@
 .services-pricing-card strong {
   color: var(--services-gold);
   display: block;
-  font-family: var(--services-serif);
+  font-family: var(--serif);
   font-size: 2.25rem;
   font-weight: 400;
   line-height: 1;
@@ -441,7 +443,7 @@
 
 .services-other {
   align-items: center;
-  background: #030303;
+  background: transparent;
   border-bottom: 1px solid var(--services-line);
   display: grid;
   justify-items: center;
@@ -452,8 +454,8 @@
 
 .services-other h2 {
   color: #ffffff;
-  font-family: var(--services-sans);
-  font-size: clamp(2.25rem, 4.15vw, 3.95rem);
+  font-family: var(--sans);
+  font-size: clamp(2rem, 2.8vw, 2.8rem);
   font-weight: 900;
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -548,7 +550,7 @@
 
 .services-offer-copy h3 {
   color: #f8f1e5;
-  font-family: var(--services-sans);
+  font-family: var(--sans);
   font-size: 0.77rem;
   font-weight: 850;
   line-height: 1.18;
@@ -610,7 +612,7 @@
 
 .services-trust {
   align-items: center;
-  background: #050505;
+  background: transparent;
   border-bottom: 1px solid var(--services-line);
   display: grid;
   gap: 2.8rem;
@@ -632,7 +634,7 @@
 
 .services-logos span {
   color: #d8d0c3;
-  font-family: var(--services-serif);
+  font-family: var(--serif);
   font-size: 1.85rem;
   line-height: 0.95;
   text-align: center;
@@ -641,7 +643,7 @@
 
 .services-logos small {
   display: block;
-  font-family: var(--services-sans);
+  font-family: var(--sans);
   font-size: 0.56rem;
   font-weight: 850;
   letter-spacing: 0.2em;
@@ -657,7 +659,7 @@
 .services-testimonial span {
   color: var(--services-gold);
   display: block;
-  font-family: Georgia, serif;
+  font-family: var(--serif);
   font-size: 3rem;
   height: 1.25rem;
   line-height: 0.6;
@@ -680,7 +682,7 @@
 }
 
 .services-values {
-  background: #050505;
+  background: transparent;
   border-bottom: 1px solid var(--services-line);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -694,7 +696,7 @@
   padding: 0 1.35rem;
 }
 
-.services-values article + article {
+.services-values article+article {
   border-left: 1px solid rgba(201, 155, 86, 0.24);
 }
 
@@ -704,7 +706,7 @@
 
 .services-values h3 {
   color: var(--services-gold);
-  font-family: var(--services-sans);
+  font-family: var(--sans);
   font-size: 0.72rem;
   font-weight: 850;
   margin: 0 0 0.34rem;
@@ -720,7 +722,7 @@
 }
 
 .services-footer {
-  background: #050505;
+  background: transparent;
   min-height: 54px;
 }
 
@@ -739,7 +741,7 @@
 }
 
 .services-footer strong {
-  font-family: var(--services-serif);
+  font-family: var(--serif);
   font-size: 2.1rem;
   font-weight: 400;
 }
@@ -826,7 +828,7 @@
   .services-mobile-menu a:not(.services-gold-btn) {
     border-bottom: 1px solid rgba(201, 155, 86, 0.22);
     color: var(--services-text);
-    font-family: var(--services-serif);
+    font-family: var(--serif);
     font-size: 1.55rem;
     padding: 0.45rem 0;
   }
@@ -848,7 +850,7 @@
   .services-hero::after {
     background:
       linear-gradient(180deg, rgba(3, 3, 3, 0.6) 0%, rgba(3, 3, 3, 0.88) 60%, #030303 100%),
-      radial-gradient(circle at 50% 30%, rgba(228, 193, 126, 0.08), transparent 18rem);
+      radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.08), transparent 18rem);
     z-index: 2;
   }
 
@@ -884,7 +886,7 @@
   }
 
   .services-hero h1 {
-    font-size: clamp(2.3rem, 10vw, 3.2rem);
+    font-size: clamp(2rem, 6vw, 2.8rem);
     line-height: 0.98;
   }
 
@@ -928,7 +930,7 @@
     padding-block: 1.8rem;
   }
 
-  .services-trust > div,
+  .services-trust>div,
   .services-testimonial {
     grid-column: 1 / -1;
   }
@@ -973,7 +975,7 @@
   }
 
   .services-stats article,
-  .services-stats article + article,
+  .services-stats article+article,
   .services-stats article:nth-child(3) {
     border-left: 0;
     border-top: 1px solid var(--services-line);
@@ -1005,7 +1007,7 @@
   }
 
   .services-values article,
-  .services-values article + article {
+  .services-values article+article {
     border-left: 0;
     border-top: 1px solid rgba(201, 155, 86, 0.24);
     padding: 1.1rem 0;

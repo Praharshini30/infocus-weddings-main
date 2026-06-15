@@ -1,24 +1,20 @@
 .build-your-crew-page {
-  background: #030303;
+  background: transparent;
   min-height: 100vh;
 }
 
 .build-your-crew {
-  --byc-bg: #030303;
-  --byc-card: #0b0b09;
-  --byc-gold: var(--gold, #c99b56);
-  --byc-gold-soft: var(--gold-soft, #e4c17e);
-  --byc-text: var(--text, #fff6e8);
-  --byc-muted: rgba(255, 246, 232, 0.68);
+  --byc-bg: transparent;
+  --byc-card: rgba(10, 7, 5, 0.85);
+  --byc-gold: #C99B56;
+  --byc-gold-soft: #C99B56;
+  --byc-text: var(--text-secondary);
+  --byc-muted: var(--text-muted);
   --byc-faint: rgba(255, 246, 232, 0.44);
-  --byc-line: rgba(201, 155, 86, 0.38);
-  --byc-serif: var(--serif, "Cormorant Garamond", Georgia, serif);
-  --byc-sans: var(--sans, "Inter", Arial, sans-serif);
-  background:
-    radial-gradient(circle at 52% 1%, rgba(201, 155, 86, 0.1), transparent 32rem),
-    linear-gradient(90deg, rgba(255, 246, 232, 0.018) 1px, transparent 1px),
-    var(--byc-bg);
-  background-size: auto, 9px 9px, auto;
+  --byc-line: rgba(232, 169, 26, 0.18);
+  --byc-serif: var(--serif);
+  --byc-sans: var(--sans);
+  background: transparent;
   color: var(--byc-text);
   font-family: var(--byc-sans);
   overflow: hidden;
@@ -40,9 +36,8 @@
 
 .byc-hero::before {
   background:
-    linear-gradient(90deg, #030303 0%, rgba(3, 3, 3, 0.88) 24%, rgba(3, 3, 3, 0.2) 40%, transparent 52%),
-    linear-gradient(180deg, transparent 0%, rgba(3, 3, 3, 0.08) 62%, rgba(3, 3, 3, 0.72) 100%),
-    radial-gradient(circle at 74% 38%, rgba(201, 155, 86, 0.14), transparent 22rem);
+    linear-gradient(90deg, #030303 0%, rgba(3, 3, 3, 0.98) 32%, rgba(3, 3, 3, 0.78) 44%, rgba(3, 3, 3, 0.28) 62%, rgba(3, 3, 3, 0.08) 100%),
+    radial-gradient(circle at 68% 18%, rgba(212, 175, 55, 0.18), transparent 18rem);
   content: "";
   inset: 0;
   pointer-events: none;
@@ -53,7 +48,7 @@
 .byc-hero-copy {
   align-self: center;
   grid-column: 1;
-  padding: 0 0 6.2rem clamp(2.5rem, 5vw, 5.4rem);
+  padding: 0 0 6.2rem clamp(2.5rem, 3.5vw, 3.5rem);
   position: relative;
   z-index: 3;
 }
@@ -72,7 +67,7 @@
 .byc-hero h1 {
   color: #f7efe3;
   font-family: var(--display);
-  font-size: clamp(3.4rem, 4.9vw, 5.85rem);
+  font-size: clamp(2.5rem, 3.5vw, 4.2rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 0.9;
@@ -134,7 +129,7 @@
 }
 
 .byc-hero-image {
-  inset: 90px 0 0 0;
+  inset: 0;
   overflow: hidden;
   pointer-events: none;
   position: absolute;
@@ -158,13 +153,11 @@
 
 .byc-hero-image img {
   display: block;
-  filter: brightness(0.7) contrast(1.12) saturate(0.86);
+  filter: brightness(0.6) contrast(1.1) saturate(0.8);
   height: 100%;
   object-fit: cover;
   object-position: 68% 34%;
   width: 100%;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.05) 28%, rgba(0, 0, 0, 0.65) 42%, #000 56%);
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.05) 28%, rgba(0, 0, 0, 0.65) 42%, #000 56%);
 }
 
 .byc-hero-stats {
@@ -173,7 +166,7 @@
   gap: 1.95rem;
   grid-column: 2;
   justify-self: end;
-  padding: 0 clamp(1.5rem, 3.5vw, 3.8rem) 0 0;
+  padding: 0 clamp(1.5rem, 2.5vw, 2.5rem) 0 0;
   position: relative;
   z-index: 3;
 }
@@ -200,9 +193,9 @@
 }
 
 .byc-shell {
-  margin: -5.1rem auto 0;
+  margin: 0 auto;
   max-width: 1480px;
-  padding: 0 clamp(1.25rem, 3.2vw, 3.2rem) 3.1rem;
+  padding: 0 clamp(1.25rem, 2.2vw, 2.2rem) 3.1rem;
   position: relative;
   z-index: 4;
 }
@@ -328,7 +321,7 @@
 .byc-section-title h2 {
   color: var(--byc-gold-soft);
   font-family: var(--byc-serif);
-  font-size: clamp(1.15rem, 1.65vw, 1.55rem);
+  font-size: clamp(1.15rem, 1.35vw, 1.35rem);
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.1;
@@ -401,7 +394,6 @@
 
 .byc-card-content {
   display: flex;
-  flex: 1;
   flex-direction: column;
 }
 
@@ -489,9 +481,9 @@
 .byc-help-panel button,
 .byc-primary-action {
   align-items: center;
-  background: linear-gradient(135deg, #9b6529, #d6aa60 55%, #986326);
-  border: 1px solid rgba(228, 193, 126, 0.5);
-  color: #fff7e9;
+  background: linear-gradient(135deg, var(--lux-gold), var(--lux-gold-warm));
+  border: 1px solid rgba(201, 155, 86, 0.48);
+  color: #050505;
   cursor: pointer;
   display: inline-flex;
   font-size: 0.68rem;
@@ -502,15 +494,16 @@
   min-height: 39px;
   padding: 0 1rem;
   text-transform: uppercase;
-  transition: border-color 0.25s ease, filter 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.25s ease, filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   width: 100%;
 }
 
 .byc-add-btn:hover,
 .byc-help-panel button:hover,
 .byc-primary-action:hover {
-  border-color: rgba(255, 225, 170, 0.78);
-  filter: brightness(1.06);
+  border-color: rgba(201, 155, 86, 0.78);
+  box-shadow: 0 4px 20px rgba(201, 155, 86, 0.2);
+  filter: brightness(1.1);
   transform: translateY(-2px);
 }
 
@@ -655,6 +648,29 @@
   text-transform: uppercase;
 }
 
+.byc-clear-all-btn {
+  font-size: 0.65rem;
+  min-height: 32px !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 6px !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  letter-spacing: 0.08em;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.byc-clear-all-btn:hover {
+  color: var(--byc-gold) !important;
+  box-shadow: 0 4px 12px rgba(201, 155, 86, 0.4) !important;
+  transform: translateY(-2px);
+}
+
+.byc-clear-all-btn:hover::before {
+  display: none !important;
+}
+
 .byc-help-panel {
   align-content: center;
   display: grid;
@@ -693,8 +709,19 @@
 }
 
 .byc-primary-action {
-  min-height: 58px;
-  width: min(100%, 245px);
+  min-height: 48px;
+  width: auto;
+  padding: 0 2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s ease, border-color 0.25s ease, filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.byc-primary-action:hover {
+  background: linear-gradient(135deg, #a87f42, #8b621b);
+  filter: none;
+  box-shadow: 0 4px 20px rgba(168, 127, 66, 0.3);
+  transform: translateY(-2px);
 }
 
 .byc-save-action {
@@ -709,11 +736,11 @@
 
 
   .byc-hero h1 {
-    font-size: clamp(3.2rem, 5vw, 5rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
   }
 
   .byc-hero-copy {
-    padding-left: clamp(2rem, 4vw, 3.4rem);
+    padding-left: clamp(1.5rem, 3vw, 2.5rem);
   }
 
   .byc-photo-grid {
@@ -757,14 +784,12 @@
   }
 
   .byc-hero-image {
-    inset: 88px 0 0 0;
+    inset: 0;
     min-height: 730px;
   }
 
   .byc-hero-image img {
     object-position: 68% 34%;
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.05) 28%, rgba(0, 0, 0, 0.65) 42%, #000 56%);
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.05) 28%, rgba(0, 0, 0, 0.65) 42%, #000 56%);
   }
 
   .byc-hero-stats {
@@ -846,7 +871,7 @@
   }
 
   .byc-hero h1 {
-    font-size: clamp(2.2rem, 11vw, 2.9rem);
+    font-size: clamp(2rem, 8vw, 2.6rem);
     line-height: 0.95;
     margin-inline: auto;
   }

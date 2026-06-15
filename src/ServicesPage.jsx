@@ -14,6 +14,7 @@ import {
   Trophy,
   UserRoundCheck,
 } from 'lucide-react';
+import CountUp from './components/CountUp.jsx';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import './services-page.css';
@@ -87,39 +88,14 @@ export default function ServicesPage() {
     <div className="services-page">
       <Navbar />
 
-      <main>
-        <section className="services-hero" id="top">
-          <div className="services-hero-copy">
-            <p className="services-eyebrow">Timeless Moments. Beautifully Yours.</p>
-            <h1>
-              Crafting
-              <br />
-              Timeless
-              <br />
-              <span>Wedding Stories</span>
-            </h1>
-            <span className="services-hero-rule" />
-            <p>
-              We don't just take photographs, we create cinematic heirlooms that preserve emotion, elegance and legacy.
-            </p>
-            <div className="services-hero-actions">
-              <a className="services-gold-btn" href="/#contact">Reserve Your Date</a>
-              <a className="services-story-btn" href="/#film">
-                <span><Play size={15} fill="currentColor" /></span>
-                Watch Our Story
-              </a>
-            </div>
-          </div>
-          <div className="services-hero-photo" aria-hidden="true" />
-        </section>
-
+      <main className="pt-[clamp(80px,10vw,120px)]">
         <section className="services-stats" aria-label="Studio statistics">
           {stats.map(([Icon, value, label]) => (
             <article key={label}>
               <Icon size={42} strokeWidth={1.4} />
               <div>
-                <strong>{value}</strong>
-                <span>{label}</span>
+                <strong className="text-3xl md:text-4xl"><CountUp value={value} /></strong>
+                <span className="text-sm md:text-base">{label}</span>
               </div>
             </article>
           ))}
@@ -142,14 +118,14 @@ export default function ServicesPage() {
                     <li key={feature}><CheckCircle size={15} /> {feature}</li>
                   ))}
                 </ul>
-                <a className="services-gold-btn small" href="/#contact">Inquire Now</a>
+                <a className="btn btn-lux-primary" href="/#contact">Inquire Now</a>
               </article>
             ))}
           </div>
 
           <p className="services-bespoke">Bespoke packages available for destination & intimate weddings</p>
           <div className="services-build-crew-cta">
-            <Link className="services-gold-btn services-build-crew-btn" to="/build-your-crew">
+            <Link className="btn btn-lux-primary" to="/build-your-crew">
               Build Your Crew
             </Link>
           </div>
@@ -159,8 +135,8 @@ export default function ServicesPage() {
         <section className="services-other">
           <h2>Pre Wedding, Birthday, Corporate &amp; Other Services</h2>
           <div>
-            <a className="services-gold-btn mini" href="/#contact">Enquire Now</a>
-            <Link className="services-gold-btn mini" to="/build-your-crew">Build Your Crew</Link>
+            <a className="btn btn-lux-primary text-[10px] px-4" href="/#contact">Enquire Now</a>
+            <Link className="btn btn-lux-secondary text-[10px] px-4" to="/build-your-crew">Build Your Crew</Link>
           </div>
         </section>
 
@@ -196,7 +172,7 @@ export default function ServicesPage() {
               <img src={src} alt="" key={src} />
             ))}
           </div>
-          <Link className="services-outline-btn" to="/portfolio">Explore Portfolio</Link>
+          <Link className="btn btn-lux-secondary" to="/portfolio">Explore Portfolio</Link>
         </section>
 
         <section className="services-trust">

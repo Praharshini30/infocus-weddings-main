@@ -30,11 +30,6 @@ const heroStats = [
   ['100%', 'Client Satisfaction'],
 ];
 
-const heroBadges = [
-  [CircleDollarSign, 'Transparent Pricing'],
-  [ShieldCheck, 'Premium Quality'],
-  [Sparkles, 'Tailored For You'],
-];
 
 const processSteps = [
   ['1', 'Choose Services', 'Select what you need'],
@@ -208,7 +203,7 @@ function ServiceCard({ service, quantity, onAdd, onDecrease, onIncrease, compact
               </button>
             </div>
           )}
-          <button className="byc-add-btn" type="button" onClick={onAdd}>
+          <button className="btn btn-lux-secondary compact w-full mt-4" type="button" onClick={onAdd}>
             <ShoppingBag size={14} />
             Add To Package
           </button>
@@ -245,45 +240,9 @@ export default function BuildYourCrew() {
   return (
     <div className="build-your-crew-page">
       <Navbar />
-      <main>
+      <main className="pt-[clamp(80px,10vw,120px)]">
         <section className="build-your-crew" id="build-your-crew">
-          <div className="byc-hero">
-            <div className="byc-hero-copy">
-              <p className="byc-eyebrow">Build Your Perfect Package</p>
-              <h1>
-                Every Moment.
-                <br />
-                <span>Every Detail.</span>
-                <br />
-                Perfectly Captured.
-              </h1>
-              <p className="byc-hero-text">
-                Choose the services you need and build a package that's perfect for your celebration.
-              </p>
-              <Link className="byc-back-home" to="/">Back to Home</Link>
-              <div className="byc-badges">
-                {heroBadges.map(([Icon, label]) => (
-                  <span key={label}>
-                    <Icon size={17} />
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="byc-hero-image" aria-hidden="true">
-              <img src={`${A}heritage-couple-portrait.png`} alt="" />
-            </div>
-            <div className="byc-hero-stats" aria-label="Studio statistics">
-              {heroStats.map(([value, label]) => (
-                <div key={label}>
-                  <strong>{value}</strong>
-                  <span>{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="byc-shell">
+          <div className="byc-shell" id="build-your-crew-steps">
             <div className="byc-process-bar">
               <div className="byc-process-steps">
                 <p className="byc-process-eyebrow">How It Works</p>
@@ -378,8 +337,8 @@ export default function BuildYourCrew() {
                     <dd>{formatCurrency(grandTotal)}</dd>
                   </div>
                 </dl>
-                <button className="byc-clear-btn" type="button" onClick={clearPackage}>
-                  <Save size={13} />
+                <button className="btn btn-lux-secondary byc-clear-all-btn" type="button" onClick={clearPackage}>
+                  <Save size={14} />
                   Clear All
                 </button>
               </div>

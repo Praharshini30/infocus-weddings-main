@@ -11,7 +11,7 @@
             <h2>{featuredStory.couple}</h2>
             <p className="pf-location">{featuredStory.location}</p>
             <p className="pf-section-text">{featuredStory.summary}</p>
-            <a className="pf-link-btn" href="#portfolio-wedding">
+            <a className="btn btn-lux-secondary compact mt-6" href="#portfolio-wedding">
               View Full Story
               <ArrowUpRight size={16} />
             </a>

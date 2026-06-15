@@ -1,8 +1,17 @@
 import PortfolioPage from './portfolio/PortfolioPage.jsx';
 import ServicesPage from './ServicesPage.jsx';
 import BuildYourCrew from './BuildYourCrew.jsx';
+import BlogPage from './blog/BlogPage.jsx';
+import AboutPage from './AboutPage.jsx';
+import ContactPage from './ContactPage.jsx';
+import WeddingFilmsPage from './WeddingFilmsPage.jsx';
 import Navbar, { Brand } from './Navbar.jsx';
+import Footer from './Footer.jsx';
+import FaqPage from './FaqPage.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import HomeHero from './components/HomeHero.jsx';
+import CountUp from './components/CountUp.jsx';
+import LuxuryBackground from './components/LuxuryBackground.jsx';
 import { Link, Route, Routes } from 'react-router-dom';
 import {
   CalendarCheck,
@@ -103,9 +112,9 @@ const reels = [
 
 function SectionHeading({ eyebrow, title }) {
   return (
-    <div className="section-heading centered">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
+    <div className="text-center mb-[3.5rem] max-780:mb-[2.5rem]">
+      <p className="text-[var(--lux-gold-warm)] text-[0.74rem] font-[650] tracking-[0.22em] uppercase mb-[1rem]">{eyebrow}</p>
+      <h2 className="font-serif font-normal tracking-0 leading-[1.08] text-[clamp(2rem,3.5vw,2.8rem)]">{title}</h2>
     </div>
   );
 }
@@ -116,71 +125,32 @@ function HomePage() {
       <Navbar />
 
       <main id="top">
-        <section className="hero-section">
-          <div className="hero-slideshow" aria-hidden="true">
-            {heroSlides.map((slide, index) => (
-              <img
-                className="hero-image"
-                src={slide.src}
-                alt=""
-                key={slide.src}
-                style={{ '--slide-index': index }}
-              />
-            ))}
-          </div>
-          <div className="hero-overlay" />
+        <HomeHero />
 
-          <div className="hero-content page-shell">
-            <div className="hero-copy">
-              <p className="eyebrow hero-eyebrow">Timeless Moments. Beautifully Yours.</p>
-              <h1>
-                <span>Crafting</span>
-                <br />
-                <span>Timeless</span>
-                <br />
-                <span className="hero-title-gold">Wedding</span>
-                <br />
-                <span className="hero-title-gold">Stories</span>
-              </h1>
-              <p className="hero-text">
-                We don't just take photographs, we create cinematic heirlooms
-                that preserve emotion, elegance and legacy.
-              </p>
-
-              <div className="hero-actions">
-                <a className="btn btn-primary" href="#contact">Reserve Your Date</a>
-                <a className="btn btn-ghost" href="#film">
-                  <Play size={16} fill="currentColor" /> Watch Our Story
-                </a>
-              </div>
-
-              <div className="trust-row" aria-label="Trusted by 200 plus couples">
-                <span className="stars">*****</span>
-                <span>Trusted by 200+ couples</span>
-              </div>
-            </div>
-          </div>
-
-          <a className="watch-reel" href="#film">
-            <span className="play-ring"><Play size={18} fill="currentColor" /></span>
-            <span>Watch<br />Reel</span>
-          </a>
-        </section>
-
-        <section className="section featured-section" id="portfolio">
-          <div className="page-shell">
+        <section className="py-[clamp(3.5rem,5vw,5rem)] bg-black" id="portfolio">
+          <div className="mx-auto w-[min(calc(100%-64px),1240px)] max-780:w-[min(calc(100%-32px),1240px)]">
             <SectionHeading eyebrow="Featured Moments" title="Stories We've Captured" />
 
-            <div className="story-grid">
-              {stories.map((story) => (
-                <article className={`story-card ${story.className}`} key={story.className}>
-                  <img src={story.src} alt={story.alt} />
-                </article>
-              ))}
+            <div className="grid gap-[0.65rem] grid-cols-[1.04fr_1.2fr_1.04fr] grid-rows-[215px_215px] max-1080:grid-rows-[170px_170px] max-780:grid-cols-[1fr_1fr] max-780:grid-rows-[180px_180px_180px] max-560:grid-cols-1 max-560:grid-rows-[auto]">
+              {stories.map((story, index) => {
+                let positionClasses = '';
+                let objectPosition = 'object-center';
+                if (index === 0) { positionClasses = 'col-start-1 row-start-1 max-780:col-span-1 max-780:row-start-1 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[center_33%]'; }
+                if (index === 1) { positionClasses = 'col-start-2 row-span-2 max-780:col-span-2 max-780:row-start-3 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[50%_50%]'; }
+                if (index === 2) { positionClasses = 'col-start-3 row-start-1 max-780:col-span-1 max-780:row-start-1 max-780:col-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-center'; }
+                if (index === 3) { positionClasses = 'col-start-1 row-start-2 max-780:col-span-1 max-780:row-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[18%_46%]'; }
+                if (index === 4) { positionClasses = 'col-start-3 row-start-2 max-780:col-span-1 max-780:row-start-2 max-780:col-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-center'; }
+
+                return (
+                  <article className={`bg-[var(--lux-bg-soft)] border border-[var(--lux-line)] rounded-[4px] overflow-hidden group hover:shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:border-[rgba(212,175,55,0.4)] transition-[box-shadow,border-color] duration-400 ease-in-out ${positionClasses}`} key={story.className}>
+                    <img className={`h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.055] w-full ${objectPosition}`} src={story.src} alt={story.alt} />
+                  </article>
+                );
+              })}
             </div>
 
-            <div className="center-action">
-              <Link className="btn btn-outline" to="/portfolio">View Full Portfolio</Link>
+            <div className="flex justify-center mt-[2rem]">
+              <Link className="btn btn-lux-secondary items-center rounded-[4px] inline-flex text-[0.68rem] font-[650] justify-center tracking-[0.14em] min-h-[42px] px-[1.32rem] py-[0.78rem] uppercase transition-[transform,border-color,background] duration-250 ease-in-out whitespace-nowrap bg-[rgba(255,246,232,0.04)] border border-[var(--lux-line)] text-[var(--lux-gold-warm)] hover:-translate-y-[2px]" to="/portfolio">View Full Portfolio</Link>
             </div>
           </div>
         </section>
@@ -214,7 +184,7 @@ function HomePage() {
                 specializing in South Indian weddings. We blend artistry, elegance
                 and tradition to create timeless visual stories.
               </p>
-              <a className="btn btn-primary compact" href="#about">Our Journey</a>
+              <a className="btn btn-lux-primary compact" href="#about">Our Journey</a>
             </div>
 
             <div className="value-cards">
@@ -248,10 +218,13 @@ function HomePage() {
               </p>
               <div className="stats-row">
                 {stats.map(([value, label]) => (
-                  <div key={label}><strong>{value}</strong><span>{label}</span></div>
+                  <div key={label} className="flex flex-col gap-2">
+                    <strong className="text-2xl lg:text-3xl"><CountUp value={value} /></strong>
+                    <span className="text-sm lg:text-base">{label}</span>
+                  </div>
                 ))}
               </div>
-              <a className="btn btn-outline" href="#about">Know More About Us</a>
+              <a className="btn btn-lux-secondary" href="#about">Know More About Us</a>
             </div>
           </div>
         </section>
@@ -276,7 +249,7 @@ function HomePage() {
             </div>
 
             <div className="services-cta">
-              <Link className="services-explore-btn" to="/services">Explore More</Link>
+              <Link className="btn btn-lux-secondary" to="/services">Explore More</Link>
             </div>
           </div>
         </section>
@@ -324,9 +297,9 @@ function HomePage() {
         <section className="section testimonials-section">
           <div className="page-shell">
             <SectionHeading eyebrow="Kind Words" title="What Our Couples Say" />
-
-            <div className="testimonials-grid">
-              {testimonials.map(([quote, name, place, src]) => (
+          </div>
+          <div className="testimonials-grid">
+            {testimonials.map(([quote, name, place, src]) => (
                 <article key={name}>
                   <span className="quote-mark">"</span>
                   <p>{quote}</p>
@@ -334,7 +307,6 @@ function HomePage() {
                 </article>
               ))}
             </div>
-          </div>
         </section>
 
         <section className="final-cta" id="contact">
@@ -346,8 +318,8 @@ function HomePage() {
               <p>Your love story deserves to be told beautifully. Let's make magic together.</p>
             </div>
             <div className="final-actions">
-              <a className="btn btn-primary" href="mailto:hello@infocusweddings.com">Book Consultation</a>
-              <a className="btn btn-ghost" href="https://wa.me/919999999999">
+              <a className="btn btn-lux-primary" href="mailto:hello@infocusweddings.com">Book Consultation</a>
+              <a className="btn btn-lux-secondary" href="https://wa.me/919999999999">
                 <MessageCircle size={16} /> Chat on WhatsApp
               </a>
             </div>
@@ -355,38 +327,7 @@ function HomePage() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="page-shell footer-layout">
-          <div>
-            <Brand />
-            <p>We capture timeless weddings with emotion, elegance and cinematic storytelling.</p>
-          </div>
-          <div>
-            <h4>Quick Links</h4>
-            <a href="#top">Home</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-          </div>
-          <div>
-            <h4>Services</h4>
-            <a href="#services">Wedding Photography</a>
-            <a href="#services">Cinematic Films</a>
-            <a href="#services">Pre-Wedding Shoots</a>
-            <a href="#services">Albums & Prints</a>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <p>+91 99999 99999</p>
-            <p>hello@infocusweddings.com</p>
-            <p>Hyderabad, Andhra Pradesh</p>
-          </div>
-        </div>
-        <div className="footer-bottom page-shell">
-          <span>© 2026 Infocus Weddings. All rights reserved.</span>
-          <span>Designed for timeless memories</span>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
@@ -394,12 +335,18 @@ function HomePage() {
 export default function App() {
   return (
     <>
+      <LuxuryBackground />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/services" element={<ServicesPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/wedding-films" element={<WeddingFilmsPage />} />
+        <Route path="/services" element={<ServicesPage />} />
         <Route path="/build-your-crew" element={<BuildYourCrew />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/faqs" element={<FaqPage />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
     </>

@@ -18,8 +18,8 @@ export default function PortfolioCTA() {
           <p className="pf-section-text">
             Let&apos;s create timeless memories together — from the first look to the final dance.
           </p>
-          <a className="pf-btn pf-btn-gold" href="mailto:hello@infocusweddings.com">
-            Book Consultation
+          <a className="btn btn-lux-primary py-4 px-8 mt-6" href="mailto:hello@infocusweddings.com">
+            ENQUIRE NOW
           </a>
         </Reveal>
       </div>
