@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Plus, Minus, ChevronRight } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
@@ -188,9 +189,9 @@ export default function FaqPage() {
                 </p>
                 
                 <div>
-                  <a href="/contact" className="btn btn-lux-primary inline-flex items-center gap-3 py-4 px-8 text-sm">
+                  <Link to="/contact" className="btn btn-lux-primary inline-flex items-center gap-3 py-4 px-8 text-sm">
                     Book a Consultation <ChevronRight size={16} />
-                  </a>
+                  </Link>
                 </div>
               </div>
               

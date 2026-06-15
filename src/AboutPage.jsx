@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play, Camera, Film, Mic, Users, Heart, Star, Award, Scissors, Glasses, MapPin, Sparkles, Infinity as InfinityIcon } from 'lucide-react';
 import Navbar from './Navbar.jsx';
@@ -246,7 +247,7 @@ export default function AboutPage() {
           </div>
 
           <div className="text-center">
-            <a href="/portfolio" className="btn btn-lux-secondary">View Full Gallery</a>
+            <Link to="/portfolio" className="btn btn-lux-secondary">View Full Gallery</Link>
           </div>
         </motion.section>
 
@@ -325,9 +326,9 @@ export default function AboutPage() {
               <p className="text-muted text-lg mb-10 font-light">
                 Private consultations for<br/>luxury celebrations.
               </p>
-              <a href="/contact" className="btn btn-lux-primary inline-flex items-center gap-3 py-4 px-8 text-sm">
+              <Link to="/contact" className="btn btn-lux-primary inline-flex items-center gap-3 py-4 px-8 text-sm">
                 Book A Consultation <ChevronRight size={16} />
-              </a>
+              </Link>
             </div>
           </div>
         </motion.section>

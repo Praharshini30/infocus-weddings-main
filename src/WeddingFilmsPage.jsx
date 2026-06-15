@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Play, Clapperboard, Film, MapPin, Trophy, Camera, Zap, Video, Smartphone, Ear, CalendarCheck, Package, CirclePlay } from 'lucide-react';
 import CountUp from './components/CountUp.jsx';
 import Navbar from './Navbar.jsx';
@@ -115,7 +116,7 @@ export default function WeddingFilmsPage() {
             ))}
           </div>
           <div className="wf-explore-wrap">
-            <a href="/portfolio" className="btn btn-lux-secondary mt-8">EXPLORE ALL FILMS</a>
+            <Link to="/portfolio" className="btn btn-lux-secondary mt-8">EXPLORE ALL FILMS</Link>
           </div>
         </section>
 
@@ -216,7 +217,7 @@ export default function WeddingFilmsPage() {
         <section className="wf-section wf-cta">
           <h2 className="wf-gold-heading">LET'S TELL YOUR STORY</h2>
           <p className="wf-subheading">Ready to create something timeless?</p>
-          <a href="/#contact" className="btn btn-lux-primary py-4 px-8 mt-8 text-sm">BOOK A CONSULTATION</a>
+          <Link to="/#contact" className="btn btn-lux-primary py-4 px-8 mt-8 text-sm">BOOK A CONSULTATION</Link>
         </section>
       </main>
 
