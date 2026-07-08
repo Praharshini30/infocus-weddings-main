@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
-export default function LazyImage({ src, alt, className = '', style = {}, ...props }) {
+const LazyImage = memo(function LazyImage({ src, alt, className = '', style = {}, ...props }) {
   const [loaded, setLoaded] = useState(false);
   return (
     <img
@@ -14,4 +14,6 @@ export default function LazyImage({ src, alt, className = '', style = {}, ...pro
       {...props}
     />
   );
-}
+});
+
+export default LazyImage;

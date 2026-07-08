@@ -44,14 +44,6 @@ const slides = [
 export default function HomeHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Preload images
-  useEffect(() => {
-    slides.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.image;
-    });
-  }, []);
-
   // Auto-play
   useEffect(() => {
     const timer = setInterval(() => {
@@ -91,19 +83,12 @@ export default function HomeHero() {
             src={slides[currentIndex].image}
             alt={slides[currentIndex].title}
             className="w-full h-full object-cover"
-            loading="eager"
-            fetchPriority={currentIndex === 0 ? "high" : "auto"}
+            loading={currentIndex === 0 ? "eager" : "lazy"}
+            fetchPriority={currentIndex === 0 ? "high" : "low"}
             style={{ 
               objectPosition: slides[currentIndex].objectPosition || 'center 30%',
               ...slides[currentIndex].style
             }}
-          />
-          {/* Preload next slide to memory */}
-          <img
-            src={slides[(currentIndex + 1) % slides.length].image}
-            alt=""
-            loading="eager"
-            style={{ display: 'none' }}
           />
           {/* Overlays for readability and luxury aesthetic */}
           <div className="absolute inset-0 bg-black/40 z-[1]" />

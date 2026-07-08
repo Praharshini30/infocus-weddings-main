@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { ArrowDown } from 'lucide-react';
 
-export default function SharedHero({
+const SharedHero = memo(function SharedHero({
   image,
   eyebrow,
   title,
@@ -80,4 +80,6 @@ export default function SharedHero({
       )}
     </section>
   );
-}
+});
+
+export default SharedHero;

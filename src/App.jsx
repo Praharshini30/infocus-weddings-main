@@ -1,13 +1,15 @@
-import PortfolioPage from './portfolio/PortfolioPage.jsx';
-import ServicesPage from './ServicesPage.jsx';
-import BuildYourCrew from './BuildYourCrew.jsx';
-import BlogPage from './blog/BlogPage.jsx';
-import AboutPage from './AboutPage.jsx';
-import ContactPage from './ContactPage.jsx';
-import WeddingFilmsPage from './WeddingFilmsPage.jsx';
+import React, { lazy, Suspense } from 'react';
 import Navbar, { Brand } from './Navbar.jsx';
 import Footer from './Footer.jsx';
 import FaqPage from './FaqPage.jsx';
+
+const PortfolioPage = lazy(() => import('./portfolio/PortfolioPage.jsx'));
+const ServicesPage = lazy(() => import('./ServicesPage.jsx'));
+const BuildYourCrew = lazy(() => import('./BuildYourCrew.jsx'));
+const BlogPage = lazy(() => import('./blog/BlogPage.jsx'));
+const AboutPage = lazy(() => import('./AboutPage.jsx'));
+const ContactPage = lazy(() => import('./ContactPage.jsx'));
+const WeddingFilmsPage = lazy(() => import('./WeddingFilmsPage.jsx'));
 import ScrollToTop from './components/ScrollToTop.jsx';
 import HomeHero from './components/HomeHero.jsx';
 import CountUp from './components/CountUp.jsx';
@@ -339,18 +341,20 @@ export default function App() {
     <>
       <LuxuryBackground />
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/wedding-films" element={<WeddingFilmsPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/build-your-crew" element={<BuildYourCrew />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/faqs" element={<FaqPage />} />
-        <Route path="*" element={<HomePage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/wedding-films" element={<WeddingFilmsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/build-your-crew" element={<BuildYourCrew />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faqs" element={<FaqPage />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </Suspense>
     </>
   );
 }
