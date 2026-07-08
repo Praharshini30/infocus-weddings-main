@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play, Camera, Film, Mic, Users, Heart, Star, Award, Scissors, Glasses, MapPin, Sparkles, Infinity as InfinityIcon } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
+import LazyImage from './components/LazyImage.jsx';
 import './about.css';
 
 const fadeUp = {
@@ -24,9 +25,8 @@ const staggerContainer = {
 export default function AboutPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderImages = [
-    "/assets/royal-bride-window.png",
-    "/assets/bride-groom-1.png",
-    "/assets/wedding-dance.png"
+    "/assets/DSC01542_about.webp",
+    "/assets/DSC00378_about.webp"
   ];
 
   useEffect(() => {
@@ -238,12 +238,12 @@ export default function AboutPage() {
           </div>
 
           <div className="about-gallery-grid mb-12">
-            <div className="about-gallery-item"><img src="/assets/gallery-1.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Gallery" /></div>
-            <div className="about-gallery-item"><img src="/assets/gallery-2.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Gallery" /></div>
-            <div className="about-gallery-item col-span-2"><img src="/assets/gallery-3.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Gallery" /></div>
-            <div className="about-gallery-item col-span-2"><img src="/assets/gallery-4.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Gallery" /></div>
-            <div className="about-gallery-item"><img src="/assets/gallery-5.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Gallery" /></div>
-            <div className="about-gallery-item"><img src="/assets/gallery-6.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Gallery" /></div>
+            <div className="about-gallery-item"><LazyImage src="/assets/DSC01464_about.webp" alt="Gallery" /></div>
+            <div className="about-gallery-item"><LazyImage src="/assets/0A5A8042_about.webp" alt="Gallery" /></div>
+            <div className="about-gallery-item col-span-2"><LazyImage src="/assets/SM_30974_about.webp" alt="Gallery" /></div>
+            <div className="about-gallery-item col-span-2"><LazyImage src="/assets/yjhsqa_about.webp" alt="Gallery" /></div>
+            <div className="about-gallery-item"><LazyImage src="/assets/WMD07537_about.webp" alt="Gallery" /></div>
+            <div className="about-gallery-item"><LazyImage src="/assets/DSC06152_about.webp" alt="Gallery" /></div>
           </div>
 
           <div className="text-center">

@@ -5,7 +5,7 @@ import SharedHero from '../../components/SharedHero.jsx';
 export default function Hero() {
   return (
     <SharedHero
-      image="/assets/heritage-couple-portrait.png"
+      image="/assets/couple back.webp"
       eyebrow="Our Portfolio"
       title="Stories That Last Forever"
       description="A collection of timeless celebrations, emotions, and unforgettable memories captured with cinematic precision."

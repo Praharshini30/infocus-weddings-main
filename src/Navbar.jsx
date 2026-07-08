@@ -86,7 +86,7 @@ export default function Navbar() {
   return (
     <>
       <header className={`items-center flex justify-between gap-[clamp(28px,2vw,36px)] w-full h-[90px] inset-x-0 top-0 bottom-auto px-[max(5%,calc((100%-1680px)/2))] absolute z-20 transition-colors bg-[linear-gradient(180deg,rgba(5,5,4,0.86),rgba(5,5,4,0))] max-1080:bg-[linear-gradient(180deg,rgba(5,5,4,0.95),rgba(5,5,4,0.35))] max-780:px-[18px] max-780:bg-[linear-gradient(180deg,rgba(5,5,4,0.88),rgba(5,5,4,0.2))] max-560:h-[75px] ${menuOpen ? '!bg-[rgba(5,5,4,0.96)] max-780:!bg-[rgba(5,5,4,0.98)]' : ''}`}>
-        
+
         {/* Zone 1: Logo Section (Left) */}
         <div className="flex-none">
           <Brand />
@@ -109,7 +109,7 @@ export default function Navbar() {
         {/* Zone 3: CTA Button (Right) */}
         <div className="flex-none flex justify-end items-center">
           <a className="btn btn-lux-primary max-1080:hidden px-[1.1rem] py-[0.65rem] text-[0.65rem] min-h-[38px] tracking-[0.08em]" href={ctaHref}>Book Consultation</a>
-          
+
           <button
             className="items-center bg-[rgba(255,246,232,0.07)] border border-line-soft rounded-[4px] text-text hidden h-[42px] justify-center w-[42px] max-1080:flex"
             type="button"

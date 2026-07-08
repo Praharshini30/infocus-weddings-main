@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { destinations } from '../portfolioData.js';
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
 
 export default function DestinationSection({ visible, onImageClick }) {
@@ -36,7 +37,7 @@ export default function DestinationSection({ visible, onImageClick }) {
               onClick={() => onImageClick && onImageClick(destinationImages, index)}
               aria-label={`View ${place.name} wedding`}
             >
-              <img src={place.image} alt={`${place.name} destination wedding`} loading="lazy" />
+              <LazyImage src={place.image} alt={`${place.name} destination wedding`} />
             </button>
             <div className="pf-destination-meta">
               <strong>{place.name}</strong>

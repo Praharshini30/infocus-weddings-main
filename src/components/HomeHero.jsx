@@ -6,28 +6,34 @@ const A = '/assets/';
 
 const slides = [
   {
-    image: `${A}hero-temple-couple.png`,
+    image: `${A}NAG01188.webp`,
+    objectPosition: 'center 35%',
     title: 'Capturing Love Stories That Last Forever',
     description: 'Timeless wedding photography and films crafted with emotion and elegance.',
     cta1: { text: 'Reserve Your Date', href: '/#contact' },
     cta2: { text: 'Watch Our Story', href: '/#film', icon: Play }
   },
   {
-    image: `${A}haldi-laughter.webp`,
+    image: `${A}VSR03823.webp`,
+    objectPosition: 'center 30%',
+    style: { transform: 'scale(1.15) translateX(7%)' },
     title: 'Every Moment, Beautifully Preserved',
     description: 'From candid smiles to grand celebrations, we capture every detail.',
     cta1: { text: 'View Portfolio', href: '/portfolio' },
     cta2: { text: 'Our Services', href: '/services' }
   },
   {
-    image: `${A}royal-bride-window.png`,
+    image: `${A}VSR03510.webp`,
+    objectPosition: 'center 28%',
     title: 'Cinematic Wedding Films',
     description: 'Relive your special day through stunning visual storytelling.',
     cta1: { text: 'Watch Films', href: '/#film', icon: Play },
     cta2: { text: 'Book Consultation', href: '/#contact' }
   },
   {
-    image: `${A}pre-wedding-beach.png`,
+    image: `${A}SM_31076.webp`,
+    objectPosition: 'center 35%',
+    style: { transform: 'scale(1.15) translateX(7%)' },
     title: 'Destination Wedding Specialists',
     description: 'Turning breathtaking locations into unforgettable memories.',
     cta1: { text: 'Explore Services', href: '/services' },
@@ -79,18 +85,32 @@ export default function HomeHero() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full overflow-hidden"
         >
           <img
             src={slides[currentIndex].image}
             alt={slides[currentIndex].title}
-            className="w-full h-full object-cover object-[center_30%] scale-100"
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority={currentIndex === 0 ? "high" : "auto"}
+            style={{ 
+              objectPosition: slides[currentIndex].objectPosition || 'center 30%',
+              ...slides[currentIndex].style
+            }}
+          />
+          {/* Preload next slide to memory */}
+          <img
+            src={slides[(currentIndex + 1) % slides.length].image}
+            alt=""
+            loading="eager"
+            style={{ display: 'none' }}
           />
           {/* Overlays for readability and luxury aesthetic */}
           <div className="absolute inset-0 bg-black/40 z-[1]" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,4,0.98)_0%,rgba(5,5,4,0.85)_35%,rgba(5,5,4,0.2)_70%,transparent_100%)] z-[1]" />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(5,5,4,0.1)_65%,rgba(5,5,4,0.95)_100%)] z-[1]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(5,5,4,0.6)_100%)] z-[1]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,164,106,0.02)_0%,transparent_80%)] z-[1] pointer-events-none" />
         </motion.div>
       </AnimatePresence>
 
@@ -145,7 +165,7 @@ export default function HomeHero() {
                   {Icon1 && <Icon1 size={16} fill="currentColor" />}
                   {currentSlide.cta1.text}
                 </a>
-                
+
                 {currentSlide.cta2 && (
                   <a
                     href={currentSlide.cta2.href}
@@ -183,11 +203,10 @@ export default function HomeHero() {
           <button
             key={idx}
             onClick={() => goToSlide(idx)}
-            className={`transition-all duration-500 rounded-full ${
-              currentIndex === idx
+            className={`transition-all duration-500 rounded-full ${currentIndex === idx
                 ? 'w-[40px] h-[4px] bg-[var(--gold-soft)] shadow-[0_0_14px_rgba(228,193,126,0.65)]'
                 : 'w-[12px] h-[4px] bg-[rgba(201,155,86,0.3)] hover:bg-[rgba(201,155,86,0.6)]'
-            }`}
+              }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}

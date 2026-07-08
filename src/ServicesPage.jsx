@@ -17,6 +17,7 @@ import {
 import CountUp from './components/CountUp.jsx';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
+import LazyImage from './components/LazyImage.jsx';
 import './services-page.css';
 
 const A = '/assets/';
@@ -48,19 +49,19 @@ const collections = [
 ];
 
 const serviceCards = [
-  ['Pre Wedding', 'Stories of love, captured beautifully.', Heart, `${A}heritage-couple-portrait.png`],
-  ['Weddings', 'Timeless coverage of your big day.', Gem, `${A}reception-walk.jpeg`],
-  ['Destination Weddings', 'For celebrations across the world.', Film, `${A}temple-ceremony-couple.webp`],
-  ['Cinematic Films', 'Wedding films that feel like cinema.', Sparkles, `${A}sample-wedding-reel.mp4`],
+  ['Pre Wedding', 'Stories of love, captured beautifully.', Heart, `${A}VSR03510.webp`],
+  ['Weddings', 'Timeless coverage of your big day.', Gem, `${A}SM_31002_services.webp`],
+  ['Destination Weddings', 'For celebrations across the world.', Film, `${A}VSR02946_services.webp`],
+  ['Cinematic Films', 'Wedding films that feel like cinema.', Sparkles, `${A}file30216_services.webp`],
   ['Albums & Prints', 'Heirloom artwork for generations.', Camera, `${A}bridal-details-collage.png`],
 ];
 
 const portfolioImages = [
-  `${A}heritage-stair-portrait.webp`,
-  `${A}royal-bride-window.png`,
-  `${A}heritage-couple-portrait.png`,
-  `${A}hero-temple-couple.png`,
-  `${A}bridal-window-red.webp`,
+  `${A}WMD08878_gallery.webp`,
+  `${A}DSC03986_gallery.webp`,
+  `${A}DSC01464_gallery.webp`,
+  `${A}SM_30585_gallery.webp`,
+  `${A}DSC00378_gallery.webp`,
 ];
 
 const values = [
@@ -150,7 +151,7 @@ export default function ServicesPage() {
                 {src.endsWith('.mp4') ? (
                   <video src={src} poster={`${A}reception-walk.jpeg`} autoPlay muted loop playsInline />
                 ) : (
-                  <img src={src} alt="" />
+                  <LazyImage src={src} alt="" />
                 )}
                 <div className="services-offer-shade" />
                 <div className="services-offer-copy">
@@ -169,7 +170,7 @@ export default function ServicesPage() {
           <h2>Visual Stories That Speak</h2>
           <div className="services-gallery">
             {portfolioImages.map((src) => (
-              <img src={src} alt="" key={src} />
+              <LazyImage src={src} alt="" key={src} />
             ))}
           </div>
           <Link className="btn btn-lux-secondary" to="/portfolio">Explore Portfolio</Link>

@@ -245,7 +245,10 @@ a {
 .btn-lux-secondary::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, #E0BC74, #D4AF5A, #B8893F);
   z-index: -1;
   opacity: 0;
@@ -1670,4 +1673,15 @@ body,
 .film-banner {
   background: #000000 !important;
   background-image: none !important;
+}
+
+/* Smooth image loading fade-in transition */
+.fade-in-image {
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: opacity;
+}
+
+.fade-in-image.loaded {
+  opacity: 1;
 }

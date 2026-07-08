@@ -1,3 +1,4 @@
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
 
 const A = '/assets/';
@@ -5,7 +6,7 @@ const A = '/assets/';
 export default function PortfolioCTA() {
   return (
     <section className="pf-cta" id="portfolio-contact">
-      <img src={`${A}reception-walk.jpeg`} alt="" aria-hidden="true" />
+      <LazyImage src={`${A}VSR03896.webp`} alt="" aria-hidden="true" />
       <div className="pf-cta-shade" />
       <div className="pf-cta-content">
         <Reveal>

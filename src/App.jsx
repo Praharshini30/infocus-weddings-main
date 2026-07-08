@@ -26,6 +26,8 @@ import {
   Sparkles,
 } from 'lucide-react';
 
+import LazyImage from './components/LazyImage.jsx';
+
 const A = '/assets/';
 
 const heroSlides = [
@@ -40,18 +42,18 @@ const heroSlides = [
 ];
 
 const stories = [
-  { className: 'story-card-one', src: `${A}temple-ceremony-couple.webp`, alt: 'Traditional temple wedding couple' },
-  { className: 'story-card-two', src: `${A}haldi-laughter.webp`, alt: 'Bride laughing during haldi ceremony' },
-  { className: 'story-card-three', src: `${A}heritage-stair-portrait.webp`, alt: 'Heritage wedding portrait on palace stairs' },
-  { className: 'story-card-four', src: `${A}bridal-window-red.webp`, alt: 'Bridal portrait in red lehenga by a window' },
-  { className: 'story-card-five', src: `${A}reception-walk.jpeg`, alt: 'Couple walking through a reception hall' },
+  { className: 'story-card-one', src: `${A}239A6337.webp`, alt: 'Top left wedding story card' },
+  { className: 'story-card-two', src: `${A}WMD08878.webp`, alt: 'Center close-up emotional wedding moment' },
+  { className: 'story-card-three', src: `${A}VSR02674.webp`, alt: 'Top right wedding couple story card' },
+  { className: 'story-card-four', src: `${A}couple back.webp`, alt: 'Bottom left couple from behind story card' },
+  { className: 'story-card-five', src: `${A}VSR03896.webp`, alt: 'Bottom right wedding story card' },
 ];
 
 const values = [
-  ['Rooted In', 'Tradition', `${A}temple-ceremony-couple.webp`, 'Temple wedding tradition'],
-  ['Focused On', 'Details', `${A}bridal-details-collage.png`, 'Bridal jewellery details'],
-  ['Driven By', 'Emotion', `${A}haldi-laughter.webp`, 'Joyful haldi emotion'],
-  ['Defined By', 'Excellence', `${A}heritage-stair-portrait.webp`, 'Elegant heritage portrait composition'],
+  ['Rooted In', 'Tradition', `${A}DSC09939.webp`, 'Traditional South Indian wedding ritual'],
+  ['Focused On', 'Details', `${A}infocus_engagement_ring_detail.webp`, 'Luxury engagement rings'],
+  ['Driven By', 'Emotion', `${A}VSR07404.webp`, 'Joyful proposal and emotion'],
+  ['Defined By', 'Excellence', `${A}VSR07504.webp`, 'Premium portrait excellence'],
 ];
 
 const services = [
@@ -59,19 +61,19 @@ const services = [
     icon: Camera,
     name: 'Wedding Photography',
     text: 'Candid and traditional photography to capture every memorable moment.',
-    src: `${A}hero-temple-couple.png`,
+    src: `${A}DSC00986.webp`,
   },
   {
     icon: Film,
     name: 'Cinematic Films',
     text: 'Beautifully crafted wedding films that tell your story with emotion.',
-    src: `${A}pre-wedding-beach.png`,
+    src: `${A}VSR03896.webp`,
   },
   {
     icon: Heart,
     name: 'Pre-Wedding Shoots',
     text: 'Romantic and elegant portraits in memorable locations.',
-    src: `${A}heritage-couple-portrait.png`,
+    src: `${A}VSR03510.webp`,
   },
   {
     icon: Images,
@@ -138,12 +140,12 @@ function HomePage() {
                 if (index === 0) { positionClasses = 'col-start-1 row-start-1 max-780:col-span-1 max-780:row-start-1 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[center_33%]'; }
                 if (index === 1) { positionClasses = 'col-start-2 row-span-2 max-780:col-span-2 max-780:row-start-3 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[50%_50%]'; }
                 if (index === 2) { positionClasses = 'col-start-3 row-start-1 max-780:col-span-1 max-780:row-start-1 max-780:col-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-center'; }
-                if (index === 3) { positionClasses = 'col-start-1 row-start-2 max-780:col-span-1 max-780:row-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[18%_46%]'; }
+                if (index === 3) { positionClasses = 'col-start-1 row-start-2 max-780:col-span-1 max-780:row-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; }
                 if (index === 4) { positionClasses = 'col-start-3 row-start-2 max-780:col-span-1 max-780:row-start-2 max-780:col-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-center'; }
 
                 return (
                   <article className={`bg-[var(--lux-bg-soft)] border border-[var(--lux-line)] rounded-[4px] overflow-hidden group hover:shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:border-[rgba(212,175,55,0.4)] transition-[box-shadow,border-color] duration-400 ease-in-out ${positionClasses}`} key={story.className}>
-                    <img className={`h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.055] w-full ${objectPosition}`} src={story.src} alt={story.alt} />
+                    <LazyImage className={`h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.055] w-full ${objectPosition}`} src={story.src} alt={story.alt} />
                   </article>
                 );
               })}
@@ -190,7 +192,7 @@ function HomePage() {
             <div className="value-cards">
               {values.map(([label, title, src, alt]) => (
                 <article key={title}>
-                  <img src={src} alt={alt} />
+                  <LazyImage src={src} alt={alt} />
                   <div>
                     <span>{label}</span>
                     <h3>{title}</h3>
@@ -203,7 +205,7 @@ function HomePage() {
 
         <section className="section about-section" id="about">
           <div className="about-image">
-            <img src={`${A}royal-bride-window.png`} alt="Bride sitting in warm palace light" />
+            <LazyImage src={`${A}file30140.webp`} alt="Couple portrait in warm light" />
           </div>
 
           <div className="page-shell about-layout">
@@ -236,7 +238,7 @@ function HomePage() {
             <div className="services-grid">
               {services.map(({ icon: Icon, name, text, src }, index) => (
                 <article key={name}>
-                  <img src={src} alt={`${name} service`} />
+                  <LazyImage src={src} alt={`${name} service`} />
                   <div className="service-body">
                     <span className="service-icon"><Icon size={18} /></span>
                     <h3>{name}</h3>
@@ -300,17 +302,17 @@ function HomePage() {
           </div>
           <div className="testimonials-grid">
             {testimonials.map(([quote, name, place, src]) => (
-                <article key={name}>
-                  <span className="quote-mark">"</span>
-                  <p>{quote}</p>
-                  <div><img src={src} alt={name} /><span><strong>{name}</strong>{place}</span></div>
-                </article>
-              ))}
-            </div>
+              <article key={name}>
+                <span className="quote-mark">"</span>
+                <p>{quote}</p>
+                <div><LazyImage src={src} alt={name} /><span><strong>{name}</strong>{place}</span></div>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="final-cta" id="contact">
-          <img src={`${A}reception-walk.jpeg`} alt="Wedding reception couple" />
+          <LazyImage src={`${A}VSR03896.webp`} alt="Wedding couple in front of lit palace" />
           <div className="final-shade" />
           <div className="page-shell final-layout">
             <div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
+import LazyImage from './components/LazyImage.jsx';
 import './contact.css';
 import { 
   Users, ClipboardEdit, Camera, Film, 
@@ -15,7 +16,7 @@ export default function ContactPage() {
 
       {/* 1. HERO + FORM SECTION */}
       <section className="cp-hero">
-        <img src="/assets/hero-temple-couple.png" alt="Luxury Wedding Couple" className="cp-hero-bg" />
+        <img src="/assets/VSR03896.webp" alt="Luxury Wedding Couple" className="cp-hero-bg" />
         <div className="cp-hero-fade"></div>
         
         <div className="cp-hero-left">
@@ -223,27 +224,27 @@ export default function ContactPage() {
 
         <div className="cp-dest-grid">
           <div className="cp-dest-card">
-            <img src="/assets/royal-bride-window.png" alt="India" />
+            <LazyImage src="/assets/VSR02742_contact.webp" alt="India" />
             <div className="cp-dest-title">INDIA</div>
           </div>
           <div className="cp-dest-card">
-            <img src="/assets/reception-2.png" alt="Dubai" />
+            <LazyImage src="/assets/VSR03586_contact.webp" alt="Dubai" />
             <div className="cp-dest-title">DUBAI</div>
           </div>
           <div className="cp-dest-card">
-            <img src="/assets/pre-wedding-beach.png" alt="Bali" />
+            <LazyImage src="/assets/pre-wedding-beach.png" alt="Bali" />
             <div className="cp-dest-title">BALI</div>
           </div>
           <div className="cp-dest-card">
-            <img src="/assets/engagement-1.png" alt="Europe" />
+            <LazyImage src="/assets/VSR00140_contact.webp" alt="Europe" />
             <div className="cp-dest-title">EUROPE</div>
           </div>
           <div className="cp-dest-card">
-            <img src="/assets/wedding-4.png" alt="Thailand" />
+            <LazyImage src="/assets/VSU00343_contact.webp" alt="Thailand" />
             <div className="cp-dest-title">THAILAND</div>
           </div>
           <div className="cp-dest-card">
-            <img src="/assets/bridal-window-red.webp" alt="Sri Lanka" />
+            <LazyImage src="/assets/yjhsqa.webp" alt="Sri Lanka" />
             <div className="cp-dest-title">SRI LANKA</div>
           </div>
         </div>

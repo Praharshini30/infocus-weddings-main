@@ -1,11 +1,12 @@
 import { preWeddingGallery } from '../portfolioData.js';
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
 
 export default function PreWeddingSection({ visible, onImageClick }) {
   if (!visible) return null;
 
-  const preWeddingImages = [preWeddingGallery.hero, ...preWeddingGallery.side];
-
+// Forcing HMR reload to clear stale object cache
+  console.log('DEBUG preWeddingGallery:', preWeddingGallery, typeof preWeddingGallery, Array.isArray(preWeddingGallery));
   return (
     <section className="pf-section pf-pre-wedding" id="portfolio-pre-wedding">
       <div className="pf-magazine">
@@ -19,31 +20,19 @@ export default function PreWeddingSection({ visible, onImageClick }) {
 
         </Reveal>
 
-        <div className="pf-magazine-grid">
-          <Reveal className="pf-magazine-hero" delay={80}>
-            <button
-              type="button"
-              className="pf-lightbox-trigger"
-              onClick={() => onImageClick && onImageClick(preWeddingImages, 0)}
-              aria-label={`View pre-wedding moment`}
-            >
-              <img src={preWeddingGallery.hero.src} alt={preWeddingGallery.hero.alt} loading="lazy" />
-            </button>
-          </Reveal>
-          <div className="pf-magazine-stack">
-            {preWeddingGallery.side.map((item, index) => (
-              <Reveal key={item.src} delay={120 + index * 80}>
-                <button
-                  type="button"
-                  className="pf-lightbox-trigger"
-                  onClick={() => onImageClick && onImageClick(preWeddingImages, index + 1)}
-                  aria-label={`View pre-wedding detail`}
-                >
-                  <img src={item.src} alt={item.alt} loading="lazy" />
-                </button>
-              </Reveal>
-            ))}
-          </div>
+        <div className="pf-masonry">
+          {preWeddingGallery.map((item, index) => (
+            <Reveal key={item.src} delay={80 + (index % 3) * 80} className="pf-masonry-item">
+              <button
+                type="button"
+                className="pf-lightbox-trigger"
+                onClick={() => onImageClick && onImageClick(preWeddingGallery, index)}
+                aria-label={`View pre-wedding moment`}
+              >
+                <LazyImage src={item.src} alt={item.alt} />
+              </button>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

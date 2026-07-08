@@ -4,7 +4,8 @@ import SharedHero from '../../components/SharedHero.jsx';
 export default function BlogHero() {
   return (
     <SharedHero
-      image="/assets/hero-temple-couple.png"
+      image="/assets/engagement/infocus - weddings - hyderabad - engagement rings - couple - luxury - photography.webp"
+      imagePosition="object-[center_35%]"
       eyebrow="THE JOURNAL"
       title={
         <>

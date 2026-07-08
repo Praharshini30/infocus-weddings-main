@@ -23,6 +23,8 @@ export default function SharedHero({
           src={image}
           alt="Luxury wedding inspiration"
           className={`w-full h-full object-cover ${imagePosition}`}
+          loading="eager"
+          fetchPriority="high"
         />
         {/* Dark base overlay for readability */}
         <div className="absolute inset-0 bg-black/30 z-[1]" />

@@ -1,4 +1,5 @@
 import { receptionGallery } from '../portfolioData.js';
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
 
 export default function ReceptionSection({ visible, onImageClick }) {
@@ -26,7 +27,7 @@ export default function ReceptionSection({ visible, onImageClick }) {
               onClick={() => onImageClick && onImageClick(receptionGallery, index)}
               aria-label={`View reception moment`}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <LazyImage src={item.src} alt={item.alt} />
               <span className="pf-cinema-tag">{item.tag}</span>
             </button>
           </Reveal>

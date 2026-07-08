@@ -1,4 +1,5 @@
-import { engagementGallery } from '../portfolioData.js';
+import { engagementGallery } from '../portfolioData.js?v=2';
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
 
 export default function EngagementSection({ visible, onImageClick }) {
@@ -17,16 +18,16 @@ export default function EngagementSection({ visible, onImageClick }) {
         </Reveal>
       </div>
 
-      <div className="pf-asym-grid">
+      <div className="pf-masonry">
         {engagementGallery.map((item, index) => (
-          <Reveal key={item.src} className={`pf-asym-item pf-asym-${item.span}`} delay={index * 70}>
+          <Reveal key={item.src} className="pf-masonry-item" delay={index * 70}>
             <button
               type="button"
               className="pf-lightbox-trigger"
               onClick={() => onImageClick && onImageClick(engagementGallery, index)}
               aria-label={`View engagement moment`}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <LazyImage src={item.src} alt={item.alt} />
             </button>
           </Reveal>
         ))}

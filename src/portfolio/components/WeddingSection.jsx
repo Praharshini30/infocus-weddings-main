@@ -1,4 +1,5 @@
 import { weddingGallery } from '../portfolioData.js';
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
 
 export default function WeddingSection({ visible, onImageClick }) {
@@ -30,7 +31,7 @@ export default function WeddingSection({ visible, onImageClick }) {
               aria-label={`View ${item.tag}`}
               onClick={() => onImageClick && onImageClick(weddingGallery, index)}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <LazyImage src={item.src} alt={item.alt} />
               <span className="pf-image-overlay">
                 <span className="pf-badge">{item.tag}</span>
               </span>

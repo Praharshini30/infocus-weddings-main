@@ -76,7 +76,7 @@ export default function WeddingFilmsPage() {
           
           <div className="wf-hero-center">
             <div className="wf-hero-image-wrapper">
-              <img src={`${A}heritage-couple-portrait.png`} alt="Wedding Films Hero" />
+              <img src={`${A}VSR02742.webp`} alt="Wedding Films Hero" style={{ objectPosition: 'center 25%' }} />
               <div className="wf-hero-fade"></div>
             </div>
           </div>

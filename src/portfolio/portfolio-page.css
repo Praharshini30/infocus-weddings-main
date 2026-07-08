@@ -372,9 +372,12 @@
   width: 100%;
 }
 
-.pf-masonry-tall img { aspect-ratio: 3 / 4; }
-.pf-masonry-wide img { aspect-ratio: 16 / 10; }
-.pf-masonry-square img { aspect-ratio: 1 / 1; }
+.pf-masonry-tall img,
+.pf-masonry-wide img,
+.pf-masonry-square img { 
+  height: auto; 
+  aspect-ratio: auto;
+}
 
 .pf-lightbox-trigger:hover img {
   transform: scale(1.05);
@@ -423,7 +426,6 @@
 .pf-soft-grid img,
 .pf-asym-grid img,
 .pf-collage img,
-.pf-cinema-card img,
 .pf-destination-card img {
   filter: brightness(0.84) contrast(1.06);
   height: 100%;
@@ -502,12 +504,24 @@
 }
 
 .pf-cinema-card {
+  align-items: center;
+  background: var(--pf-surface);
+  border: 1px solid var(--pf-border);
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   position: relative;
+  aspect-ratio: 3 / 4;
 }
 
 .pf-cinema-card img {
-  aspect-ratio: 3 / 4;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.84) contrast(1.06);
+  transition: transform 0.7s ease;
 }
 
 .pf-cinema-tag {
