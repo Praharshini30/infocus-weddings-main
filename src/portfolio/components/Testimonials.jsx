@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { testimonials } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
 
+import { getCloudinaryUrl } from '../../utils/cloudinary.js';
+
 export default function Testimonials({ visible }) {
   const [active, setActive] = useState(0);
 
@@ -33,7 +35,7 @@ export default function Testimonials({ visible }) {
             className={`pf-testimonial-card ${index === active ? 'active' : ''}`}
             aria-hidden={index !== active}
           >
-            <img src={item.image} alt={item.couple} loading="lazy" />
+            <img src={getCloudinaryUrl(item.image, 600)} alt={item.couple} loading="lazy" decoding="async" />
             <blockquote>
               <p>&ldquo;{item.quote}&rdquo;</p>
               <footer>

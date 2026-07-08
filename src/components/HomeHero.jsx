@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { getCloudinaryUrl } from '../utils/cloudinary.js';
 
 const A = '/assets/';
 
@@ -80,7 +81,7 @@ export default function HomeHero() {
           className="absolute inset-0 w-full h-full overflow-hidden"
         >
           <img
-            src={slides[currentIndex].image}
+            src={getCloudinaryUrl(slides[currentIndex].image, 1600)}
             alt={slides[currentIndex].title}
             className="w-full h-full object-cover"
             loading={currentIndex === 0 ? "eager" : "lazy"}

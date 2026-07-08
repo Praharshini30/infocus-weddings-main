@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { getCloudinaryUrl } from '../../utils/cloudinary.js';
 
 export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext }) {
   useEffect(() => {
@@ -54,7 +55,7 @@ export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext
       )}
 
       <div className="pf-lightbox-content" onClick={(e) => e.stopPropagation()}>
-        <img src={src} alt={alt} className="pf-lightbox-img" />
+        <img src={getCloudinaryUrl(src, 1600)} alt={alt} className="pf-lightbox-img" />
         {tag && <span className="pf-lightbox-tag-badge">{tag}</span>}
       </div>
 

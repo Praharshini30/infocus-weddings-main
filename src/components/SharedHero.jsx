@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { ArrowDown } from 'lucide-react';
+import { getCloudinaryUrl } from '../utils/cloudinary.js';
 
 const SharedHero = memo(function SharedHero({
   image,
@@ -20,7 +21,7 @@ const SharedHero = memo(function SharedHero({
       <div className="absolute inset-0 w-full h-full">
         {/* True Background Image */}
         <img
-          src={image}
+          src={getCloudinaryUrl(image, 1600)}
           alt="Luxury wedding inspiration"
           className={`w-full h-full object-cover ${imagePosition}`}
           loading="eager"

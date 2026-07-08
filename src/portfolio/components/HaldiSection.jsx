@@ -1,5 +1,6 @@
 import { haldiGallery } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
+import { getCloudinaryUrl } from '../../utils/cloudinary.js';
 
 export default function HaldiSection({ visible, onImageClick }) {
   if (!visible) return null;
@@ -26,7 +27,7 @@ export default function HaldiSection({ visible, onImageClick }) {
               onClick={() => onImageClick && onImageClick(haldiGallery, index)}
               aria-label={`View haldi moment`}
             >
-              <img src={item.src} alt={item.alt} loading="lazy" />
+              <img src={getCloudinaryUrl(item.src, 1200)} alt={item.alt} loading="lazy" decoding="async" />
             </button>
           </Reveal>
         ))}

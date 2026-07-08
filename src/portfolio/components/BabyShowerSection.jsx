@@ -1,5 +1,6 @@
 import { babyShowerGallery } from '../portfolioData.js';
 import Reveal from './Reveal.jsx';
+import { getCloudinaryUrl } from '../../utils/cloudinary.js';
 
 export default function BabyShowerSection({ visible, onImageClick }) {
   if (!visible) return null;
@@ -26,7 +27,7 @@ export default function BabyShowerSection({ visible, onImageClick }) {
               onClick={() => onImageClick && onImageClick(babyShowerImages, 0)}
               aria-label={`View baby shower moment`}
             >
-              <img src={babyShowerGallery.hero.src} alt={babyShowerGallery.hero.alt} loading="lazy" />
+              <img src={getCloudinaryUrl(babyShowerGallery.hero.src, 1200)} alt={babyShowerGallery.hero.alt} loading="lazy" decoding="async" />
             </button>
           </Reveal>
           {babyShowerGallery.images.map((item, index) => (
@@ -37,7 +38,7 @@ export default function BabyShowerSection({ visible, onImageClick }) {
                 onClick={() => onImageClick && onImageClick(babyShowerImages, index + 1)}
                 aria-label={`View baby shower detail`}
               >
-                <img src={item.src} alt={item.alt} loading="lazy" />
+                <img src={getCloudinaryUrl(item.src, 1200)} alt={item.alt} loading="lazy" decoding="async" />
               </button>
             </Reveal>
           ))}

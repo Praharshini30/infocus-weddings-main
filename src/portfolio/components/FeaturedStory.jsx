@@ -1,6 +1,7 @@
   import { ArrowUpRight } from 'lucide-react';
   import { featuredStory } from '../portfolioData.js';
   import Reveal from './Reveal.jsx';
+  import { getCloudinaryUrl } from '../../utils/cloudinary.js';
 
   export default function FeaturedStory() {
     return (
@@ -19,7 +20,7 @@
         </div>
         <Reveal className="pf-featured-media" delay={120}>
           <figure>
-            <img src={featuredStory.image} alt={featuredStory.alt} />
+            <img src={getCloudinaryUrl(featuredStory.image, 1200)} alt={featuredStory.alt} loading="lazy" decoding="async" />
           </figure>
         </Reveal>
       </section>

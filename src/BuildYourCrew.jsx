@@ -153,12 +153,14 @@ function formatCurrency(value) {
   }).format(value);
 }
 
+import { getCloudinaryUrl } from './utils/cloudinary.js';
+
 function Media({ src, title }) {
   if (src.endsWith('.mp4')) {
-    return <video src={src} poster={`${A}reception-walk.jpeg`} autoPlay muted loop playsInline aria-label={title} />;
+    return <video src={src} poster={getCloudinaryUrl('reception-walk', 600)} autoPlay muted loop playsInline aria-label={title} />;
   }
 
-  return <img src={src} alt={title} />;
+  return <img src={getCloudinaryUrl(src, 600)} alt={title} loading="lazy" decoding="async" />;
 }
 
 function SectionTitle({ title, subtitle }) {
@@ -307,7 +309,7 @@ export default function BuildYourCrew() {
 
             <div className="byc-summary-panel">
               <div className="byc-summary-image">
-                <img src={`${A}heritage-couple-portrait.png`} alt="Wedding couple" />
+                <img src={getCloudinaryUrl('heritage-couple-portrait', 600)} alt="Wedding couple" loading="lazy" decoding="async" />
               </div>
               <div className="byc-summary-details">
                 <p className="byc-summary-label">Your Package Summary</p>
