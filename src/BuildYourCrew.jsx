@@ -309,7 +309,7 @@ export default function BuildYourCrew() {
 
             <div className="byc-summary-panel">
               <div className="byc-summary-image">
-                <img src={getCloudinaryUrl('heritage-couple-portrait', 600)} alt="Wedding couple" loading="lazy" decoding="async" />
+                <img src={getCloudinaryUrl('/assets/heritage-couple-portrait.png', 600)} alt="Wedding couple" loading="lazy" decoding="async" />
               </div>
               <div className="byc-summary-details">
                 <p className="byc-summary-label">Your Package Summary</p>
