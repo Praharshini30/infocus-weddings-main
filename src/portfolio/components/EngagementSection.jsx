@@ -7,7 +7,7 @@ export default function EngagementSection({ visible, onImageClick }) {
 
   return (
     <section className="pf-section pf-engagement" id="portfolio-engagement">
-      <div className="pf-section-head pf-section-head-row">
+      <div className="pf-section-head">
         <Reveal>
           <p className="pf-label">The Beginning Of Forever</p>
           <h2>Engagement</h2>

@@ -1,6 +1,6 @@
 import { haldiGallery } from '../portfolioData.js';
+import LazyImage from '../../components/LazyImage.jsx';
 import Reveal from './Reveal.jsx';
-import { getCloudinaryUrl } from '../../utils/cloudinary.js';
 
 export default function HaldiSection({ visible, onImageClick }) {
   if (!visible) return null;
@@ -14,20 +14,24 @@ export default function HaldiSection({ visible, onImageClick }) {
           <p className="pf-section-text">
             Energetic candid moments, vibrant rituals, and laughter-filled family celebrations.
           </p>
-
         </Reveal>
       </div>
 
-      <div className="pf-collage">
+      <div className="pf-masonry">
         {haldiGallery.map((item, index) => (
-          <Reveal key={item.src} className={`pf-collage-item pf-collage-${item.size}`} delay={index * 60}>
+          <Reveal
+            key={item.src}
+            className="pf-masonry-item"
+            delay={index * 60}
+            as="article"
+          >
             <button
               type="button"
               className="pf-lightbox-trigger"
               onClick={() => onImageClick && onImageClick(haldiGallery, index)}
               aria-label={`View haldi moment`}
             >
-              <img src={getCloudinaryUrl(item.src, 1200)} alt={item.alt} loading="lazy" decoding="async" />
+              <LazyImage src={item.src} alt={item.alt} />
             </button>
           </Reveal>
         ))}

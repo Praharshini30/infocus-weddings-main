@@ -167,3 +167,29 @@ export const sectionIds = {
   reception: 'portfolio-reception',
   'wedding-films': 'portfolio-films',
 };
+
+export const allGallery = [
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570775/SM_30974_erkb5g.webp', alt: 'Joyful Haldi Ceremony', size: 'tall', tag: 'Haldi' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570776/WMD07537_nuxygb.webp', alt: 'Bridal Jewellery Details', size: 'square', tag: 'Details' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570772/INF05640_omrlcd.webp', alt: 'Cinematic Couple Moment', size: 'wide', tag: 'Romance' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570764/239A5784_lrikes.webp', alt: 'Traditional Mandap Ceremony', size: 'tall', tag: 'Ceremony' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570763/239A5069_ky6ds7.webp', alt: 'South Indian Wedding Ritual', size: 'square', tag: 'Rituals' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570811/infocus_weddings_-_reception_-_candid_photography_-_hyderabad_zmions.webp', alt: 'Joyful Candid Reception Moments', size: 'wide', tag: 'Candid' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570808/infocus_-_weddings_-_hyderabad_-engagement_couple_-_luxury_-_best_photography_mwnfhl.webp', alt: 'Elegant Engagement Couple Portrait', size: 'tall', tag: 'Couple Portrait' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570807/infocus_-_weddings_-_hyderabad_-_ring_-_couple_-_luxury_-_photography-_ceremony_-_engagement_i6hawv.webp', alt: 'Romantic Ring Ceremony Moment', size: 'square', tag: 'Ceremony' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570804/ifocusweddings_-_reception_-photoo_uoondh.webp', alt: 'Grand Reception Celebration', size: 'wide', tag: 'Celebration' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570797/239A3256_copy_y6wiyy.webp', alt: 'Engagement Couple Portrait', size: 'tall', tag: 'Couple Portrait' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570713/VSR02674_foaxnx.webp', alt: 'Pre-Wedding Heritage Outdoor', size: 'wide', tag: 'Pre-Wedding' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570707/VSR02742_qotzvh.webp', alt: 'Warm Intimate Couple Portrait', size: 'tall', tag: 'Romance' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570709/VSR03510_ynw6te.webp', alt: 'Scenic Pre-Wedding Couple Walk', size: 'square', tag: 'Pre-Wedding' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570711/VSR07404_sxfhmb.webp', alt: 'Candid Romantic Proposal Moment', size: 'wide', tag: 'Candid' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570741/VSR03877_d8rs0s.webp', alt: 'Joyful Candid Ceremony Laughs', size: 'tall', tag: 'Emotion' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570739/SID07904_svx9cj.webp', alt: 'High Energy Reception Dance Floor', size: 'square', tag: 'Celebration' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570664/DSC01542_cqxkyf.webp', alt: 'Golden Hour Pre-Wedding Romance', size: 'wide', tag: 'Romance' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570664/DSC06152_t06qvj.webp', alt: 'Palace Architecture Couple Portrait', size: 'tall', tag: 'Couple Portrait' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570665/DSC09939_xrrqtq.webp', alt: 'Traditional South Indian Blessings', size: 'square', tag: 'Rituals' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570663/DSC01464_xshhvb.webp', alt: 'Luxury Groom Details Portrait', size: 'wide', tag: 'Details' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570662/WMD08878_sgwkt4.webp', alt: 'Emotional Teary Ceremony Moment', size: 'tall', tag: 'Emotion' },
+  { src: 'https://res.cloudinary.com/dtfbshx24/image/upload/v1783570662/239A6337_vknbie.webp', alt: 'Couple Reception Entry Portrait', size: 'square', tag: 'Celebration' }
+];
+

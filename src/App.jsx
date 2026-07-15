@@ -29,6 +29,8 @@ import {
 } from 'lucide-react';
 
 import LazyImage from './components/LazyImage.jsx';
+import StackedCardsCarousel from './components/StackedCardsCarousel.jsx';
+import TestimonialCarousel from './components/TestimonialCarousel.jsx';
 
 const A = '/assets/';
 
@@ -135,23 +137,7 @@ function HomePage() {
           <div className="mx-auto w-[min(calc(100%-64px),1240px)] max-780:w-[min(calc(100%-32px),1240px)]">
             <SectionHeading eyebrow="Featured Moments" title="Stories We've Captured" />
 
-            <div className="grid gap-[0.65rem] grid-cols-[1.04fr_1.2fr_1.04fr] grid-rows-[215px_215px] max-1080:grid-rows-[170px_170px] max-780:grid-cols-[1fr_1fr] max-780:grid-rows-[180px_180px_180px] max-560:grid-cols-1 max-560:grid-rows-[auto]">
-              {stories.map((story, index) => {
-                let positionClasses = '';
-                let objectPosition = 'object-center';
-                if (index === 0) { positionClasses = 'col-start-1 row-start-1 max-780:col-span-1 max-780:row-start-1 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[center_33%]'; }
-                if (index === 1) { positionClasses = 'col-start-2 row-span-2 max-780:col-span-2 max-780:row-start-3 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-[50%_50%]'; }
-                if (index === 2) { positionClasses = 'col-start-3 row-start-1 max-780:col-span-1 max-780:row-start-1 max-780:col-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-center'; }
-                if (index === 3) { positionClasses = 'col-start-1 row-start-2 max-780:col-span-1 max-780:row-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; }
-                if (index === 4) { positionClasses = 'col-start-3 row-start-2 max-780:col-span-1 max-780:row-start-2 max-780:col-start-2 max-560:col-auto max-560:row-auto max-560:h-[260px]'; objectPosition = 'object-center'; }
-
-                return (
-                  <article className={`bg-[var(--lux-bg-soft)] border border-[var(--lux-line)] rounded-[4px] overflow-hidden group hover:shadow-[0_4px_20px_rgba(212,175,55,0.15)] hover:border-[rgba(212,175,55,0.4)] transition-[box-shadow,border-color] duration-400 ease-in-out ${positionClasses}`} key={story.className}>
-                    <LazyImage className={`h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.055] w-full ${objectPosition}`} src={story.src} alt={story.alt} />
-                  </article>
-                );
-              })}
-            </div>
+            <StackedCardsCarousel />
 
             <div className="flex justify-center mt-[2rem]">
               <Link className="btn btn-lux-secondary items-center rounded-[4px] inline-flex text-[0.68rem] font-[650] justify-center tracking-[0.14em] min-h-[42px] px-[1.32rem] py-[0.78rem] uppercase transition-[transform,border-color,background] duration-250 ease-in-out whitespace-nowrap bg-[rgba(255,246,232,0.04)] border border-[var(--lux-line)] text-[var(--lux-gold-warm)] hover:-translate-y-[2px]" to="/portfolio">View Full Portfolio</Link>
@@ -302,15 +288,7 @@ function HomePage() {
           <div className="page-shell">
             <SectionHeading eyebrow="Kind Words" title="What Our Couples Say" />
           </div>
-          <div className="testimonials-grid">
-            {testimonials.map(([quote, name, place, src]) => (
-              <article key={name}>
-                <span className="quote-mark">"</span>
-                <p>{quote}</p>
-                <div><LazyImage src={src} alt={name} /><span><strong>{name}</strong>{place}</span></div>
-              </article>
-            ))}
-          </div>
+          <TestimonialCarousel testimonials={testimonials} />
         </section>
 
         <section className="final-cta" id="contact">

@@ -28,13 +28,10 @@ export default function WeddingSection({ visible, onImageClick }) {
             <button 
               type="button" 
               className="pf-lightbox-trigger" 
-              aria-label={`View ${item.tag}`}
+              aria-label="View wedding moment"
               onClick={() => onImageClick && onImageClick(weddingGallery, index)}
             >
               <LazyImage src={item.src} alt={item.alt} />
-              <span className="pf-image-overlay">
-                <span className="pf-badge">{item.tag}</span>
-              </span>
             </button>
           </Reveal>
         ))}

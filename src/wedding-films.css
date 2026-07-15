@@ -293,6 +293,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.75rem;
+  font-weight: 600;
   color: var(--lux-gold-warm);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -490,6 +491,7 @@
 
 .wf-timeline-item h3 {
   font-size: 0.8rem;
+  font-weight: 600;
   color: var(--lux-gold-warm);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -575,6 +577,7 @@
 
 .wf-process-step h3 {
   font-size: 0.8rem;
+  font-weight: 600;
   color: var(--lux-gold-warm);
   letter-spacing: 0.15em;
   text-transform: uppercase;

@@ -7,20 +7,24 @@ export default function ReceptionSection({ visible, onImageClick }) {
 
   return (
     <section className="pf-section pf-reception" id="portfolio-reception">
-      <div className="pf-section-head pf-section-head-row">
+      <div className="pf-section-head">
         <Reveal>
-          <p className="pf-label">Evening Of Elegance</p>
+          <p className="pf-label">Glamour & Celebration</p>
           <h2>Reception</h2>
           <p className="pf-section-text">
-            Grand entries, dance floor energy, and romantic portraits under cinematic night light.
+            Grand entry celebrations, evening lights, and candid moments of joy.
           </p>
-
         </Reveal>
       </div>
 
-      <div className="pf-cinema-row">
+      <div className="pf-masonry">
         {receptionGallery.map((item, index) => (
-          <Reveal key={item.src} className="pf-cinema-card" delay={index * 80} as="article">
+          <Reveal
+            key={item.src}
+            className="pf-masonry-item"
+            delay={index * 80}
+            as="article"
+          >
             <button
               type="button"
               className="pf-lightbox-trigger"
@@ -28,7 +32,6 @@ export default function ReceptionSection({ visible, onImageClick }) {
               aria-label={`View reception moment`}
             >
               <LazyImage src={item.src} alt={item.alt} />
-              <span className="pf-cinema-tag">{item.tag}</span>
             </button>
           </Reveal>
         ))}

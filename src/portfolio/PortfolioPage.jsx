@@ -14,13 +14,14 @@ import Testimonials from './components/Testimonials.jsx';
 import PortfolioCTA from './components/PortfolioCTA.jsx';
 import PortfolioFooter from './components/PortfolioFooter.jsx';
 import Lightbox from './components/Lightbox.jsx';
+import AllGallerySection from './components/AllGallerySection.jsx';
 import './portfolio-page.css';
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [lightbox, setLightbox] = useState({ isOpen: false, images: [], currentIndex: 0 });
 
-  const showCategory = (category) => activeCategory === 'all' || activeCategory === category;
+  const showCategory = (category) => activeCategory !== 'all' && activeCategory === category;
   const showExtras = activeCategory === 'all';
 
   const handleImageClick = (imagesList, index) => {
@@ -55,6 +56,7 @@ export default function PortfolioPage() {
       <main>
         <Hero />
         <CategoryFilter activeCategory={activeCategory} onChange={setActiveCategory} />
+        <AllGallerySection visible={activeCategory === 'all'} onImageClick={handleImageClick} />
         <WeddingSection visible={showCategory('wedding')} onImageClick={handleImageClick} />
         <PreWeddingSection visible={showCategory('pre-wedding')} onImageClick={handleImageClick} />
         <EngagementSection visible={showCategory('engagement')} onImageClick={handleImageClick} />
