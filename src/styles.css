@@ -370,11 +370,11 @@ h3 {
 h1 {
   color: #f7f1e7;
   font-family: var(--display);
-  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  font-size: clamp(2.2rem, 3.5vw, 3.6rem);
   font-weight: 500;
-  letter-spacing: 0;
-  line-height: 0.92;
-  max-width: 740px;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  max-width: 680px;
   text-transform: uppercase;
 }
 
@@ -388,11 +388,11 @@ h1 span {
 
 .hero-text {
   color: var(--muted);
-  font-size: 1.12rem;
+  font-size: 1.02rem;
   font-weight: 300;
-  line-height: 1.72;
-  margin: 1.65rem 0 1.9rem;
-  max-width: 560px;
+  line-height: 1.65;
+  margin: 1.25rem 0 1.6rem;
+  max-width: 520px;
 }
 
 .hero-actions {
@@ -1365,8 +1365,8 @@ h1 span {
   }
 
   h1 {
-    font-size: clamp(3rem, 6vw, 4.2rem);
-    line-height: 0.94;
+    font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+    line-height: 1.08;
   }
 
   .hero-eyebrow::before {
