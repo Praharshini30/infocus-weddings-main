@@ -718,49 +718,28 @@ input[type="date"].lux-input::-webkit-calendar-picker-indicator:hover {
   background: radial-gradient(circle at center, rgba(10, 8, 6, 0.1) 0%, rgba(10, 8, 6, 0.75) 100%);
 }
 
-.cp-dest-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: rgba(201, 155, 86, 0.12);
-  border: 1px solid rgba(201, 155, 86, 0.4);
-  margin-bottom: 0.85rem;
-  transition: all 0.4s ease;
-  position: relative;
-  z-index: 3;
-}
-
-.cp-dest-card:hover .cp-dest-icon-wrap {
-  background: rgba(201, 155, 86, 0.25);
-  border-color: var(--lux-gold-warm);
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-}
-
 .cp-dest-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.85) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
   pointer-events: none;
   z-index: 2;
 }
 
 .cp-dest-title {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1.25rem;
   left: 0;
   width: 100%;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   color: var(--lux-gold-warm);
   text-transform: uppercase;
   z-index: 3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 @media (max-width: 1024px) {
