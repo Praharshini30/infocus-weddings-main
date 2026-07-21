@@ -702,30 +702,42 @@
 }
 
 .byc-summary-actions {
-  align-content: center;
-  display: grid;
-  gap: 1rem;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.4rem;
+  border-left: 1px solid rgba(201, 155, 86, 0.22);
 }
 
-.byc-primary-action {
+.byc-whatsapp-btn {
+  width: 100%;
+  max-width: 240px;
   min-height: 48px;
-  width: auto;
-  padding: 0 2rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 650;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   border-radius: 4px;
-  transition: background 0.3s ease, border-color 0.25s ease, filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.byc-primary-action:hover {
-  background: linear-gradient(135deg, #a87f42, #8b621b);
-  filter: none;
-  box-shadow: 0 4px 20px rgba(168, 127, 66, 0.3);
-  transform: translateY(-2px);
-}
-
-.byc-save-action {
-  margin: 0;
+.byc-pdf-btn {
+  width: 100%;
+  max-width: 240px;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 650;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
 }
 
 @media (max-width: 1320px) {
@@ -762,8 +774,11 @@
   .byc-summary-actions {
     border-top: 1px solid rgba(201, 155, 86, 0.22);
     grid-column: 1 / -1;
-    grid-template-columns: 1fr auto;
-    justify-items: end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
   }
 }
 
@@ -836,8 +851,11 @@
   .byc-summary-actions {
     border-left: 1px solid rgba(201, 155, 86, 0.22);
     grid-column: auto;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
   }
 }
 

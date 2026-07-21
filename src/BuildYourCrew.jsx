@@ -6,6 +6,7 @@ import {
   ChevronRight,
   CircleDollarSign,
   Clock,
+  FileText,
   Headphones,
   HeartHandshake,
   Minus,
@@ -469,11 +470,11 @@ export default function BuildYourCrew() {
                 <button type="button" onClick={handleWhatsAppEnquiry}>Talk To Our Expert</button>
               </div>
               <div className="byc-summary-actions">
-                <button className="btn btn-lux-primary" type="button" onClick={handleWhatsAppEnquiry}>
+                <button className="btn btn-lux-primary byc-whatsapp-btn" type="button" onClick={handleWhatsAppEnquiry}>
                   Send WhatsApp Enquiry
                 </button>
-                <button className="byc-save-action" type="button" onClick={handleDownloadPdf}>
-                  <CalendarCheck size={15} />
+                <button className="btn btn-lux-secondary byc-pdf-btn" type="button" onClick={handleDownloadPdf}>
+                  <FileText size={15} />
                   Download Estimation Sheet
                 </button>
               </div>
