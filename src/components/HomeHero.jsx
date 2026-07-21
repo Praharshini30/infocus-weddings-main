@@ -9,8 +9,9 @@ const slides = [
   {
     image: `${A}NAG01188.webp`,
     objectPosition: 'center 35%',
-    title: 'Capturing Love Stories That Last Forever',
-    description: 'Timeless wedding photography and films crafted with emotion and elegance.',
+    eyebrow: 'LUXURY CANDID PHOTOGRAPHY & WEDDING FILMS',
+    title: 'We Create Heirloom Wedding Films\nfor Extraordinary Celebrations.',
+    description: 'Capturing every emotion, ritual, and timeless moment through cinematic storytelling and elegant photography—creating memories that will be cherished for generations.',
     cta1: { text: 'Reserve Your Date', href: '/#contact' },
     cta2: { text: 'Watch Our Story', href: '/#film', icon: Play }
   },
@@ -18,16 +19,18 @@ const slides = [
     image: `${A}VSR03823.webp`,
     objectPosition: 'center 30%',
     style: { transform: 'scale(1.15) translateX(7%)' },
-    title: 'Every Moment, Beautifully Preserved',
-    description: 'From candid smiles to grand celebrations, we capture every detail.',
+    eyebrow: 'TELUGU WEDDING STORIES',
+    title: 'Capturing Timeless\nTelugu Wedding Stories',
+    description: 'Inspired by the beauty of Telugu traditions, we preserve every ritual, every emotion, and every celebration through timeless photography and cinematic storytelling.',
     cta1: { text: 'View Portfolio', href: '/portfolio' },
     cta2: { text: 'Our Services', href: '/services' }
   },
   {
     image: `${A}VSR03510.webp`,
     objectPosition: 'center 28%',
-    title: 'Cinematic Wedding Films',
-    description: 'Relive your special day through stunning visual storytelling.',
+    eyebrow: 'DESTINATION WEDDINGS',
+    title: 'Destination Weddings,\nBeautifully Told.',
+    description: 'From royal palaces to sun-kissed beaches, we capture destination weddings with cinematic artistry, preserving every breathtaking moment in timeless elegance.',
     cta1: { text: 'Watch Films', href: '/#film', icon: Play },
     cta2: { text: 'Book Consultation', href: '/#contact' }
   },
@@ -35,8 +38,9 @@ const slides = [
     image: `${A}SM_31076.webp`,
     objectPosition: 'center 35%',
     style: { transform: 'scale(1.15) translateX(7%)' },
-    title: 'Destination Wedding Specialists',
-    description: 'Turning breathtaking locations into unforgettable memories.',
+    eyebrow: 'GLOBAL COVERAGE',
+    title: 'Available Across\nIndia & Worldwide',
+    description: 'From the timeless temples of South India to breathtaking destinations around the world, we travel wherever your love story takes us.',
     cta1: { text: 'Explore Services', href: '/services' },
     cta2: { text: 'Build Your Crew', href: '/build-your-crew' }
   }
@@ -52,6 +56,19 @@ export default function HomeHero() {
     }, 5000);
     return () => clearInterval(timer);
   }, [currentIndex]); // reset timer on manual navigation
+
+  // Preload first slide with correct Cloudinary URL
+  useEffect(() => {
+    const url = getCloudinaryUrl(slides[0].image, 1600);
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = url;
+    document.head.appendChild(link);
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -86,7 +103,7 @@ export default function HomeHero() {
             className="w-full h-full object-cover"
             loading={currentIndex === 0 ? "eager" : "lazy"}
             fetchPriority={currentIndex === 0 ? "high" : "low"}
-            style={{ 
+            style={{
               objectPosition: slides[currentIndex].objectPosition || 'center 30%',
               ...slides[currentIndex].style
             }}
@@ -100,8 +117,8 @@ export default function HomeHero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-[2] w-full h-[100svh] flex items-center justify-start px-[5vw] lg:px-[8vw]">
-        <div className="max-w-[650px] w-[90%] md:w-[60%] lg:w-[42%] mt-[-2rem] max-780:mt-[-1rem] text-left flex flex-col items-start max-780:items-center max-780:text-center max-780:mx-auto">
+      <div className="relative z-[2] w-full h-[100svh] flex items-center justify-start px-[5vw] lg:px-[8vw] pt-[110px] md:pt-[130px]">
+        <div className="max-w-[650px] xl:max-w-[850px] 2xl:max-w-[1000px] w-[90%] md:w-[60%] lg:w-[42%] min-[1440px]:w-[50%] mt-0 text-left flex flex-col items-start max-780:items-center max-780:text-center max-780:mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -114,13 +131,27 @@ export default function HomeHero() {
               }}
               className="w-full flex flex-col items-start max-780:items-center"
             >
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
+                  exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
+                }}
+                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm min-[1440px]:text-[1.05rem] font-semibold tracking-[0.3em] uppercase mb-[0.75rem] min-[1440px]:mb-[1.25rem]"
+              >
+                {currentSlide.eyebrow}
+              </motion.span>
+
               <motion.h1
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
                 }}
-                className="font-serif font-normal text-[#f7f1e7] leading-[1.08] text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] uppercase mb-[1.5rem] text-left max-780:text-center"
+                className={`font-serif font-normal text-[#f7f1e7] leading-[1.3] uppercase mb-[1.5rem] min-[1440px]:mb-[2rem] text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[620px] xl:max-w-none ${currentIndex === 0
+                    ? 'text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] min-[1440px]:text-[3.5rem] 2xl:text-[3.75rem]'
+                    : 'text-4xl md:text-5xl lg:text-6xl xl:text-[3.75rem] min-[1440px]:text-[4.25rem] 2xl:text-[4.75rem]'
+                  }`}
               >
                 {currentSlide.title}
               </motion.h1>
@@ -131,7 +162,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
                 }}
-                className="font-sans text-[rgba(255,246,232,0.8)] text-lg md:text-xl font-light leading-[1.7] mb-[2.5rem] max-w-[580px] text-left max-780:text-center max-780:mx-auto"
+                className="font-sans text-[rgba(255,246,232,0.8)] text-lg md:text-xl min-[1440px]:text-[1.35rem] 2xl:text-[1.5rem] font-light leading-[1.7] mb-[2.5rem] min-[1440px]:mb-[3rem] max-w-[580px] xl:max-w-none text-left max-780:text-center max-780:mx-auto"
               >
                 {currentSlide.description}
               </motion.p>
@@ -142,7 +173,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
                 }}
-                className="flex flex-wrap gap-[1rem] justify-start max-780:justify-center"
+                className="flex flex-wrap gap-[1rem] min-[1440px]:gap-[1.25rem] justify-start max-780:justify-center"
               >
                 <a
                   href={currentSlide.cta1.href}
@@ -161,6 +192,19 @@ export default function HomeHero() {
                     {currentSlide.cta2.text}
                   </a>
                 )}
+              </motion.div>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+                  exit: { opacity: 0, y: -15, transition: { duration: 0.4 } }
+                }}
+                className="flex flex-col items-center gap-[0.25rem] mt-[2.5rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase justify-center md:hidden"
+              >
+                <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
+                <span className="font-light opacity-80">Trusted by</span>
+                <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
               </motion.div>
             </motion.div>
           </AnimatePresence>
@@ -190,12 +234,19 @@ export default function HomeHero() {
             key={idx}
             onClick={() => goToSlide(idx)}
             className={`transition-all duration-500 rounded-full ${currentIndex === idx
-                ? 'w-[40px] h-[4px] bg-[var(--gold-soft)] shadow-[0_0_14px_rgba(228,193,126,0.65)]'
-                : 'w-[12px] h-[4px] bg-[rgba(201,155,86,0.3)] hover:bg-[rgba(201,155,86,0.6)]'
+              ? 'w-[40px] h-[4px] bg-[var(--gold-soft)] shadow-[0_0_14px_rgba(228,193,126,0.65)]'
+              : 'w-[12px] h-[4px] bg-[rgba(201,155,86,0.3)] hover:bg-[rgba(201,155,86,0.6)]'
               }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
         ))}
+      </div>
+
+      {/* Desktop Trust Badge (Opposite side of Hero content) */}
+      <div className="absolute right-[5vw] lg:right-[8vw] bottom-[4rem] z-[10] hidden md:flex flex-col items-end text-right text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase pointer-events-none">
+        <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base mb-1">★★★★★</span>
+        <span className="font-light opacity-80">Trusted by</span>
+        <span className="font-semibold text-sm text-[#f7f1e7] mt-0.5">300+ Reviews</span>
       </div>
     </section>
   );

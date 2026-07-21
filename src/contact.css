@@ -795,3 +795,44 @@
     gap: 3rem;
   }
 }
+
+/* 7. LARGE DESKTOP SCREEN POLISH (1920x1080 and above) */
+@media (min-width: 1900px) {
+  /* Raise hero left block slightly */
+  .cp-hero-left {
+    transform: translateY(-25px);
+  }
+
+  /* Founder note visual balance */
+  .cp-founder-card {
+    grid-template-columns: 0.68fr 1.32fr;
+    max-width: 1100px;
+  }
+  
+  .cp-founder-content {
+    padding-left: 5rem;
+  }
+
+  /* Increase stats horizontal spacing */
+  .cp-stats-row {
+    gap: 5.5rem;
+  }
+
+  /* Expand Destinations and other sections */
+  .cp-section {
+    max-width: 1650px;
+  }
+
+  /* Visual balance in Contact columns */
+  .cp-info-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Reduce spacing between CTA/Info row and Footer */
+  .contact-page .cp-section:last-of-type {
+    padding-bottom: 2rem;
+  }
+}

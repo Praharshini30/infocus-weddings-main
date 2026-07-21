@@ -5,8 +5,6 @@ import Reveal from './Reveal.jsx';
 export default function PreWeddingSection({ visible, onImageClick }) {
   if (!visible) return null;
 
-// Forcing HMR reload to clear stale object cache
-  console.log('DEBUG preWeddingGallery:', preWeddingGallery, typeof preWeddingGallery, Array.isArray(preWeddingGallery));
   return (
     <section className="pf-section pf-pre-wedding" id="portfolio-pre-wedding">
       <div className="pf-section-head">

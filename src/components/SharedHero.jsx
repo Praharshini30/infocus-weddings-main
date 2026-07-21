@@ -40,7 +40,7 @@ const SharedHero = memo(function SharedHero({
       </div>
 
       {/* Content */}
-      <div className={`relative z-[2] w-full max-w-[1240px] mx-auto px-[max(5%,calc((100%-1240px)/2))] pt-[90px] ${contentBottomPadding}`}>
+      <div className={`shared-hero-container relative z-[2] w-full max-w-[1240px] mx-auto px-[max(5%,calc((100%-1240px)/2))] pt-[90px] ${contentBottomPadding}`}>
         <div className="max-w-[650px] pr-[2rem] max-780:pr-0">
           {eyebrow && (
             <div className="flex items-center gap-[1.1rem] mb-[1.8rem]">

@@ -29,7 +29,7 @@ export default function BlogPage() {
         <BlogHero />
         
         <section className="py-[6rem] max-780:py-[4rem]">
-          <div className="max-w-[1240px] mx-auto px-[max(5%,calc((100%-1240px)/2))]">
+          <div className="blog-main-container max-w-[1240px] mx-auto px-[max(5%,calc((100%-1240px)/2))]">
             <div className="flex justify-between items-end border-b border-line/50 pb-[1rem] mb-[4rem]">
               <h2 className="font-serif text-[#f7f1e7] text-[1.8rem] tracking-[0.05em] uppercase">
                 Latest Stories

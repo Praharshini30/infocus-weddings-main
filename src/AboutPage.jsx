@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Play, Camera, Film, Mic, Users, Heart, Star, Award, Scissors, Glasses, MapPin, Sparkles, Infinity as InfinityIcon } from 'lucide-react';
+import { ChevronRight, Camera, Film, Mic, Users, Heart, Star, Award, Scissors, Glasses, MapPin, Sparkles, Infinity as InfinityIcon } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
 import LazyImage from './components/LazyImage.jsx';
@@ -299,11 +299,16 @@ export default function AboutPage() {
           </div>
 
           <div className="bts-card relative group">
-            <img src="/assets/bts-cover.png" onError={(e) => e.target.src="/assets/royal-bride-window.png"} alt="Behind the scenes" />
+            <video 
+              src="https://res.cloudinary.com/dtfbshx24/video/upload/f_auto,q_auto/v1784560941/infocus_weddings_home_page_video_1_1_qjip1x.mp4"
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
             <div className="bts-overlay">
-              <button className="bts-play-button mb-6">
-                <Play size={32} fill="currentColor" className="ml-1" />
-              </button>
               <p className="text-white text-sm uppercase tracking-widest mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
                 It's not just what you see.<br/>It's the passion, hard work, and heart behind every frame.
               </p>

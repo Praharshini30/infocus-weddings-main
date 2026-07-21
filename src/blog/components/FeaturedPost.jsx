@@ -1,8 +1,45 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Heart, Share2 } from 'lucide-react';
 
 export default function FeaturedPost({ post }) {
+  const [liked, setLiked] = useState(false);
+  const [shareText, setShareText] = useState('Share');
+
   if (!post) return null;
+
+  const handleLike = (e) => {
+    e.preventDefault();
+    setLiked(!liked);
+  };
+
+  const handleShare = async (e) => {
+    e.preventDefault();
+    const shareUrl = `${window.location.origin}/blog/${post.slug}`;
+    const shareData = {
+      title: post.title,
+      text: post.excerpt,
+      url: shareUrl,
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        setShareText('Link copied!');
+        setTimeout(() => {
+          setShareText('Share');
+        }, 2000);
+      } catch (err) {
+        console.error('Could not copy text:', err);
+      }
+    }
+  };
 
   return (
     <div className="mb-[3.5rem]">
@@ -31,12 +68,35 @@ export default function FeaturedPost({ post }) {
             <h3 className="font-serif text-[#f7f1e7] text-[1.5rem] leading-[1.15] font-normal mb-[0.8rem]">
               {post.title}
             </h3>
-            <p className="text-muted text-[0.88rem] leading-[1.65] line-clamp-2 mb-[1.5rem]">
+            <p className="text-muted text-[0.88rem] leading-[1.65] line-clamp-2 mb-[1.2rem]">
               {post.excerpt}
             </p>
-            <a href={`/blog/${post.slug}`} className="inline-flex items-center text-[0.65rem] font-[700] tracking-[0.14em] uppercase text-gold transition-colors hover:text-[#f7f1e7]">
-              READ MORE <ArrowRight size={14} className="ml-[0.4rem] transition-transform duration-300 group-hover:translate-x-[4px]" />
-            </a>
+            
+            <div className="flex items-center justify-between gap-[1rem] flex-wrap mt-[1.2rem]">
+              <Link to={`/blog/${post.slug}`} className="inline-flex items-center text-[0.65rem] font-[700] tracking-[0.14em] uppercase text-gold transition-colors hover:text-[#f7f1e7]">
+                READ MORE <ArrowRight size={14} className="ml-[0.4rem] transition-transform duration-300 group-hover:translate-x-[4px]" />
+              </Link>
+
+              <div className="flex items-center gap-[0.7rem] text-muted">
+                <button 
+                  onClick={handleLike}
+                  className={`flex items-center justify-center p-1.5 border border-line-soft rounded-full transition-colors duration-300 hover:text-gold hover:border-gold ${liked ? 'text-gold border-gold bg-gold/5' : 'text-muted'}`}
+                  aria-label={liked ? "Unlike article" : "Like article"}
+                  title={liked ? "Liked" : "Like"}
+                >
+                  <Heart size={12} className={`transition-transform duration-300 ${liked ? 'fill-gold text-gold scale-110' : 'text-muted'}`} />
+                </button>
+                
+                <button 
+                  onClick={handleShare}
+                  className="flex items-center justify-center p-1.5 border border-line-soft rounded-full transition-colors duration-300 hover:text-gold hover:border-gold text-muted"
+                  aria-label="Share article link"
+                  title={shareText}
+                >
+                  <Share2 size={12} />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </article>

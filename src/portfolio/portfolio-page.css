@@ -679,7 +679,7 @@
 .pf-testimonial-carousel {
   margin: 0 auto;
   max-width: 920px;
-  min-height: 320px;
+  height: 230px;
   position: relative;
 }
 
@@ -691,19 +691,19 @@
   display: grid;
   gap: 1.5rem;
   grid-template-columns: 180px 1fr;
-  inset: 0;
-  opacity: 0;
   padding: 1.5rem;
   pointer-events: none;
   position: absolute;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
 
 .pf-testimonial-card.active {
   opacity: 1;
   pointer-events: auto;
-  position: relative;
-  transform: translateY(0);
+  z-index: 2;
 }
 
 .pf-testimonial-card img {
@@ -940,6 +940,10 @@
     grid-template-columns: 1fr;
   }
 
+  .pf-testimonial-carousel {
+    height: 270px;
+  }
+
   .pf-footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -954,6 +958,10 @@
   .pf-cinema-row {
     grid-template-columns: 1fr;
     columns: 1;
+  }
+
+  .pf-testimonial-carousel {
+    height: 420px;
   }
 
   .pf-testimonial-card {

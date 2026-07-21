@@ -589,7 +589,6 @@ h1 span {
 }
 
 .film-frame {
-  aspect-ratio: 16 / 5.6;
   margin: 0 auto;
   max-width: 1030px;
   overflow: hidden;
@@ -598,7 +597,6 @@ h1 span {
 }
 
 .film-frame img,
-.film-frame video,
 .film-shade {
   height: 100%;
   inset: 0;
@@ -606,8 +604,17 @@ h1 span {
   width: 100%;
 }
 
-.film-frame img,
 .film-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  filter: brightness(0.82) saturate(0.8);
+  object-fit: cover;
+  object-position: center;
+}
+
+.film-frame img {
   filter: brightness(0.82) saturate(0.8);
   object-fit: cover;
   object-position: center;
@@ -772,7 +779,7 @@ h1 span {
   filter: brightness(0.72) saturate(0.82);
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 15%;
 }
 
 .about-layout {
@@ -1984,5 +1991,20 @@ img.loaded {
   }
   .testimonial-card {
     flex: 0 0 250px; /* Mobile view: shows 1-1.5 cards */
+  }
+}
+
+/* Fix Featured Video container aspect ratio on mobile to match the video height */
+.film-frame {
+  aspect-ratio: auto !important;
+}
+
+/* Responsive overrides for large desktop screens (1920px and above) on the Blog Page */
+@media (min-width: 1900px) {
+  .blog-main-container,
+  .shared-hero-container {
+    max-width: 1720px !important;
+    padding-left: max(5%, calc((100% - 1720px) / 2)) !important;
+    padding-right: max(5%, calc((100% - 1720px) / 2)) !important;
   }
 }

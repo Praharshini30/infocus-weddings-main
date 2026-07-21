@@ -11,13 +11,16 @@ export default function BlogCTA() {
           alt="Wedding celebration" 
           className="w-full h-full object-cover opacity-30 blur-[2px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/90 to-bg" />
+        {/* Horizontal gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/90 to-bg z-[1]" />
+        {/* Vertical fade to prevent background seams at top and bottom borders */}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,#050504_0%,transparent_20%,transparent_80%,#050504_100%)] z-[1]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1240px] mx-auto px-[max(5%,calc((100%-1240px)/2))] flex items-center justify-between gap-[4rem] max-1080:flex-col max-1080:text-center max-1080:gap-[3rem]">
-        <div className="flex items-center gap-[3rem] max-780:flex-col max-780:gap-[2rem]">
-          <div className="relative w-[180px] h-[120px] rounded-[4px] overflow-hidden flex-none max-780:w-[200px] max-780:h-[130px]">
+      <div className="relative z-10 w-full max-w-[1240px] mx-auto px-8 xl:px-12 flex items-center justify-between gap-[4rem] max-1080:flex-col max-1080:text-center max-1080:gap-[3rem]">
+        <div className="flex items-center gap-[3rem] max-780:flex-col max-780:gap-[2rem] text-left max-1080:text-center">
+          <div className="relative w-[180px] h-[120px] rounded-[4px] overflow-hidden flex-none max-780:w-[200px] max-780:h-[130px] mx-auto max-1080:mx-auto">
             <img 
               src="/assets/reception-1.png" 
               alt="Video thumbnail" 
