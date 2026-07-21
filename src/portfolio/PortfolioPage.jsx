@@ -63,7 +63,7 @@ export default function PortfolioPage() {
     <div className="portfolio-page">
       <Navbar />
       <main>
-        <Hero />
+        <Hero onCategorySelect={setActiveCategory} />
         <CategoryFilter activeCategory={activeCategory} onChange={setActiveCategory} />
         <AllGallerySection visible={activeCategory === 'all'} onImageClick={handleImageClick} />
         <WeddingSection visible={showCategory('wedding')} onImageClick={handleImageClick} />
