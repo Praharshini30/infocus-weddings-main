@@ -77,7 +77,7 @@ export default function PortfolioPage() {
         {showExtras && <Testimonials visible />}
         <PortfolioCTA />
       </main>
-      <PortfolioFooter />
+      <PortfolioFooter onCategorySelect={setActiveCategory} />
 
       {lightbox.isOpen && (
         <Lightbox
