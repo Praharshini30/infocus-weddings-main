@@ -228,25 +228,76 @@ export default function ContactPage() {
         </div>
 
         <div className="cp-dest-grid">
+          {/* 1. INDIA */}
           <div className="cp-dest-card">
-            <LazyImage src="/assets/VSR02742_contact.webp" alt="India" />
-            <div className="cp-dest-title">INDIA</div>
+            <div className="cp-dest-icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2C10.5 4 9 5.5 9 8h6c0-2.5-1.5-4-3-6z" />
+                <path d="M4 21V11c0-1.5 1-2.5 2.5-2.5S9 9.5 9 11v10" />
+                <path d="M15 21V11c0-1.5 1-2.5 2.5-2.5s2.5 1 2.5 2.5v10" />
+                <path d="M9 14h6v7H9z" />
+                <path d="M2 21h20" />
+              </svg>
+            </div>
+            <div className="cp-dest-title">INDIA 🇮🇳</div>
           </div>
+
+          {/* 2. DUBAI */}
           <div className="cp-dest-card">
-            <LazyImage src="/assets/VSR03586_contact.webp" alt="Dubai" />
-            <div className="cp-dest-title">DUBAI</div>
+            <div className="cp-dest-icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2v20" />
+                <path d="M10 6h4" />
+                <path d="M9 10h6" />
+                <path d="M8 14h8" />
+                <path d="M7 18h10" />
+                <path d="M5 22h14" />
+                <path d="M10 2l2-2 2 2" />
+              </svg>
+            </div>
+            <div className="cp-dest-title">DUBAI 🇦🇪</div>
           </div>
+
+          {/* 3. USA */}
           <div className="cp-dest-card">
-            <LazyImage src="/assets/pre-wedding-beach.png" alt="USA" />
-            <div className="cp-dest-title">USA</div>
+            <div className="cp-dest-icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2l1.5 4h4l-3 3 1.5 4.5-4-2.5-4 2.5 1.5-4.5-3-3h4z" />
+                <path d="M12 11v11" />
+                <path d="M8 15h8" />
+                <path d="M6 22h12" />
+              </svg>
+            </div>
+            <div className="cp-dest-title">USA 🇺🇸</div>
           </div>
+
+          {/* 4. SRI LANKA */}
           <div className="cp-dest-card">
-            <LazyImage src="/assets/yjhsqa.webp" alt="Sri Lanka" />
-            <div className="cp-dest-title">SRI LANKA</div>
+            <div className="cp-dest-icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M13 8c0-2.76-2.24-5-5-5S3 5.24 3 8c0 1.65.8 3.1 2 4l3 9h6l3-9c1.2-.9 2-2.35 2-4z" />
+                <path d="M12 3v2" />
+                <path d="M8 13h8" />
+                <path d="M4 22h16" />
+              </svg>
+            </div>
+            <div className="cp-dest-title">SRI LANKA 🇱🇰</div>
           </div>
+
+          {/* 5. INDONESIA */}
           <div className="cp-dest-card">
-            <LazyImage src="/assets/VSU00343_contact.webp" alt="Indonesia" />
-            <div className="cp-dest-title">INDONESIA</div>
+            <div className="cp-dest-icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4h4v17H4z" />
+                <path d="M16 4h4v17h-4z" />
+                <path d="M8 8h8" />
+                <path d="M8 14h8" />
+                <path d="M2 21h20" />
+                <path d="M4 4l4-2" />
+                <path d="M20 4l-4-2" />
+              </svg>
+            </div>
+            <div className="cp-dest-title">INDONESIA 🇮🇩</div>
           </div>
         </div>
       </section>
