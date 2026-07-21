@@ -229,6 +229,12 @@ export default function ServicesPage() {
               );
             })}
           </div>
+
+          <div className="mt-8 flex justify-center">
+            <Link className="btn btn-lux-secondary" to="/faqs">
+              View All FAQs
+            </Link>
+          </div>
         </section>
 
         <section className="services-carousel">
