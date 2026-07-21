@@ -137,7 +137,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
                 }}
-                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm min-[1440px]:text-[1.05rem] font-semibold tracking-[0.3em] uppercase mb-[0.75rem] min-[1440px]:mb-[1.25rem]"
+                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm min-[1440px]:text-[1.05rem] font-semibold tracking-[0.3em] uppercase mb-[0.5rem] md:mb-[0.75rem] min-[1440px]:mb-[1.25rem]"
               >
                 {currentSlide.eyebrow}
               </motion.span>
@@ -148,10 +148,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
                 }}
-                className={`font-serif font-normal text-[#f7f1e7] leading-[1.3] uppercase mb-[1.5rem] min-[1440px]:mb-[2rem] text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[620px] xl:max-w-none ${currentIndex === 0
-                    ? 'text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] min-[1440px]:text-[3.5rem] 2xl:text-[3.75rem]'
-                    : 'text-4xl md:text-5xl lg:text-6xl xl:text-[3.75rem] min-[1440px]:text-[4.25rem] 2xl:text-[4.75rem]'
-                  }`}
+                className="font-serif font-normal text-[#f7f1e7] leading-[1.2] md:leading-[1.3] uppercase mb-[0.75rem] md:mb-[1.5rem] min-[1440px]:mb-[2rem] text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[620px] xl:max-w-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.75rem] min-[1440px]:text-[4.25rem] 2xl:text-[4.75rem]"
               >
                 {currentSlide.title}
               </motion.h1>
@@ -162,7 +159,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
                 }}
-                className="font-sans text-[rgba(255,246,232,0.8)] text-lg md:text-xl min-[1440px]:text-[1.35rem] 2xl:text-[1.5rem] font-light leading-[1.7] mb-[1.25rem] md:mb-[2.5rem] min-[1440px]:mb-[3rem] max-w-[580px] xl:max-w-none text-left max-780:text-center max-780:mx-auto"
+                className="font-sans text-[rgba(255,246,232,0.8)] text-base md:text-xl min-[1440px]:text-[1.35rem] 2xl:text-[1.5rem] font-light leading-[1.5] md:leading-[1.7] mb-[0.75rem] md:mb-[2.5rem] min-[1440px]:mb-[3rem] max-w-[580px] xl:max-w-none text-left max-780:text-center max-780:mx-auto"
               >
                 {currentSlide.description}
               </motion.p>
@@ -170,7 +167,7 @@ export default function HomeHero() {
           </AnimatePresence>
 
           {/* Action Container for Mobile (Badge on Left, CTAs vertically stacked on Right) */}
-          <div className="w-full flex md:hidden flex-row items-center justify-between gap-[1rem] mt-[1rem] flex-wrap max-380:flex-col max-380:items-center">
+          <div className="w-full flex md:hidden flex-row items-center justify-between gap-[1rem] mt-[0.5rem] flex-wrap max-380:flex-col max-380:items-center">
             {/* Persistent Static Mobile Reviews Badge (Left Side) */}
             <div className="flex flex-col items-start text-left gap-[0.2rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase pointer-events-none shrink-0">
               <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
