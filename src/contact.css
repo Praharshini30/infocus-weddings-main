@@ -669,7 +669,7 @@ input[type="date"].lux-input::-webkit-calendar-picker-indicator:hover {
 
 .cp-dest-card {
   position: relative;
-  aspect-ratio: 1.05/1;
+  aspect-ratio: 4 / 5;
   background: radial-gradient(circle at center, #1a1610 0%, #0a0806 100%);
   border: 1px solid rgba(201, 155, 86, 0.3);
   border-radius: 8px;
