@@ -31,20 +31,41 @@ const stats = [
 
 const collections = [
   {
-    name: 'The Essential',
-    price: '₹2,50,000',
-    features: ['Photography Coverage', 'Cinematic Highlights', 'Online Gallery'],
+    name: 'Essential',
+    price: '₹35,000',
+    features: [
+      '1 Photographer',
+      '6 Hours Coverage',
+      '200+ Edited Photos',
+      'Online Gallery',
+      'Basic Color Grading',
+    ],
   },
   {
-    name: 'The Signature',
-    price: '₹4,50,000',
+    name: 'Signature',
+    price: '₹75,000',
     featured: true,
-    features: ['Photography & Cinematic Film', 'Premium Album (40 Pages)', 'Highlights + Teaser Film', 'Online Gallery'],
+    badge: 'Most Popular',
+    features: [
+      '2 Photographers',
+      'Full Day Coverage',
+      '500+ Edited Photos',
+      'Cinematic Highlights Film',
+      'Drone Coverage',
+      'Premium Album',
+    ],
   },
   {
-    name: 'The Legacy',
-    price: '₹7,50,000',
-    features: ['Photography & Cinematic Film', 'Premium Album (100 Pages)', 'Teaser + Highlight + Full Film', 'Free Art Albums & Box', 'Drone Coverage'],
+    name: 'Luxury',
+    price: '₹1,50,000',
+    features: [
+      'Multi-Day Coverage',
+      'Bridal Story Film',
+      'Drone + Reel Team',
+      'Luxury Albums',
+      'Priority Editing',
+      'Instagram Reels',
+    ],
   },
 ];
 
@@ -109,7 +130,7 @@ export default function ServicesPage() {
           <div className="services-pricing-grid">
             {collections.map((collection) => (
               <article className={`services-pricing-card ${collection.featured ? 'featured' : ''}`} key={collection.name}>
-                {collection.featured && <div className="services-card-ribbon">Most Loved</div>}
+                {collection.featured && <div className="services-card-ribbon">{collection.badge || 'Most Popular'}</div>}
                 <h3>{collection.name}</h3>
                 <span className="services-small-rule" />
                 <p>Starting from</p>
