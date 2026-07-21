@@ -713,31 +713,39 @@
 
 .byc-whatsapp-btn {
   width: 100%;
-  max-width: 240px;
-  min-height: 48px;
+  max-width: 250px;
+  min-height: 52px;
+  padding: 0.6rem 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-weight: 650;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 4px;
+  white-space: normal;
 }
 
 .byc-pdf-btn {
   width: 100%;
-  max-width: 240px;
-  min-height: 46px;
+  max-width: 250px;
+  min-height: 52px;
+  padding: 0.6rem 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  text-align: center;
   font-weight: 650;
   font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 4px;
+  white-space: normal;
 }
 
 @media (max-width: 1320px) {

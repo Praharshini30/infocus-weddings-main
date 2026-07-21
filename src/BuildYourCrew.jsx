@@ -471,11 +471,11 @@ export default function BuildYourCrew() {
               </div>
               <div className="byc-summary-actions">
                 <button className="btn btn-lux-primary byc-whatsapp-btn" type="button" onClick={handleWhatsAppEnquiry}>
-                  Send WhatsApp Enquiry
+                  <span>SEND WHATSAPP<br />ENQUIRY</span>
                 </button>
                 <button className="btn btn-lux-secondary byc-pdf-btn" type="button" onClick={handleDownloadPdf}>
-                  <FileText size={15} />
-                  Download Estimation Sheet
+                  <FileText size={16} className="shrink-0" />
+                  <span>DOWNLOAD<br />ESTIMATION SHEET</span>
                 </button>
               </div>
             </div>
