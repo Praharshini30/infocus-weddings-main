@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Award,
   Camera,
@@ -9,22 +10,28 @@ import {
   Film,
   Gem,
   Heart,
-  Play,
+  Plus,
+  Minus,
   Sparkles,
   Trophy,
   UserRoundCheck,
+  Briefcase,
+  Cake,
+  Gift,
+  Baby,
 } from 'lucide-react';
 import CountUp from './components/CountUp.jsx';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import LazyImage from './components/LazyImage.jsx';
+import useSEO from './utils/useSEO.js';
 import './services-page.css';
 
 const A = '/assets/';
 
 const stats = [
-  [Award, '10+', 'Years of Experience'],
-  [Camera, '500+', 'Weddings Captured'],
+  [Award, '14+', 'Years of Experience'],
+  [Camera, '700+', 'Weddings Captured'],
   [Trophy, '35+', 'Awards Won'],
   [Heart, '100%', 'Client Satisfaction'],
 ];
@@ -73,8 +80,37 @@ const serviceCards = [
   ['Pre Wedding', 'Stories of love, captured beautifully.', Heart, `${A}VSR03510.webp`],
   ['Weddings', 'Timeless coverage of your big day.', Gem, `${A}SM_31002_services.webp`],
   ['Destination Weddings', 'For celebrations across the world.', Film, `${A}VSR02946_services.webp`],
-  ['Cinematic Films', 'Wedding films that feel like cinema.', Sparkles, `${A}file30216_services.webp`],
-  ['Albums & Prints', 'Heirloom artwork for generations.', Camera, `${A}bridal-details-collage.png`],
+  ['Corporate Events', 'High-end coverage for brand summits & galas.', Briefcase, `${A}file30216_services.webp`],
+  ['Birthday Party', 'Joyful candid moments for milestone celebrations.', Cake, `${A}SM_30585_gallery.webp`],
+  ['Saree Ceremony', 'Traditional elegance & ceremonial rituals.', Gift, `${A}DSC03986_gallery.webp`],
+  ['Baby Shower', 'Welcoming new life with warm memories.', Baby, `${A}bridal-details-collage.png`],
+];
+
+const faqs = [
+  {
+    question: "Do you travel for destination weddings?",
+    answer: "Yes. We document weddings across India and international destinations. From intimate celebrations to grand multi-day events, our team is available for destination wedding coverage."
+  },
+  {
+    question: "What services do you offer?",
+    answer: "We offer luxury wedding photography, cinematic wedding films, pre-wedding shoots, destination wedding coverage, bridal portraits, reels, teaser films, albums, and complete visual storytelling experiences."
+  },
+  {
+    question: "How far in advance should we book?",
+    answer: "We recommend booking at least 3–6 months in advance, especially for destination weddings and peak season dates, as we accept a limited number of projects each year."
+  },
+  {
+    question: "How many photographers and cinematographers will cover our wedding?",
+    answer: "The team size depends on the scale of your celebration. Coverage is carefully curated to ensure every important moment is captured seamlessly."
+  },
+  {
+    question: "What is your photography style?",
+    answer: "Our approach blends cinematic storytelling, editorial aesthetics, and authentic emotions, creating timeless imagery with a luxury feel."
+  },
+  {
+    question: "Can we customize packages?",
+    answer: "Absolutely. Every celebration is unique, and we create bespoke collections tailored to your event requirements, venue, and scale."
+  }
 ];
 
 const portfolioImages = [
@@ -106,6 +142,16 @@ function ServicesFooter() {
 }
 
 export default function ServicesPage() {
+  useSEO({
+    title: 'Luxury Wedding Services & Packages | Infocus Weddings Hyderabad',
+    description: 'Explore luxury wedding photography pricing packages, pre-wedding shoots, destination films, corporate events, and custom crew building by Infocus Weddings.',
+    keywords: 'Wedding Packages Hyderabad, Wedding Photography Pricing, Pre Wedding Shoot, Destination Weddings, Infocus Weddings Services',
+    canonical: 'https://infocusweddings.com/services',
+    ogImage: 'https://infocusweddings.com/assets/SM_31002_services.webp'
+  });
+
+  const [openFaq, setOpenFaq] = useState(null);
+
   return (
     <div className="services-page">
       <Navbar />
@@ -154,11 +200,34 @@ export default function ServicesPage() {
           <span className="services-ornament">◆</span>
         </section>
 
-        <section className="services-other">
-          <h2>Pre Wedding, Birthday, Corporate &amp; Other Services</h2>
-          <div>
-            <a className="btn btn-lux-primary text-[10px] px-4" href="/#contact">Enquire Now</a>
-            <Link className="btn btn-lux-secondary text-[10px] px-4" to="/build-your-crew">Build Your Crew</Link>
+        {/* Services FAQ Section */}
+        <section className="services-faq-section py-16 px-6 max-w-4xl mx-auto border-t border-[rgba(201,155,86,0.2)]">
+          <p className="services-eyebrow centered text-center text-[var(--gold-soft)] text-xs tracking-[0.2em] uppercase mb-2">Got Questions?</p>
+          <h2 className="font-serif text-center text-3xl md:text-4xl text-[#ded7cb] mb-10">Frequently Asked Questions</h2>
+          <div className="flex flex-col gap-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <div
+                  key={faq.question}
+                  className="border border-[rgba(201,155,86,0.3)] bg-[rgba(255,246,232,0.02)] rounded-sm overflow-hidden transition-colors duration-300"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    className="w-full text-left px-6 py-4 flex items-center justify-between gap-4 font-serif text-lg text-[#f7f1e7] hover:text-[var(--gold-soft)] transition-colors"
+                  >
+                    <span>{faq.question}</span>
+                    {isOpen ? <Minus size={18} className="text-[var(--gold)] shrink-0" /> : <Plus size={18} className="text-[var(--gold)] shrink-0" />}
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-5 font-sans text-sm text-[rgba(255,246,232,0.75)] leading-relaxed border-t border-[rgba(201,155,86,0.15)] pt-3">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -184,6 +253,10 @@ export default function ServicesPage() {
             ))}
           </div>
           <button className="services-arrow right" type="button" aria-label="Next service"><ChevronRight size={52} /></button>
+          <div className="mt-8 flex justify-center gap-4 flex-wrap">
+            <a className="btn btn-lux-primary" href="/#contact">Enquire Now</a>
+            <Link className="btn btn-lux-secondary" to="/build-your-crew">Build Your Crew</Link>
+          </div>
         </section>
 
         <section className="services-portfolio">
