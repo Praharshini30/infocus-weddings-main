@@ -495,11 +495,21 @@
 }
 
 .services-card-row {
-  display: grid;
-  gap: 0.62rem;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   margin: 0 auto;
   max-width: 1335px;
+  padding: 0.5rem 0.25rem;
+}
+
+.services-card-row::-webkit-scrollbar {
+  display: none;
 }
 
 .services-offer-card {
@@ -509,6 +519,22 @@
   overflow: hidden;
   position: relative;
   transition: border-color 0.25s ease, transform 0.25s ease;
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: calc((100% - 4 * 1rem) / 5);
+}
+
+@media (max-width: 1024px) {
+  .services-offer-card {
+    width: calc((100% - 2 * 1rem) / 3);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-offer-card {
+    width: 100%;
+    scroll-snap-align: center;
+  }
 }
 
 .services-offer-card:hover {

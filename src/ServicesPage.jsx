@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   Award,
   Camera,
@@ -151,6 +151,16 @@ export default function ServicesPage() {
   });
 
   const [openFaq, setOpenFaq] = useState(null);
+  const carouselRef = useRef(null);
+
+  const scrollCarousel = (direction) => {
+    if (!carouselRef.current) return;
+    const scrollAmount = carouselRef.current.clientWidth * 0.8;
+    carouselRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <div className="services-page">
@@ -238,10 +248,12 @@ export default function ServicesPage() {
         </section>
 
         <section className="services-carousel">
-          <button className="services-arrow left" type="button" aria-label="Previous service"><ChevronLeft size={52} /></button>
+          <button className="services-arrow left" type="button" aria-label="Previous service" onClick={() => scrollCarousel('left')}>
+            <ChevronLeft size={52} />
+          </button>
           <p className="services-eyebrow centered">More Than Weddings</p>
           <h2>Our Services</h2>
-          <div className="services-card-row">
+          <div className="services-card-row" ref={carouselRef}>
             {serviceCards.map(([title, text, Icon, src]) => (
               <article className="services-offer-card" key={title}>
                 {src.endsWith('.mp4') ? (
@@ -258,7 +270,9 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
-          <button className="services-arrow right" type="button" aria-label="Next service"><ChevronRight size={52} /></button>
+          <button className="services-arrow right" type="button" aria-label="Next service" onClick={() => scrollCarousel('right')}>
+            <ChevronRight size={52} />
+          </button>
           <div className="mt-8 flex justify-center gap-4 flex-wrap">
             <a className="btn btn-lux-primary" href="/#contact">Enquire Now</a>
             <Link className="btn btn-lux-secondary" to="/build-your-crew">Build Your Crew</Link>
