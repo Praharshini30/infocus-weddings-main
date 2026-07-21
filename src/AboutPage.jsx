@@ -113,13 +113,13 @@ export default function AboutPage() {
           </div>
         </motion.section>
 
-        {/* SECTION 2 - FOUNDERS */}
+        {/* SECTION 2 - FOUNDER */}
         <motion.section 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="max-w-[1240px] mx-auto px-6 mb-32 space-y-24"
+          className="max-w-[1240px] mx-auto px-6 mb-32"
         >
-          {/* Founder 1 */}
+          {/* Founder */}
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="founder-image-wrapper aspect-[3/4]">
               <img src="/assets/founder-1.png" onError={(e) => { e.target.src = "/assets/VSR02946.webp"; e.target.style.filter = "grayscale(1)"; }} alt="Pushkar Krishan Kakde" className="w-full h-full object-cover" />
@@ -144,22 +144,6 @@ export default function AboutPage() {
                   <span className="text-[11px] uppercase text-gold-soft tracking-wider font-semibold">Wedding Sutra Influencer</span>
                 </div>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Founder 2 */}
-          <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="founder-card p-8 order-2 md:order-1">
-              <h2 className="signature-font mb-2">Sana Shaik</h2>
-              <p className="text-gold-soft tracking-widest uppercase text-sm font-semibold mb-6">Managing Director</p>
-              
-              <div className="text-muted space-y-4 mb-8">
-                <p>Sana leads Infocus Weddings with a commitment to elegance, client experience and seamless execution.</p>
-                <p>Her innate sense of aesthetics is handled with care, creativity and perfection — from the first conversation to the final delivery.</p>
-              </div>
-            </div>
-            <div className="founder-image-wrapper aspect-[3/4] order-1 md:order-2">
-              <img src="/assets/founder-2.png" onError={(e) => { e.target.src = "/assets/VSR03510.webp"; e.target.style.filter = "grayscale(1)"; }} alt="Sana Shaik" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </motion.section>
