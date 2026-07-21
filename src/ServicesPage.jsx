@@ -256,16 +256,18 @@ export default function ServicesPage() {
           <div className="services-card-row" ref={carouselRef}>
             {serviceCards.map(([title, text, Icon, src]) => (
               <article className="services-offer-card" key={title}>
-                {src.endsWith('.mp4') ? (
-                  <video src={src} poster={`${A}reception-walk.jpeg`} autoPlay muted loop playsInline />
-                ) : (
-                  <LazyImage src={src} alt="" />
-                )}
-                <div className="services-offer-shade" />
+                <div className="services-offer-media-wrap">
+                  {src.endsWith('.mp4') ? (
+                    <video src={src} poster={`${A}reception-walk.jpeg`} autoPlay muted loop playsInline />
+                  ) : (
+                    <LazyImage src={src} alt={title} />
+                  )}
+                </div>
                 <div className="services-offer-copy">
-                  <Icon size={34} strokeWidth={1.35} />
+                  <span className="service-icon"><Icon size={18} /></span>
                   <h3>{title}</h3>
                   <p>{text}</p>
+                  <a href="/#contact" className="service-explore-link">Explore →</a>
                 </div>
               </article>
             ))}

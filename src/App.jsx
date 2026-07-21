@@ -287,15 +287,16 @@ function HomePage() {
 
             <div className="services-grid">
               {services.map(({ icon: Icon, name, text, src }, index) => (
-                <article key={name}>
-                  <LazyImage src={src} alt={`${name} service`} />
+                <article key={name} className="service-card-item">
+                  <div className="service-card-media">
+                    <LazyImage src={src} alt={`${name} service`} />
+                  </div>
                   <div className="service-body">
                     <span className="service-icon"><Icon size={18} /></span>
                     <h3>{name}</h3>
                     <p>{text}</p>
-                    <a href="#services">Explore</a>
+                    <a href="#services" className="service-explore-link">Explore →</a>
                   </div>
-                  <span className="service-number">0{index + 1}</span>
                 </article>
               ))}
             </div>
