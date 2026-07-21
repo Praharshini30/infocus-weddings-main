@@ -169,53 +169,103 @@ export default function HomeHero() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Persistent Static Mobile Reviews Badge (Positioned between description and CTAs) */}
-          <div className="flex md:hidden flex-col items-center gap-[0.2rem] my-[1rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase justify-center pointer-events-none w-full">
-            <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
-            <span className="font-light opacity-80">Trusted by</span>
-            <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
+          {/* Action Container for Mobile (Badge on Left, CTAs vertically stacked on Right) */}
+          <div className="w-full flex md:hidden flex-row items-center justify-between gap-[1rem] mt-[1rem] flex-wrap max-380:flex-col max-380:items-center">
+            {/* Persistent Static Mobile Reviews Badge (Left Side) */}
+            <div className="flex flex-col items-start text-left gap-[0.2rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase pointer-events-none shrink-0">
+              <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
+              <span className="font-light opacity-80">Trusted by</span>
+              <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
+            </div>
+
+            {/* Mobile CTA Buttons Vertical Stack (Right Side) */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={{
+                  visible: { transition: { staggerChildren: 0.15 } },
+                  exit: { transition: { staggerChildren: 0.1 } }
+                }}
+                className="flex flex-col gap-[0.6rem] items-end max-380:items-center grow-0"
+              >
+                <motion.a
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+                    exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
+                  }}
+                  href={currentSlide.cta1.href}
+                  className="btn btn-lux-primary gap-[0.45rem] w-full text-center justify-center min-h-[46px] px-4"
+                >
+                  {Icon1 && <Icon1 size={16} fill="currentColor" />}
+                  {currentSlide.cta1.text}
+                </motion.a>
+
+                {currentSlide.cta2 && (
+                  <motion.a
+                    variants={{
+                      hidden: { opacity: 0, y: 15 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+                      exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
+                    }}
+                    href={currentSlide.cta2.href}
+                    className="btn btn-lux-secondary gap-[0.45rem] w-full text-center justify-center min-h-[46px] px-4"
+                  >
+                    {Icon2 && <Icon2 size={16} fill="currentColor" />}
+                    {currentSlide.cta2.text}
+                  </motion.a>
+                )}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentIndex}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={{
-                visible: { transition: { staggerChildren: 0.2 } },
-                exit: { transition: { staggerChildren: 0.1 } }
-              }}
-              className="w-full flex flex-col items-start max-780:items-center"
-            >
+          {/* Desktop CTA Row (Hidden on mobile) */}
+          <div className="hidden md:flex w-full mt-[2.5rem] min-[1440px]:mt-[3rem]">
+            <AnimatePresence mode="wait">
               <motion.div
+                key={currentIndex}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
                 variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
-                  exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
+                  visible: { transition: { staggerChildren: 0.2 } },
+                  exit: { transition: { staggerChildren: 0.1 } }
                 }}
-                className="flex flex-wrap gap-[1rem] min-[1440px]:gap-[1.25rem] justify-start max-780:justify-center"
+                className="flex flex-wrap gap-[1rem] min-[1440px]:gap-[1.25rem] justify-start"
               >
-                <a
+                <motion.a
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                    exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
+                  }}
                   href={currentSlide.cta1.href}
                   className="btn btn-lux-primary gap-[0.45rem]"
                 >
                   {Icon1 && <Icon1 size={16} fill="currentColor" />}
                   {currentSlide.cta1.text}
-                </a>
+                </motion.a>
 
                 {currentSlide.cta2 && (
-                  <a
+                  <motion.a
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                      exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
+                    }}
                     href={currentSlide.cta2.href}
                     className="btn btn-lux-secondary gap-[0.45rem]"
                   >
                     {Icon2 && <Icon2 size={16} fill="currentColor" />}
                     {currentSlide.cta2.text}
-                  </a>
+                  </motion.a>
                 )}
               </motion.div>
-            </motion.div>
-          </AnimatePresence>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
 
