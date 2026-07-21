@@ -132,6 +132,14 @@ const CLOUDINARY_MAPPING = {
 export function getCloudinaryUrl(localPath, width = 1200) {
   if (!localPath) return '';
   
+  // If already a Cloudinary URL, ensure f_auto,q_auto transformations
+  if (localPath.includes('res.cloudinary.com')) {
+    if (!localPath.includes('f_auto') && !localPath.includes('q_auto')) {
+      return localPath.replace('/upload/', `/upload/f_auto,q_auto,c_limit,w_${width}/`);
+    }
+    return localPath;
+  }
+  
   // Clean path
   let cleanPath = localPath;
   if (cleanPath.startsWith('/')) {

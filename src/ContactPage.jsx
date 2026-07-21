@@ -309,6 +309,13 @@ InFocus Weddings Website`;
         <div className="cp-dest-grid">
           {/* 1. INDIA */}
           <div className="cp-dest-card">
+            <LazyImage 
+              src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto,c_limit,w_600/v1783570663/DSC00378_dcp9xf.webp" 
+              alt="India Wedding Destination" 
+              width={600} 
+              className="cp-dest-img" 
+            />
+            <div className="cp-dest-card-overlay" />
             <div className="cp-dest-icon-wrap">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2C10.5 4 9 5.5 9 8h6c0-2.5-1.5-4-3-6z" />
@@ -323,6 +330,13 @@ InFocus Weddings Website`;
 
           {/* 2. DUBAI */}
           <div className="cp-dest-card">
+            <LazyImage 
+              src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto,c_limit,w_600/v1783570804/ifocusweddings_-_reception_-photoo_uoondh.webp" 
+              alt="Dubai Wedding Destination" 
+              width={600} 
+              className="cp-dest-img" 
+            />
+            <div className="cp-dest-card-overlay" />
             <div className="cp-dest-icon-wrap">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2v20" />
@@ -339,6 +353,13 @@ InFocus Weddings Website`;
 
           {/* 3. USA */}
           <div className="cp-dest-card">
+            <LazyImage 
+              src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto,c_limit,w_600/v1783570712/RAV05283_eexb30.webp" 
+              alt="USA Wedding Destination" 
+              width={600} 
+              className="cp-dest-img" 
+            />
+            <div className="cp-dest-card-overlay" />
             <div className="cp-dest-icon-wrap">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 2l1.5 4h4l-3 3 1.5 4.5-4-2.5-4 2.5 1.5-4.5-3-3h4z" />
@@ -352,6 +373,13 @@ InFocus Weddings Website`;
 
           {/* 4. SRI LANKA */}
           <div className="cp-dest-card">
+            <LazyImage 
+              src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto,c_limit,w_600/v1783570666/SM_31002_pgw6cz.webp" 
+              alt="Sri Lanka Wedding Destination" 
+              width={600} 
+              className="cp-dest-img" 
+            />
+            <div className="cp-dest-card-overlay" />
             <div className="cp-dest-icon-wrap">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M13 8c0-2.76-2.24-5-5-5S3 5.24 3 8c0 1.65.8 3.1 2 4l3 9h6l3-9c1.2-.9 2-2.35 2-4z" />
@@ -365,6 +393,13 @@ InFocus Weddings Website`;
 
           {/* 5. INDONESIA */}
           <div className="cp-dest-card">
+            <LazyImage 
+              src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto,c_limit,w_600/v1783570663/DSC01464_xshhvb.webp" 
+              alt="Indonesia Wedding Destination" 
+              width={600} 
+              className="cp-dest-img" 
+            />
+            <div className="cp-dest-card-overlay" />
             <div className="cp-dest-icon-wrap">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 4h4v17H4z" />
