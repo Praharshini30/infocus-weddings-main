@@ -107,7 +107,7 @@ export default function AboutPage() {
                 <p className="text-white about-serif text-xl italic mb-4 leading-snug">
                   Every frame is a doorway back to the moment you felt most alive.
                 </p>
-                <p className="text-gold-soft text-sm uppercase tracking-wider">— Rahul Sharma, Founder</p>
+                <p className="text-gold-soft text-sm uppercase tracking-wider">— Pushkar Krishan Kakde, Founder</p>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
           {/* Founder 1 */}
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="founder-image-wrapper aspect-[3/4]">
-              <img src="/assets/founder-1.png" onError={(e) => { e.target.src = "/assets/royal-bride-window.png"; e.target.style.filter = "grayscale(1)"; }} alt="Pushkar Krishan Kakde" className="w-full h-full object-cover" />
+              <img src="/assets/founder-1.png" onError={(e) => { e.target.src = "/assets/VSR02946.webp"; e.target.style.filter = "grayscale(1)"; }} alt="Pushkar Krishan Kakde" className="w-full h-full object-cover" />
             </div>
             <div className="founder-card p-8">
               <h2 className="signature-font mb-2">Pushkar Krishan Kakde</h2>
@@ -157,11 +157,9 @@ export default function AboutPage() {
                 <p>Sana leads Infocus Weddings with a commitment to elegance, client experience and seamless execution.</p>
                 <p>Her innate sense of aesthetics is handled with care, creativity and perfection — from the first conversation to the final delivery.</p>
               </div>
-              
-              <h2 className="signature-font mt-8">Sana Shaik</h2>
             </div>
             <div className="founder-image-wrapper aspect-[3/4] order-1 md:order-2">
-              <img src="/assets/founder-2.png" onError={(e) => { e.target.src = "/assets/royal-bride-window.png"; e.target.style.filter = "grayscale(1)"; }} alt="Sana Shaik" className="w-full h-full object-cover" />
+              <img src="/assets/founder-2.png" onError={(e) => { e.target.src = "/assets/VSR03510.webp"; e.target.style.filter = "grayscale(1)"; }} alt="Sana Shaik" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </motion.section>
@@ -180,14 +178,14 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { role: "Cinematographers", icon: Film, desc: "Crafting cinematic visuals that bring stories to life." },
-              { role: "Photographers", icon: Camera, desc: "Capturing emotions with artistry and precision." },
-              { role: "Editors", icon: Scissors, desc: "Turning raw moments into timeless masterpieces." },
-              { role: "Sound Designers", icon: Mic, desc: "Creating immersive sound that enhances every frame." },
-              { role: "Client Experience", icon: Users, desc: "Building relationships and curating unforgettable experiences." }
+              { role: "Cinematographers", icon: Film, desc: "Crafting cinematic visuals that bring stories to life.", img: "/assets/WMD08878_gallery.webp" },
+              { role: "Photographers", icon: Camera, desc: "Capturing emotions with artistry and precision.", img: "/assets/DSC03986_gallery.webp" },
+              { role: "Editors", icon: Scissors, desc: "Turning raw moments into timeless masterpieces.", img: "/assets/DSC01464_gallery.webp" },
+              { role: "Sound Designers", icon: Mic, desc: "Creating immersive sound that enhances every frame.", img: "/assets/SM_30585_gallery.webp" },
+              { role: "Client Experience", icon: Users, desc: "Building relationships and curating unforgettable experiences.", img: "/assets/DSC00378_gallery.webp" }
             ].map((item, idx) => (
               <motion.div key={idx} variants={fadeUp} className="artist-card">
-                <img src={`/assets/artist-${idx + 1}.png`} alt={item.role} onError={(e) => { e.target.src = "/assets/royal-bride-window.png"; e.target.style.filter = "grayscale(1) contrast(1.2)"; }} />
+                <img src={`/assets/artist-${idx + 1}.png`} alt={item.role} onError={(e) => { e.target.src = item.img; e.target.style.filter = "grayscale(1) contrast(1.2)"; }} />
                 <div className="artist-content">
                   <item.icon className="text-gold-soft mb-3" size={24} />
                   <h3 className="text-white text-sm font-bold tracking-widest uppercase mb-2">{item.role}</h3>
@@ -247,7 +245,7 @@ export default function AboutPage() {
           </div>
 
           <div className="text-center">
-            <Link to="/portfolio" className="btn btn-lux-secondary">View Full Gallery</Link>
+            <Link to="/portfolio#portfolio-nav" className="btn btn-lux-secondary">View Full Gallery</Link>
           </div>
         </motion.section>
 
@@ -298,7 +296,7 @@ export default function AboutPage() {
             <div className="h-px w-16 bg-gold-soft opacity-30"></div>
           </div>
 
-          <div className="bts-card relative group">
+          <div className="bts-card relative group w-[90%] max-w-[1150px] mx-auto">
             <video 
               src="https://res.cloudinary.com/dtfbshx24/video/upload/f_auto,q_auto/v1784560941/infocus_weddings_home_page_video_1_1_qjip1x.mp4"
               className="w-full h-full object-cover"
