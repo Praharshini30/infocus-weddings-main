@@ -584,32 +584,27 @@ h1 span {
 }
 
 .film-banner {
-  background: #060605;
-  padding: 2rem 0 2.9rem;
+  background: transparent;
+  padding: 3rem 0;
 }
 
 .film-frame {
   margin: 0 auto;
-  max-width: 1030px;
+  max-width: 1240px;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
-  width: min(calc(100% - 64px), 1030px);
-}
-
-.film-frame img,
-.film-shade {
-  height: 100%;
-  inset: 0;
-  position: absolute;
-  width: 100%;
+  border: 1px solid rgba(201, 155, 86, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.08);
 }
 
 .film-frame video {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
-  filter: brightness(0.82) saturate(0.8);
   object-fit: cover;
   object-position: center;
 }

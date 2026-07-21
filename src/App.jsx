@@ -196,14 +196,14 @@ function HomePage() {
         </section>
 
         <motion.section 
-          className="film-banner max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16" 
+          className="film-banner max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 py-12" 
           id="film"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <div className="film-frame w-[88%] max-w-[1150px] mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl border border-[rgba(201,155,86,0.25)]" style={{ background: 'transparent', padding: 0 }}>
+          <div className="film-frame w-full max-w-[1240px] mx-auto aspect-video rounded-xl overflow-hidden shadow-2xl border border-[rgba(201,155,86,0.3)]">
             <video
               src="https://res.cloudinary.com/dtfbshx24/video/upload/f_auto,q_auto/v1784560941/infocus_weddings_home_page_video_1_1_qjip1x.mp4"
               autoPlay
@@ -213,10 +213,10 @@ function HomePage() {
               playsInline
               preload="metadata"
               aria-label="Cinematic Wedding Film"
-              className="w-full h-full object-cover rounded-[8px]"
+              className="w-full h-full object-cover"
             />
           </div>
-          <p className="text-center font-sans text-[rgba(255,246,232,0.75)] text-base md:text-lg font-light leading-[1.7] max-w-[850px] mx-auto mt-[2rem] px-4">
+          <p className="text-center font-sans text-[rgba(255,246,232,0.75)] text-base md:text-lg font-light leading-[1.7] max-w-[850px] mx-auto mt-8 px-4">
             Our cinematic storytelling captures the subtle glances, the unscripted tears, and the grand symphony of your celebrations. Every wedding film is a custom heirloom, handcrafted to evoke the authentic emotions of your love story for generations to come.
           </p>
         </motion.section>
