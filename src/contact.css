@@ -654,7 +654,7 @@
 
 .cp-dest-card {
   position: relative;
-  aspect-ratio: 3/4;
+  aspect-ratio: 1.05/1;
   background: radial-gradient(circle at center, #1a1610 0%, #0a0806 100%);
   border: 1px solid rgba(201, 155, 86, 0.3);
   border-radius: 8px;
@@ -664,14 +664,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1rem;
+  padding: 1.25rem 0.75rem;
   transition: all 0.4s ease;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .cp-dest-card:hover {
   border-color: var(--lux-gold-warm);
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
 }
 
@@ -679,12 +679,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px;
-  height: 70px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: rgba(201, 155, 86, 0.08);
   border: 1px solid rgba(201, 155, 86, 0.25);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.85rem;
   transition: all 0.4s ease;
 }
 
