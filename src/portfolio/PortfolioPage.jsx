@@ -9,15 +9,24 @@ import BabyShowerSection from './components/BabyShowerSection.jsx';
 import HaldiSection from './components/HaldiSection.jsx';
 import ReceptionSection from './components/ReceptionSection.jsx';
 import DestinationSection from './components/DestinationSection.jsx';
-import FilmsSection from './components/FilmsSection.jsx';
 import Testimonials from './components/Testimonials.jsx';
 import PortfolioCTA from './components/PortfolioCTA.jsx';
 import PortfolioFooter from './components/PortfolioFooter.jsx';
 import Lightbox from './components/Lightbox.jsx';
 import AllGallerySection from './components/AllGallerySection.jsx';
+import CorporateSection from './components/CorporateSection.jsx';
+import useSEO from '../utils/useSEO.js';
 import './portfolio-page.css';
 
 export default function PortfolioPage() {
+  useSEO({
+    title: 'Portfolio | Luxury Wedding Photographer in Hyderabad | Infocus Weddings',
+    description: 'Browse premium wedding photography, destination weddings, pre-wedding shoots, engagement stories, and cinematic wedding films by Infocus Weddings.',
+    keywords: 'Wedding Portfolio, Wedding Photography, Pre Wedding Shoot, Wedding Films, Hyderabad Photographer, Infocus Weddings',
+    canonical: 'https://infocusweddings.com/portfolio',
+    ogImage: 'https://infocusweddings.com/assets/NAG01188.webp'
+  });
+
   const [activeCategory, setActiveCategory] = useState('all');
   const [lightbox, setLightbox] = useState({ isOpen: false, images: [], currentIndex: 0 });
 
@@ -63,7 +72,7 @@ export default function PortfolioPage() {
         <BabyShowerSection visible={showCategory('baby-shower')} onImageClick={handleImageClick} />
         <HaldiSection visible={showCategory('haldi')} onImageClick={handleImageClick} />
         <ReceptionSection visible={showCategory('reception')} onImageClick={handleImageClick} />
-        <FilmsSection visible={showCategory('wedding-films')} />
+        <CorporateSection visible={activeCategory === 'corporate-events' || activeCategory === 'all'} />
         {showExtras && <DestinationSection visible onImageClick={handleImageClick} />}
         {showExtras && <Testimonials visible />}
         <PortfolioCTA />

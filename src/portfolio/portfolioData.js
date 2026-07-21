@@ -2,13 +2,13 @@ const A = '/assets/';
 
 export const categories = [
   { id: 'all', label: 'All' },
-  { id: 'wedding', label: 'Wedding' },
-  { id: 'pre-wedding', label: 'Pre-Wedding' },
-  { id: 'engagement', label: 'Engagement' },
-  { id: 'baby-shower', label: 'Baby Shower' },
-  { id: 'haldi', label: 'Haldi' },
-  { id: 'reception', label: 'Reception' },
-  { id: 'wedding-films', label: 'Wedding Films' },
+  { id: 'wedding', label: 'Wedding Portfolios' },
+  { id: 'pre-wedding', label: 'Pre-Wedding Shoots' },
+  { id: 'engagement', label: 'Engagement & Ring Ceremonies' },
+  { id: 'baby-shower', label: 'Baby Shower Celebrations' },
+  { id: 'haldi', label: 'Haldi & Sangeet Moments' },
+  { id: 'reception', label: 'Wedding Receptions' },
+  { id: 'corporate-events', label: 'Corporate Events' },
 ];
 
 export const featuredStory = {
