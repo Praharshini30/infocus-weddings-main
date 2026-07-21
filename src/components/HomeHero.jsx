@@ -8,7 +8,7 @@ const A = '/assets/';
 const slides = [
   {
     image: `${A}NAG01188.webp`,
-    objectPosition: 'center 35%',
+    objectPosition: '62% 35%',
     eyebrow: 'LUXURY CANDID PHOTOGRAPHY & WEDDING FILMS',
     title: 'We Create Heirloom Wedding Films\nfor Extraordinary Celebrations.',
     description: 'Capturing every emotion, ritual, and timeless moment through cinematic storytelling and elegant photography—creating memories that will be cherished for generations.',
@@ -17,8 +17,8 @@ const slides = [
   },
   {
     image: `${A}VSR03823.webp`,
-    objectPosition: 'center 30%',
-    style: { transform: 'scale(1.15) translateX(7%)' },
+    objectPosition: '68% 30%',
+    style: { transform: 'scale(1.08) translateX(3%)' },
     eyebrow: 'TELUGU WEDDING STORIES',
     title: 'Capturing Timeless\nTelugu Wedding Stories',
     description: 'Inspired by the beauty of Telugu traditions, we preserve every ritual, every emotion, and every celebration through timeless photography and cinematic storytelling.',
