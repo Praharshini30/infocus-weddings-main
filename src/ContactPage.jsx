@@ -308,7 +308,7 @@ InFocus Weddings Website`;
 
         <div className="cp-dest-grid">
           {/* 1. INDIA */}
-          <div className="cp-dest-card">
+          <div className="cp-dest-card cp-dest-card-india">
             <LazyImage 
               src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto/v1784643471/AhaConvert_ChatGPT_Image_Jul_21_2026_07_23_20_PM_ak2mrh.webp" 
               alt="India Wedding Destination" 
@@ -319,7 +319,7 @@ InFocus Weddings Website`;
           </div>
 
           {/* 2. DUBAI */}
-          <div className="cp-dest-card">
+          <div className="cp-dest-card cp-dest-card-dubai">
             <LazyImage 
               src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto/v1784643471/AhaConvert_ChatGPT_Image_Jul_21_2026_07_23_27_PM_oyqm5c.webp" 
               alt="Dubai Wedding Destination" 
@@ -330,7 +330,7 @@ InFocus Weddings Website`;
           </div>
 
           {/* 3. USA */}
-          <div className="cp-dest-card">
+          <div className="cp-dest-card cp-dest-card-usa">
             <LazyImage 
               src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto/v1784643472/AhaConvert_Gemini_Generated_Image_sqwpewsqwpewsqwp_l5k6vr.webp" 
               alt="USA Wedding Destination" 
@@ -341,7 +341,7 @@ InFocus Weddings Website`;
           </div>
 
           {/* 4. SRI LANKA */}
-          <div className="cp-dest-card">
+          <div className="cp-dest-card cp-dest-card-srilanka">
             <LazyImage 
               src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto/v1784643473/AhaConvert_Gemini_Generated_Image_dgn782dgn782dgn7_hu7xfq.webp" 
               alt="Sri Lanka Wedding Destination" 
@@ -352,7 +352,7 @@ InFocus Weddings Website`;
           </div>
 
           {/* 5. BALI */}
-          <div className="cp-dest-card">
+          <div className="cp-dest-card cp-dest-card-bali">
             <LazyImage 
               src="https://res.cloudinary.com/dtfbshx24/image/upload/f_auto,q_auto/v1784643472/AhaConvert_Gemini_Generated_Image_6p0fut6p0fut6p0f_u2xevz.webp" 
               alt="Bali Wedding Destination" 
