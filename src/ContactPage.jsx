@@ -10,6 +10,76 @@ import {
 import CountUp from './components/CountUp.jsx';
 
 export default function ContactPage() {
+  const todayDate = new Date().toISOString().split('T')[0];
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const brideName = form.elements['brideName']?.value?.trim() || '';
+    const groomName = form.elements['groomName']?.value?.trim() || '';
+    const name = [brideName, groomName].filter(Boolean).join(' & ');
+    const email = form.elements['email']?.value?.trim() || '';
+    const phone = form.elements['phone']?.value?.trim() || '';
+    const rawDate = form.elements['eventDate']?.value || '';
+    let eventDate = rawDate;
+    if (rawDate) {
+      const d = new Date(rawDate);
+      if (!isNaN(d.getTime())) {
+        eventDate = d.toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'long',
+          year: 'numeric'
+        });
+      }
+    }
+    const location = form.elements['location']?.value?.trim() || '';
+    const eventType = form.elements['eventType']?.value || '';
+    const budget = form.elements['budget']?.value || 'Not specified';
+    const foundUs = form.elements['foundUs']?.value || '';
+    const message = form.elements['message']?.value?.trim() || '';
+
+    const messageText = `📸 New Wedding Enquiry
+
+Name:
+${name}
+
+Phone:
+${phone}
+
+Email:
+${email}
+
+Event Type:
+${eventType}
+
+Event Date:
+${eventDate}
+
+Location:
+${location}
+
+Estimated Budget:
+${budget}
+
+How Did You Find Us:
+${foundUs}
+
+Message:
+${message}
+
+Submitted via:
+InFocus Weddings Website`;
+
+    const encodedMsg = encodeURIComponent(messageText);
+    window.open(`https://wa.me/918333000094?text=${encodedMsg}`, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="contact-page">
       <Navbar />
@@ -36,44 +106,50 @@ export default function ContactPage() {
         </div>
 
         <div className="cp-hero-right">
-          <form className="cp-form-card" onSubmit={(e) => e.preventDefault()}>
+          <form className="cp-form-card" onSubmit={handleFormSubmit}>
             <h2 className="cp-form-title">BEGIN YOUR JOURNEY</h2>
             <div className="cp-divider"></div>
             
             <div className="cp-form-grid">
               <div className="lux-input-wrap">
                 <Users size={16} className="lux-input-icon" />
-                <input type="text" className="lux-input" placeholder="Bride's Name" required />
+                <input type="text" className="lux-input" name="brideName" placeholder="Bride's Name" required />
               </div>
               <div className="lux-input-wrap">
                 <Users size={16} className="lux-input-icon" />
-                <input type="text" className="lux-input" placeholder="Groom's Name" required />
+                <input type="text" className="lux-input" name="groomName" placeholder="Groom's Name" required />
               </div>
               <div className="lux-input-wrap">
                 <Mail size={16} className="lux-input-icon" />
-                <input type="email" className="lux-input" placeholder="Email Address" required />
+                <input type="email" className="lux-input" name="email" placeholder="Email Address" required />
               </div>
               <div className="lux-input-wrap">
                 <Phone size={16} className="lux-input-icon" />
-                <input type="tel" className="lux-input" placeholder="Phone Number" required />
+                <input type="tel" className="lux-input" name="phone" placeholder="Phone Number" required />
               </div>
               <div className="lux-input-wrap">
                 <Clock size={16} className="lux-input-icon" />
-                <input type="date" className="lux-input" required />
+                <input 
+                  type="date" 
+                  className="lux-input" 
+                  name="eventDate" 
+                  min={todayDate} 
+                  required 
+                />
               </div>
               <div className="lux-input-wrap">
                 <MapPin size={16} className="lux-input-icon" />
-                <input type="text" className="lux-input" placeholder="Destination / Venue" required />
+                <input type="text" className="lux-input" name="location" placeholder="Destination / Venue" required />
               </div>
               
               <div className="lux-input-wrap full-width">
-                <select className="lux-select" required defaultValue="">
+                <select className="lux-select" name="eventType" required defaultValue="">
                   <option value="" disabled>Events You Need Coverage For</option>
-                  <option value="wedding">Wedding</option>
-                  <option value="destination-wedding">Destination Wedding</option>
-                  <option value="pre-wedding">Pre-Wedding</option>
-                  <option value="1-day">1 Day Event</option>
-                  <option value="grand-celebration">3+ Days Grand Celebration</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Destination Wedding">Destination Wedding</option>
+                  <option value="Pre-Wedding">Pre-Wedding</option>
+                  <option value="1 Day Event">1 Day Event</option>
+                  <option value="3+ Days Grand Celebration">3+ Days Grand Celebration</option>
                 </select>
               </div>
             </div>
@@ -82,34 +158,34 @@ export default function ContactPage() {
               <p>Estimated Budget (Optional)</p>
               <div className="cp-radios">
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="1.5-3L" /> ₹1.5L – ₹3L
+                  <input type="radio" name="budget" value="₹1.5L – ₹3L" /> ₹1.5L – ₹3L
                 </label>
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="3-5L" /> ₹3L – ₹5L
+                  <input type="radio" name="budget" value="₹3L – ₹5L" /> ₹3L – ₹5L
                 </label>
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="5-8L" /> ₹5L – ₹8L
+                  <input type="radio" name="budget" value="₹5L – ₹8L" /> ₹5L – ₹8L
                 </label>
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="8-12L" /> ₹8L – ₹12L
+                  <input type="radio" name="budget" value="₹8L – ₹12L" /> ₹8L – ₹12L
                 </label>
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="12L+" /> ₹12L+
+                  <input type="radio" name="budget" value="₹12L+" /> ₹12L+
                 </label>
               </div>
             </div>
 
             <div className="cp-form-grid" style={{marginBottom: '1.25rem'}}>
               <div className="lux-input-wrap full-width">
-                <select className="lux-select" required defaultValue="">
+                <select className="lux-select" name="foundUs" required defaultValue="">
                   <option value="" disabled>How did you find us?</option>
-                  <option value="ig">Instagram</option>
-                  <option value="ref">Referral</option>
-                  <option value="web">Web Search</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Web Search">Web Search</option>
                 </select>
               </div>
               <div className="lux-input-wrap full-width">
-                <textarea className="lux-textarea" placeholder="Tell us about your celebration..." required></textarea>
+                <textarea className="lux-textarea" name="message" placeholder="Tell us about your celebration..." required></textarea>
               </div>
             </div>
 
