@@ -117,8 +117,8 @@ export default function HomeHero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-[2] w-full h-[100svh] flex items-center justify-start px-[5vw] lg:px-[8vw] pt-[90px] md:pt-[105px]">
-        <div className="max-w-[640px] xl:max-w-[740px] w-full text-left flex flex-col items-start max-780:items-center max-780:text-center max-780:mx-auto">
+      <div className="relative z-[2] w-full h-[100svh] flex items-center justify-start px-[5vw] lg:px-[8vw] pt-[90px] md:pt-[110px]">
+        <div className="max-w-[560px] xl:max-w-[650px] w-full text-left flex flex-col items-start max-780:items-center max-780:text-center max-780:mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -137,7 +137,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -15, transition: { duration: 0.25 } }
                 }}
-                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-2.5"
+                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-3.5 md:mb-4"
               >
                 {currentSlide.eyebrow}
               </motion.span>
@@ -148,7 +148,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
                 }}
-                className="font-serif font-normal text-[#f7f1e7] leading-[1.12] uppercase mb-4 text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[640px] text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[3.1rem] min-[1440px]:text-[3.5rem]"
+                className="font-serif font-normal text-[#f7f1e7] leading-[1.22] md:leading-[1.25] uppercase mb-5 md:mb-6 text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[560px] text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[3.1rem] min-[1440px]:text-[3.5rem]"
               >
                 {currentSlide.title}
               </motion.h1>
@@ -159,7 +159,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
                 }}
-                className="font-sans text-[rgba(255,246,232,0.8)] text-sm md:text-base lg:text-[1.05rem] font-light leading-[1.65] mb-6 max-w-[540px] text-left max-780:text-center max-780:mx-auto"
+                className="font-sans text-[rgba(255,246,232,0.8)] text-sm md:text-base lg:text-[1.05rem] font-light leading-[1.68] mb-6 md:mb-8 max-w-[490px] text-left max-780:text-center max-780:mx-auto"
               >
                 {currentSlide.description}
               </motion.p>
@@ -171,7 +171,7 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
                   exit: { opacity: 0, y: -15, transition: { duration: 0.25 } }
                 }}
-                className="flex flex-wrap gap-3.5 items-center justify-start max-780:justify-center w-full"
+                className="flex flex-wrap gap-4 items-center justify-start max-780:justify-center w-full mt-1 md:mt-2"
               >
                 <a
                   href={currentSlide.cta1.href}
