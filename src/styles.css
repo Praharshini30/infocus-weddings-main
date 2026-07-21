@@ -869,8 +869,9 @@ h1 span {
 }
 
 .service-body h3 {
-  font-size: 1.08rem;
-  font-weight: 700;
+  font-size: 1.22rem;
+  font-weight: 750;
+  line-height: 1.25;
   margin-bottom: 0.45rem;
 }
 
