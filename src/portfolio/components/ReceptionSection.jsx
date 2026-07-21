@@ -9,10 +9,10 @@ export default function ReceptionSection({ visible, onImageClick }) {
     <section className="pf-section pf-reception" id="portfolio-reception">
       <div className="pf-section-head">
         <Reveal>
-          <p className="pf-label">Glamour & Celebration</p>
-          <h2>Reception</h2>
+          <p className="pf-label">Wedding Receptions & Sangeet</p>
+          <h2>High-Energy Wedding Receptions & Sangeet Nights</h2>
           <p className="pf-section-text">
-            Grand entry celebrations, evening lights, and candid moments of joy.
+            From the high-octane dance performances of the Sangeet to the glamorous, sophisticated air of the grand Wedding Reception, these nights are all about celebration. We specialize in dynamic Sangeet photography in Hyderabad, capturing every epic dance move, grand couple entrance, and candid party moment under dramatic event lighting. Our cinematic approach ensures the glamour, scale, and electric energy of your evening are preserved forever.
           </p>
         </Reveal>
       </div>

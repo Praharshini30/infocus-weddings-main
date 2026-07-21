@@ -9,10 +9,10 @@ export default function HaldiSection({ visible, onImageClick }) {
     <section className="pf-section pf-haldi" id="portfolio-haldi">
       <div className="pf-section-head">
         <Reveal>
-          <p className="pf-label">Color, Ritual & Joy</p>
-          <h2>Haldi</h2>
+          <p className="pf-label">Haldi Moments</p>
+          <h2>Vibrant Haldi Moments</h2>
           <p className="pf-section-text">
-            Energetic candid moments, vibrant rituals, and laughter-filled family celebrations.
+            The Haldi ceremony is where the true energy, color, and chaotic joy of an Indian wedding come alive. Our portfolio showcases vibrant Haldi photography in Hyderabad, freezing the laughter, the playful splashes of yellow, and the deep family bonds in striking contrast. Our candid wedding photographers focus on capturing these unscripted, high-energy emotions, creating a lively visual chapter that bursts with color and life.
           </p>
         </Reveal>
       </div>

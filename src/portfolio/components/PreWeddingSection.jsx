@@ -9,11 +9,10 @@ export default function PreWeddingSection({ visible, onImageClick }) {
     <section className="pf-section pf-pre-wedding" id="portfolio-pre-wedding">
       <div className="pf-section-head">
         <Reveal>
-          <p className="pf-label">Romance In Every Frame</p>
-          <h2>Pre-Wedding</h2>
+          <p className="pf-label">Pre-Wedding Shoots</p>
+          <h2>Cinematic Pre-Wedding Shoots</h2>
           <p className="pf-section-text">
-            Destination shoots, travel-inspired compositions, and intimate couple portraits
-            crafted for the modern romantic.
+            A pre-wedding session is more than just a photoshoot—it is a visual celebration of your unique chemistry before your forever begins. From the grand, historic architecture of the city to exclusive luxury resorts, we capture cinematic couple portraits at the best pre-wedding locations in Hyderabad. As a top pre-wedding photographer, our focus is on styling and executing editorial-grade concepts that tell your love story with unparalleled elegance and style.
           </p>
         </Reveal>
       </div>

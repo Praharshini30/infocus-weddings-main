@@ -9,12 +9,11 @@ export default function EngagementSection({ visible, onImageClick }) {
     <section className="pf-section pf-engagement" id="portfolio-engagement">
       <div className="pf-section-head">
         <Reveal>
-          <p className="pf-label">The Beginning Of Forever</p>
-          <h2>Engagement</h2>
+          <p className="pf-label">Engagement & Ring Ceremonies</p>
+          <h2>Elegant Engagement & Ring Ceremonies</h2>
           <p className="pf-section-text">
-            Ring exchanges, intimate portraits, and family blessings captured with editorial elegance.
+            The exchange of rings marks the beautiful beginning of a shared lifetime. Our engagement photography in Hyderabad captures the intimate glances, the nervous excitement, and the grand family unions that define this special milestone. From the perfect close-up of the ring exchange to elegant, candid couple portraits, we ensure that the prologue to your wedding day is documented with the luxury and sophistication it deserves.
           </p>
-
         </Reveal>
       </div>
 
