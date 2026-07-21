@@ -584,7 +584,7 @@ h1 span {
 }
 
 .film-banner {
-  background: transparent;
+  background: var(--lux-bg) !important;
   padding: 3rem 0;
 }
 
@@ -1676,7 +1676,7 @@ body,
 .wf-section,
 .sp-section,
 .film-banner {
-  background: #000000 !important;
+  background: var(--lux-bg) !important;
   background-image: none !important;
 }
 
