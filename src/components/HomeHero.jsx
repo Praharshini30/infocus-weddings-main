@@ -193,19 +193,6 @@ export default function HomeHero() {
                   </a>
                 )}
               </motion.div>
-
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 15 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
-                  exit: { opacity: 0, y: -15, transition: { duration: 0.4 } }
-                }}
-                className="flex flex-col items-center gap-[0.25rem] mt-[2.5rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase justify-center md:hidden"
-              >
-                <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
-                <span className="font-light opacity-80">Trusted by</span>
-                <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
-              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -247,6 +234,13 @@ export default function HomeHero() {
         <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base mb-1">★★★★★</span>
         <span className="font-light opacity-80">Trusted by</span>
         <span className="font-semibold text-sm text-[#f7f1e7] mt-0.5">300+ Reviews</span>
+      </div>
+
+      {/* Mobile Trust Badge (Static persistent overlay outside AnimatePresence) */}
+      <div className="absolute bottom-[4.5rem] left-0 right-0 z-[10] flex md:hidden flex-col items-center gap-[0.25rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase justify-center pointer-events-none">
+        <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
+        <span className="font-light opacity-80">Trusted by</span>
+        <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
       </div>
     </section>
   );
