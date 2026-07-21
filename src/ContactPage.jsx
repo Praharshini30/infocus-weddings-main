@@ -78,6 +78,9 @@ InFocus Weddings Website`;
 
     const encodedMsg = encodeURIComponent(messageText);
     window.open(`https://wa.me/918333000094?text=${encodedMsg}`, '_blank', 'noopener,noreferrer');
+    
+    // Reset form to clean default state after opening WhatsApp
+    form.reset();
   };
 
   return (
