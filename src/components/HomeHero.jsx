@@ -117,8 +117,8 @@ export default function HomeHero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-[2] w-full h-[100svh] flex items-center justify-start px-[5vw] lg:px-[8vw] pt-[110px] md:pt-[130px]">
-        <div className="max-w-[650px] xl:max-w-[850px] 2xl:max-w-[1000px] w-[90%] md:w-[60%] lg:w-[42%] min-[1440px]:w-[50%] mt-0 text-left flex flex-col items-start max-780:items-center max-780:text-center max-780:mx-auto">
+      <div className="relative z-[2] w-full h-[100svh] flex items-center justify-start px-[5vw] lg:px-[8vw] pt-[90px] md:pt-[105px]">
+        <div className="max-w-[640px] xl:max-w-[740px] w-full text-left flex flex-col items-start max-780:items-center max-780:text-center max-780:mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -126,18 +126,18 @@ export default function HomeHero() {
               animate="visible"
               exit="exit"
               variants={{
-                visible: { transition: { staggerChildren: 0.2 } },
-                exit: { transition: { staggerChildren: 0.1 } }
+                visible: { transition: { staggerChildren: 0.12 } },
+                exit: { transition: { staggerChildren: 0.08 } }
               }}
               className="w-full flex flex-col items-start max-780:items-center"
             >
               <motion.span
                 variants={{
                   hidden: { opacity: 0, y: 15 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } },
-                  exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
+                  exit: { opacity: 0, y: -15, transition: { duration: 0.25 } }
                 }}
-                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm min-[1440px]:text-[1.05rem] font-semibold tracking-[0.3em] uppercase mb-[0.5rem] md:mb-[0.75rem] min-[1440px]:mb-[1.25rem]"
+                className="text-[var(--gold-soft)] font-sans text-xs md:text-sm font-semibold tracking-[0.25em] uppercase mb-2.5"
               >
                 {currentSlide.eyebrow}
               </motion.span>
@@ -145,10 +145,10 @@ export default function HomeHero() {
               <motion.h1
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
-                  exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
+                  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
                 }}
-                className="font-serif font-normal text-[#f7f1e7] leading-[1.2] md:leading-[1.3] uppercase mb-[0.75rem] md:mb-[1.5rem] min-[1440px]:mb-[2rem] text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[620px] xl:max-w-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3.75rem] min-[1440px]:text-[4.25rem] 2xl:text-[4.75rem]"
+                className="font-serif font-normal text-[#f7f1e7] leading-[1.12] uppercase mb-4 text-left max-780:text-center max-780:whitespace-normal whitespace-pre-line max-w-[640px] text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-[3.1rem] min-[1440px]:text-[3.5rem]"
               >
                 {currentSlide.title}
               </motion.h1>
@@ -156,113 +156,43 @@ export default function HomeHero() {
               <motion.p
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
-                  exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] } },
+                  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } }
                 }}
-                className="font-sans text-[rgba(255,246,232,0.8)] text-base md:text-xl min-[1440px]:text-[1.35rem] 2xl:text-[1.5rem] font-light leading-[1.5] md:leading-[1.7] mb-[0.75rem] md:mb-[2.5rem] min-[1440px]:mb-[3rem] max-w-[580px] xl:max-w-none text-left max-780:text-center max-780:mx-auto"
+                className="font-sans text-[rgba(255,246,232,0.8)] text-sm md:text-base lg:text-[1.05rem] font-light leading-[1.65] mb-6 max-w-[540px] text-left max-780:text-center max-780:mx-auto"
               >
                 {currentSlide.description}
               </motion.p>
-            </motion.div>
-          </AnimatePresence>
 
-          {/* Action Container for Mobile (Badge on Left, CTAs vertically stacked on Right - Strict Side-by-Side across all slides) */}
-          <div className="w-full flex md:hidden flex-row items-center justify-between gap-[0.75rem] mt-[0.75rem] min-w-0">
-            {/* Persistent Static Mobile Reviews Badge (Left Side) */}
-            <div className="flex flex-col items-start text-left gap-[0.15rem] text-[rgba(255,246,232,0.85)] font-sans text-[0.7rem] tracking-[0.12em] uppercase pointer-events-none shrink-0">
-              <span className="text-[var(--gold-soft)] tracking-[0.1em] text-sm">★★★★★</span>
-              <span className="font-light opacity-80">Trusted by</span>
-              <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
-            </div>
-
-            {/* Mobile CTA Buttons Vertical Stack (Right Side) */}
-            <AnimatePresence mode="wait">
+              {/* Shared Unified CTA Row across all viewports */}
               <motion.div
-                key={currentIndex}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
                 variants={{
-                  visible: { transition: { staggerChildren: 0.15 } },
-                  exit: { transition: { staggerChildren: 0.1 } }
+                  hidden: { opacity: 0, y: 15 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+                  exit: { opacity: 0, y: -15, transition: { duration: 0.25 } }
                 }}
-                className="flex flex-col gap-[0.5rem] items-end shrink-0"
+                className="flex flex-wrap gap-3.5 items-center justify-start max-780:justify-center w-full"
               >
-                <motion.a
-                  variants={{
-                    hidden: { opacity: 0, y: 15 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-                    exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
-                  }}
+                <a
                   href={currentSlide.cta1.href}
-                  className="btn btn-lux-primary gap-[0.35rem] text-center justify-center min-h-[44px] px-3.5 text-xs whitespace-nowrap"
-                >
-                  {Icon1 && <Icon1 size={15} fill="currentColor" />}
-                  {currentSlide.cta1.text}
-                </motion.a>
-
-                {currentSlide.cta2 && (
-                  <motion.a
-                    variants={{
-                      hidden: { opacity: 0, y: 15 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-                      exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
-                    }}
-                    href={currentSlide.cta2.href}
-                    className="btn btn-lux-secondary gap-[0.35rem] text-center justify-center min-h-[44px] px-3.5 text-xs whitespace-nowrap"
-                  >
-                    {Icon2 && <Icon2 size={15} fill="currentColor" />}
-                    {currentSlide.cta2.text}
-                  </motion.a>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Desktop CTA Row (Hidden on mobile) */}
-          <div className="hidden md:flex w-full mt-[2.5rem] min-[1440px]:mt-[3rem]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                variants={{
-                  visible: { transition: { staggerChildren: 0.2 } },
-                  exit: { transition: { staggerChildren: 0.1 } }
-                }}
-                className="flex flex-wrap gap-[1rem] min-[1440px]:gap-[1.25rem] justify-start"
-              >
-                <motion.a
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-                    exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
-                  }}
-                  href={currentSlide.cta1.href}
-                  className="btn btn-lux-primary gap-[0.45rem]"
+                  className="btn btn-lux-primary gap-2 min-h-[48px] px-6 text-xs md:text-sm font-semibold uppercase tracking-wider whitespace-nowrap"
                 >
                   {Icon1 && <Icon1 size={16} fill="currentColor" />}
                   {currentSlide.cta1.text}
-                </motion.a>
+                </a>
 
                 {currentSlide.cta2 && (
-                  <motion.a
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-                      exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
-                    }}
+                  <a
                     href={currentSlide.cta2.href}
-                    className="btn btn-lux-secondary gap-[0.45rem]"
+                    className="btn btn-lux-secondary gap-2 min-h-[48px] px-6 text-xs md:text-sm font-semibold uppercase tracking-wider whitespace-nowrap"
                   >
                     {Icon2 && <Icon2 size={16} fill="currentColor" />}
                     {currentSlide.cta2.text}
-                  </motion.a>
+                  </a>
                 )}
               </motion.div>
-            </AnimatePresence>
-          </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 
