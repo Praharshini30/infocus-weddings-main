@@ -304,6 +304,28 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* 7. JOIN AS PHOTOGRAPHER */}
+      <section className="cp-section" style={{ borderTop: '1px solid rgba(201, 155, 86, 0.1)', paddingTop: '4rem', paddingBottom: '4rem' }}>
+        <div className="max-w-[800px] mx-auto text-center">
+          <h2 className="cp-gold-heading" style={{ fontSize: '1.8rem', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+            JOIN AS PHOTOGRAPHER
+          </h2>
+          <div className="cp-divider"></div>
+          <p className="text-muted text-lg font-light leading-relaxed mb-8 max-w-[500px] mx-auto" style={{ color: 'rgba(255, 246, 232, 0.7)' }}>
+            Passionate about capturing beautiful stories?<br />
+            Become a part of the InFocus Weddings creative team.
+          </p>
+          <a 
+            href="https://apps.vsnapu.com/join" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-lux-primary inline-flex items-center justify-center py-4 px-10 text-sm tracking-widest uppercase"
+          >
+            Join Now
+          </a>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
