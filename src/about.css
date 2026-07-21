@@ -284,6 +284,14 @@
   aspect-ratio: 21/9;
 }
 
+@media (max-width: 767px) {
+  .bts-card {
+    aspect-ratio: 16/9 !important;
+    width: 100% !important;
+    border-radius: 8px;
+  }
+}
+
 .bts-card img,
 .bts-card video {
   width: 100%;

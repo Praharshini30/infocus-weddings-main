@@ -299,25 +299,25 @@ export default function AboutPage() {
         <motion.section 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
           variants={fadeUp}
-          className="max-w-[1240px] mx-auto px-6 mb-32"
+          className="max-w-[1240px] mx-auto px-3 md:px-6 mb-20 md:mb-32"
         >
-          <div className="bg-[#050504] border border-[#D4AF37]/30 py-6 px-4 md:px-8 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 shadow-[0_0_30px_rgba(212,175,55,0.05)] rounded-sm">
-            <div className="flex items-center gap-3">
-              <Award className="text-[#D4AF37]" size={28} strokeWidth={1.5} />
-              <span className="text-[#D4AF37] uppercase whitespace-nowrap" style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '18px', letterSpacing: '2px', lineHeight: '1', paddingTop: '3px' }}>CANVERA AWARD</span>
+          <div className="bg-[#050504] border border-[#D4AF37]/30 py-4 px-3 md:py-6 md:px-8 flex flex-col md:flex-row items-center justify-center gap-3 md:gap-8 shadow-[0_0_30px_rgba(212,175,55,0.05)] rounded-sm w-full">
+            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+              <Award className="text-[#D4AF37] shrink-0" size={24} strokeWidth={1.5} />
+              <span className="text-[#D4AF37] uppercase whitespace-nowrap" style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: 'clamp(14px, 4vw, 18px)', letterSpacing: '1.5px', lineHeight: '1', paddingTop: '2px' }}>CANVERA AWARD</span>
             </div>
             
             <div className="text-[#D4AF37]/50 hidden md:block" style={{ letterSpacing: '2px' }}>
               ─── ✦ ───
             </div>
             
-            <div className="text-[#D4AF37]/50 block md:hidden">
+            <div className="text-[#D4AF37]/50 block md:hidden text-[10px]">
               ✦
             </div>
             
-            <div className="flex items-center gap-3">
-              <Award className="text-[#D4AF37]" size={28} strokeWidth={1.5} />
-              <span className="text-[#D4AF37] uppercase whitespace-nowrap" style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: '18px', letterSpacing: '2px', lineHeight: '1', paddingTop: '3px' }}>WEDDING SUTRA INFLUENCER</span>
+            <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+              <Award className="text-[#D4AF37] shrink-0" size={24} strokeWidth={1.5} />
+              <span className="text-[#D4AF37] uppercase whitespace-nowrap" style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: 'clamp(14px, 4vw, 18px)', letterSpacing: '1.5px', lineHeight: '1', paddingTop: '2px' }}>WEDDING SUTRA INFLUENCER</span>
             </div>
           </div>
         </motion.section>
@@ -395,7 +395,7 @@ export default function AboutPage() {
             <div className="h-px w-16 bg-gold-soft opacity-30"></div>
           </div>
 
-          <div className="bts-card relative group w-[90%] max-w-[1150px] mx-auto">
+          <div className="bts-card relative group w-full md:w-[90%] max-w-[1150px] mx-auto">
             <video 
               src="https://res.cloudinary.com/dtfbshx24/video/upload/f_auto,q_auto/v1784560941/infocus_weddings_home_page_video_1_1_qjip1x.mp4"
               className="w-full h-full object-cover"
