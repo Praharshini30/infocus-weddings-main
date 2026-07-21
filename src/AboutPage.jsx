@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Camera, Film, Mic, Users, Heart, Star, Award, Scissors, Glasses, MapPin, Sparkles, Infinity as InfinityIcon } from 'lucide-react';
+import { ChevronRight, Camera, Film, Video, Users, Heart, Star, Award, Scissors, Glasses, MapPin, Sparkles, X, Infinity as InfinityIcon } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
 import LazyImage from './components/LazyImage.jsx';
@@ -22,8 +22,73 @@ const staggerContainer = {
   }
 };
 
+const teamDepartments = [
+  {
+    role: "Cinematographers",
+    icon: Film,
+    desc: "Crafting cinematic visuals that bring stories to life.",
+    img: "/assets/WMD08878_gallery.webp",
+    gallery: [
+      "/assets/WMD08878_gallery.webp",
+      "/assets/VSR02946.webp",
+      "/assets/file30216_services.webp",
+      "/assets/DSC01542_about.webp"
+    ]
+  },
+  {
+    role: "Candid Photographer",
+    icon: Camera,
+    desc: "Capturing authentic unscripted moments with fine-art precision.",
+    img: "/assets/DSC03986_gallery.webp",
+    gallery: [
+      "/assets/DSC03986_gallery.webp",
+      "/assets/SM_30585_gallery.webp",
+      "/assets/DSC00378_about.webp",
+      "/assets/VSR03510.webp"
+    ]
+  },
+  {
+    role: "Photographers",
+    icon: Camera,
+    desc: "Capturing emotions with artistry and precision.",
+    img: "/assets/DSC01464_gallery.webp",
+    gallery: [
+      "/assets/DSC01464_gallery.webp",
+      "/assets/0A5A8042_about.webp",
+      "/assets/SM_30974_about.webp",
+      "/assets/WMD07537_about.webp"
+    ]
+  },
+  {
+    role: "Videographer",
+    icon: Video,
+    desc: "Recording every sacred ritual and celebration in high definition.",
+    img: "/assets/SM_31002_services.webp",
+    gallery: [
+      "/assets/SM_31002_services.webp",
+      "/assets/reception-walk.jpeg",
+      "/assets/yjhsqa_about.webp",
+      "/assets/DSC06152_about.webp"
+    ]
+  },
+  {
+    role: "Editors",
+    icon: Scissors,
+    desc: "Turning raw moments into timeless masterpieces.",
+    img: "/assets/bridal-details-collage.png",
+    gallery: [
+      "/assets/bridal-details-collage.png",
+      "/assets/DSC00378_gallery.webp",
+      "/assets/DSC01542_about.webp",
+      "/assets/WMD08878_gallery.webp"
+    ]
+  }
+];
+
 export default function AboutPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+
   const sliderImages = [
     "/assets/DSC01542_about.webp",
     "/assets/DSC00378_about.webp"
@@ -36,8 +101,15 @@ export default function AboutPage() {
     return () => clearInterval(timer);
   }, [sliderImages.length]);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? sliderImages.length - 1 : prev - 1));
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedDepartment(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
     <div className="about-page-bg min-h-screen">
@@ -91,8 +163,6 @@ export default function AboutPage() {
                   />
                 </AnimatePresence>
                 
-
-                
                 {/* Indicators */}
                 <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
                   {sliderImages.map((_, idx) => (
@@ -107,7 +177,7 @@ export default function AboutPage() {
                 <p className="text-white about-serif text-xl italic mb-4 leading-snug">
                   Every frame is a doorway back to the moment you felt most alive.
                 </p>
-                <p className="text-gold-soft text-sm uppercase tracking-wider">— Pushkar Krishan Kakde, Founder</p>
+                <p className="text-gold-soft text-sm uppercase tracking-wider">— PUSHPA KRISHNA KADALI, Founder</p>
               </div>
             </div>
           </div>
@@ -122,14 +192,14 @@ export default function AboutPage() {
           {/* Founder */}
           <motion.div variants={fadeUp} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="founder-image-wrapper aspect-[3/4]">
-              <img src="/assets/founder-1.png" onError={(e) => { e.target.src = "/assets/VSR02946.webp"; e.target.style.filter = "grayscale(1)"; }} alt="Pushkar Krishan Kakde" className="w-full h-full object-cover" />
+              <img src="/assets/founder-1.png" onError={(e) => { e.target.src = "/assets/VSR02946.webp"; e.target.style.filter = "grayscale(1)"; }} alt="PUSHPA KRISHNA KADALI" className="w-full h-full object-cover" />
             </div>
             <div className="founder-card p-8">
-              <h2 className="signature-font mb-2">Pushkar Krishan Kakde</h2>
+              <h2 className="signature-font mb-2">PUSHPA KRISHNA KADALI</h2>
               <p className="text-gold-soft tracking-widest uppercase text-sm font-semibold mb-6">Lead Cinematographer & Founder</p>
               
               <div className="text-muted space-y-4 mb-8">
-                <p>Since 2017, Pushkar has been capturing extraordinary love stories with a vision rooted in emotion, art and authenticity.</p>
+                <p>Since 2012, PUSHPA has been capturing extraordinary love stories with a vision rooted in emotion, art and authenticity.</p>
                 <p>His cinematic approach and attention to detail have redefined the way weddings are experienced on film. For him, every frame is not just a shot, it's a timeless memory in the making.</p>
               </div>
               
@@ -161,24 +231,69 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {[
-              { role: "Cinematographers", icon: Film, desc: "Crafting cinematic visuals that bring stories to life.", img: "/assets/WMD08878_gallery.webp" },
-              { role: "Photographers", icon: Camera, desc: "Capturing emotions with artistry and precision.", img: "/assets/DSC03986_gallery.webp" },
-              { role: "Editors", icon: Scissors, desc: "Turning raw moments into timeless masterpieces.", img: "/assets/DSC01464_gallery.webp" },
-              { role: "Sound Designers", icon: Mic, desc: "Creating immersive sound that enhances every frame.", img: "/assets/SM_30585_gallery.webp" },
-              { role: "Client Experience", icon: Users, desc: "Building relationships and curating unforgettable experiences.", img: "/assets/DSC00378_gallery.webp" }
-            ].map((item, idx) => (
-              <motion.div key={idx} variants={fadeUp} className="artist-card">
+            {teamDepartments.map((item, idx) => (
+              <motion.div
+                key={item.role}
+                variants={fadeUp}
+                className="artist-card cursor-pointer group"
+                onClick={() => setSelectedDepartment(item)}
+              >
                 <img src={`/assets/artist-${idx + 1}.png`} alt={item.role} onError={(e) => { e.target.src = item.img; e.target.style.filter = "grayscale(1) contrast(1.2)"; }} />
                 <div className="artist-content">
-                  <item.icon className="text-gold-soft mb-3" size={24} />
+                  <item.icon className="text-gold-soft mb-3 group-hover:scale-110 transition-transform" size={24} />
                   <h3 className="text-white text-sm font-bold tracking-widest uppercase mb-2">{item.role}</h3>
                   <p className="text-muted text-xs leading-relaxed">{item.desc}</p>
+                  <span className="inline-block mt-3 text-[10px] uppercase tracking-wider text-[var(--gold-soft)] underline underline-offset-4 opacity-0 group-hover:opacity-100 transition-opacity">View Work →</span>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.section>
+
+        {/* TEAM GALLERY MODAL */}
+        <AnimatePresence>
+          {selectedDepartment && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 md:p-8"
+              onClick={() => setSelectedDepartment(null)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                className="bg-[#0c0c0b] border border-[rgba(201,155,86,0.3)] rounded-lg p-6 md:p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  className="absolute top-4 right-4 text-white/70 hover:text-[var(--gold-soft)] p-2 rounded-full bg-black/40 border border-white/10 transition-colors"
+                  onClick={() => setSelectedDepartment(null)}
+                  aria-label="Close modal"
+                >
+                  <X size={20} />
+                </button>
+
+                <div className="flex items-center gap-3 mb-2">
+                  <selectedDepartment.icon className="text-[var(--gold-soft)]" size={26} />
+                  <h3 className="font-serif text-2xl md:text-3xl text-[#f7f1e7] uppercase tracking-wider">{selectedDepartment.role} Portfolio</h3>
+                </div>
+                <p className="text-muted text-sm mb-6">{selectedDepartment.desc}</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {selectedDepartment.gallery.map((imgSrc, index) => (
+                    <div key={index} className="aspect-[4/3] rounded-md overflow-hidden border border-[rgba(201,155,86,0.2)] bg-black">
+                      <LazyImage src={imgSrc} alt={`${selectedDepartment.role} work ${index + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* SECTION 4 - AWARDS */}
         <motion.section 
@@ -248,7 +363,7 @@ export default function AboutPage() {
           <div className="timeline-container">
             <div className="timeline-line"></div>
             {[
-              { year: "2017", icon: Camera, desc: "An idea born from passion to tell love stories." },
+              { year: "2012", icon: Camera, desc: "An idea born from passion to tell love stories." },
               { year: "2018", icon: Glasses, desc: "Took the first step with a vision and a dream." },
               { year: "2019", icon: Users, desc: "Built a team of passionate storytellers." },
               { year: "2020", icon: Award, desc: "Gained recognition from couples across India." },
