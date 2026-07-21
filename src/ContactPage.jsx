@@ -69,9 +69,11 @@ export default function ContactPage() {
               <div className="lux-input-wrap full-width">
                 <select className="lux-select" required defaultValue="">
                   <option value="" disabled>Events You Need Coverage For</option>
-                  <option value="1">Pre-Wedding + 1 Day</option>
-                  <option value="2">2 Days Wedding</option>
-                  <option value="3">3+ Days Grand Celebration</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="destination-wedding">Destination Wedding</option>
+                  <option value="pre-wedding">Pre-Wedding</option>
+                  <option value="1-day">1 Day Event</option>
+                  <option value="grand-celebration">3+ Days Grand Celebration</option>
                 </select>
               </div>
             </div>
@@ -80,13 +82,16 @@ export default function ContactPage() {
               <p>Estimated Budget (Optional)</p>
               <div className="cp-radios">
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="3-5L" /> ₹3L - ₹5L
+                  <input type="radio" name="budget" value="1.5-3L" /> ₹1.5L – ₹3L
                 </label>
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="5-8L" /> ₹5L - ₹8L
+                  <input type="radio" name="budget" value="3-5L" /> ₹3L – ₹5L
                 </label>
                 <label className="cp-radio-label">
-                  <input type="radio" name="budget" value="8-12L" /> ₹8L - ₹12L
+                  <input type="radio" name="budget" value="5-8L" /> ₹5L – ₹8L
+                </label>
+                <label className="cp-radio-label">
+                  <input type="radio" name="budget" value="8-12L" /> ₹8L – ₹12L
                 </label>
                 <label className="cp-radio-label">
                   <input type="radio" name="budget" value="12L+" /> ₹12L+
@@ -175,7 +180,7 @@ export default function ContactPage() {
               timeless together. We pour our hearts into capturing the genuine emotions, 
               fleeting glances, and grand celebrations that define your legacy.
             </p>
-            <div className="cp-signature-name">Prathap Krishna Kokate</div>
+            <div className="cp-signature-name">PUSHPA KRISHNA KADALI</div>
             <div className="cp-signature-title">Lead Cinematographer & Founder</div>
           </div>
         </div>
@@ -186,15 +191,22 @@ export default function ContactPage() {
         <div className="cp-stat">
           <Trophy size={40} className="cp-stat-icon" />
           <div className="cp-stat-text">
-            <strong><CountUp value="9+" /></strong>
+            <strong><CountUp value="14+" /></strong>
             <span>Years of<br/>Experience</span>
           </div>
         </div>
         <div className="cp-stat">
           <Users size={40} className="cp-stat-icon" />
           <div className="cp-stat-text">
-            <strong><CountUp value="350+" /></strong>
+            <strong><CountUp value="1200+" /></strong>
             <span>Celebrations<br/>Captured</span>
+          </div>
+        </div>
+        <div className="cp-stat">
+          <MapPin size={40} className="cp-stat-icon" />
+          <div className="cp-stat-text">
+            <strong><CountUp value="80+" /></strong>
+            <span>Cities<br/>Covered</span>
           </div>
         </div>
         <div className="cp-stat">
@@ -202,13 +214,6 @@ export default function ContactPage() {
           <div className="cp-stat-text">
             <strong><CountUp value="25+" /></strong>
             <span>Destinations<br/>Covered</span>
-          </div>
-        </div>
-        <div className="cp-stat">
-          <Star size={40} className="cp-stat-icon" />
-          <div className="cp-stat-text" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <strong style={{ fontSize: '1.25rem', letterSpacing: '0.08em', lineHeight: '1.1', marginBottom: '0.15rem' }}>AWARD</strong>
-            <span style={{ whiteSpace: 'nowrap' }}>WINNING STUDIO</span>
           </div>
         </div>
       </section>
@@ -232,20 +237,16 @@ export default function ContactPage() {
             <div className="cp-dest-title">DUBAI</div>
           </div>
           <div className="cp-dest-card">
-            <LazyImage src="/assets/pre-wedding-beach.png" alt="Bali" />
-            <div className="cp-dest-title">BALI</div>
-          </div>
-          <div className="cp-dest-card">
-            <LazyImage src="/assets/VSR00140_contact.webp" alt="Europe" />
-            <div className="cp-dest-title">EUROPE</div>
-          </div>
-          <div className="cp-dest-card">
-            <LazyImage src="/assets/VSU00343_contact.webp" alt="Thailand" />
-            <div className="cp-dest-title">THAILAND</div>
+            <LazyImage src="/assets/pre-wedding-beach.png" alt="USA" />
+            <div className="cp-dest-title">USA</div>
           </div>
           <div className="cp-dest-card">
             <LazyImage src="/assets/yjhsqa.webp" alt="Sri Lanka" />
             <div className="cp-dest-title">SRI LANKA</div>
+          </div>
+          <div className="cp-dest-card">
+            <LazyImage src="/assets/VSU00343_contact.webp" alt="Indonesia" />
+            <div className="cp-dest-title">INDONESIA</div>
           </div>
         </div>
       </section>
@@ -256,12 +257,15 @@ export default function ContactPage() {
           <div className="cp-info-col">
             <h3>GET IN TOUCH</h3>
             <div className="cp-contact-list">
-              <div className="cp-contact-item">
-                <Phone size={18} className="cp-icon" /> +91 888 888 8888
-              </div>
-              <div className="cp-contact-item">
+              <a href="tel:+918333000094" className="cp-contact-item hover:text-[var(--lux-gold-warm)] transition-colors">
+                <Phone size={18} className="cp-icon" /> +91 8333000094
+              </a>
+              <a href="tel:+919032887794" className="cp-contact-item hover:text-[var(--lux-gold-warm)] transition-colors">
+                <Phone size={18} className="cp-icon" /> +91 9032887794
+              </a>
+              <a href="mailto:hello@infocusweddings.com" className="cp-contact-item hover:text-[var(--lux-gold-warm)] transition-colors">
                 <Mail size={18} className="cp-icon" /> hello@infocusweddings.com
-              </div>
+              </a>
               <div className="cp-contact-item">
                 <MapPin size={18} className="cp-icon" /> Hyderabad, India
               </div>
@@ -274,21 +278,22 @@ export default function ContactPage() {
           <div className="cp-info-col">
             <h3>CONNECT WITH US</h3>
             <div className="cp-social-row">
-              <a href="#" className="cp-social-btn">
+              <a href="https://www.instagram.com/infocusweddings/" target="_blank" rel="noopener noreferrer" className="cp-social-btn" aria-label="Instagram">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
-              <a href="#" className="cp-social-btn">
+              <a href="https://www.youtube.com/@infocusweddings" target="_blank" rel="noopener noreferrer" className="cp-social-btn" aria-label="YouTube">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
               </a>
-              <a href="#" className="cp-social-btn">
+              <a href="https://wa.me/918333000094" target="_blank" rel="noopener noreferrer" className="cp-social-btn" aria-label="WhatsApp">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
               </a>
             </div>
             
-            <h3 style={{marginTop: '2rem'}}>OFFICE HOURS</h3>
+            <h3 style={{marginTop: '2rem'}}>VSNAP PLATFORM</h3>
             <div className="cp-office-hours">
-              Mon - Sat | 10:00 AM - 7:00 PM<br/>
-              (Consultations by appointment only)
+              <a href="https://www.vsnapu.com/" target="_blank" rel="noopener noreferrer" className="text-[var(--lux-gold-warm)] underline hover:opacity-80">
+                Visit Official VSnap Website →
+              </a>
             </div>
           </div>
 
