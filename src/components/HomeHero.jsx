@@ -166,11 +166,11 @@ export default function HomeHero() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Action Container for Mobile (Badge on Left, CTAs vertically stacked on Right) */}
-          <div className="w-full flex md:hidden flex-row items-center justify-between gap-[1rem] mt-[0.5rem] flex-wrap max-380:flex-col max-380:items-center">
+          {/* Action Container for Mobile (Badge on Left, CTAs vertically stacked on Right - Strict Side-by-Side across all slides) */}
+          <div className="w-full flex md:hidden flex-row items-center justify-between gap-[0.75rem] mt-[0.75rem] min-w-0">
             {/* Persistent Static Mobile Reviews Badge (Left Side) */}
-            <div className="flex flex-col items-start text-left gap-[0.2rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase pointer-events-none shrink-0">
-              <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
+            <div className="flex flex-col items-start text-left gap-[0.15rem] text-[rgba(255,246,232,0.85)] font-sans text-[0.7rem] tracking-[0.12em] uppercase pointer-events-none shrink-0">
+              <span className="text-[var(--gold-soft)] tracking-[0.1em] text-sm">★★★★★</span>
               <span className="font-light opacity-80">Trusted by</span>
               <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
             </div>
@@ -186,7 +186,7 @@ export default function HomeHero() {
                   visible: { transition: { staggerChildren: 0.15 } },
                   exit: { transition: { staggerChildren: 0.1 } }
                 }}
-                className="flex flex-col gap-[0.6rem] items-end max-380:items-center grow-0"
+                className="flex flex-col gap-[0.5rem] items-end shrink-0"
               >
                 <motion.a
                   variants={{
@@ -195,9 +195,9 @@ export default function HomeHero() {
                     exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
                   }}
                   href={currentSlide.cta1.href}
-                  className="btn btn-lux-primary gap-[0.45rem] w-full text-center justify-center min-h-[46px] px-4"
+                  className="btn btn-lux-primary gap-[0.35rem] text-center justify-center min-h-[44px] px-3.5 text-xs whitespace-nowrap"
                 >
-                  {Icon1 && <Icon1 size={16} fill="currentColor" />}
+                  {Icon1 && <Icon1 size={15} fill="currentColor" />}
                   {currentSlide.cta1.text}
                 </motion.a>
 
@@ -209,9 +209,9 @@ export default function HomeHero() {
                       exit: { opacity: 0, y: -15, transition: { duration: 0.3 } }
                     }}
                     href={currentSlide.cta2.href}
-                    className="btn btn-lux-secondary gap-[0.45rem] w-full text-center justify-center min-h-[46px] px-4"
+                    className="btn btn-lux-secondary gap-[0.35rem] text-center justify-center min-h-[44px] px-3.5 text-xs whitespace-nowrap"
                   >
-                    {Icon2 && <Icon2 size={16} fill="currentColor" />}
+                    {Icon2 && <Icon2 size={15} fill="currentColor" />}
                     {currentSlide.cta2.text}
                   </motion.a>
                 )}
