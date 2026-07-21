@@ -14,7 +14,7 @@ import { blogPosts, blogCategories } from './blogData.js';
 
 export default function BlogPage() {
   const featuredPost = blogPosts.find(p => p.featured) || blogPosts[0];
-  const gridPosts = blogPosts.filter(p => p.id !== featuredPost.id).slice(0, 6);
+  const gridPosts = blogPosts.filter(p => p.id !== featuredPost.id);
   const sidebarFeaturedPost = blogPosts.find(p => p.id === 9) || blogPosts[1];
 
   useEffect(() => {

@@ -55,13 +55,14 @@ export default function BlogCard({ post }) {
       </div>
       
       <div className="p-[1.5rem] flex flex-col flex-grow">
-        <span className="text-muted text-[0.65rem] font-bold tracking-[0.1em] uppercase block mb-[0.6rem]">
-          {post.date}
-        </span>
+        <div className="flex items-center justify-between gap-[0.5rem] mb-[0.6rem] text-muted text-[0.65rem] font-bold tracking-[0.1em] uppercase">
+          <span>{post.date}</span>
+          {post.readTime && <span className="text-gold/70">{post.readTime}</span>}
+        </div>
         <h3 className="font-serif text-[#f7f1e7] text-[1.35rem] leading-[1.25] font-normal mb-[0.75rem] line-clamp-2">
           {post.title}
         </h3>
-        <p className="text-muted text-[0.85rem] leading-[1.6] line-clamp-2 mb-[1.5rem]">
+        <p className="text-muted text-[0.85rem] leading-[1.6] line-clamp-2 mb-[1.5rem] flex-grow">
           {post.excerpt}
         </p>
         
