@@ -162,11 +162,32 @@ export default function HomeHero() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
                   exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
                 }}
-                className="font-sans text-[rgba(255,246,232,0.8)] text-lg md:text-xl min-[1440px]:text-[1.35rem] 2xl:text-[1.5rem] font-light leading-[1.7] mb-[2.5rem] min-[1440px]:mb-[3rem] max-w-[580px] xl:max-w-none text-left max-780:text-center max-780:mx-auto"
+                className="font-sans text-[rgba(255,246,232,0.8)] text-lg md:text-xl min-[1440px]:text-[1.35rem] 2xl:text-[1.5rem] font-light leading-[1.7] mb-[1.25rem] md:mb-[2.5rem] min-[1440px]:mb-[3rem] max-w-[580px] xl:max-w-none text-left max-780:text-center max-780:mx-auto"
               >
                 {currentSlide.description}
               </motion.p>
+            </motion.div>
+          </AnimatePresence>
 
+          {/* Persistent Static Mobile Reviews Badge (Positioned between description and CTAs) */}
+          <div className="flex md:hidden flex-col items-center gap-[0.2rem] my-[1rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase justify-center pointer-events-none w-full">
+            <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
+            <span className="font-light opacity-80">Trusted by</span>
+            <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={{
+                visible: { transition: { staggerChildren: 0.2 } },
+                exit: { transition: { staggerChildren: 0.1 } }
+              }}
+              className="w-full flex flex-col items-start max-780:items-center"
+            >
               <motion.div
                 variants={{
                   hidden: { opacity: 0, y: 20 },
@@ -234,13 +255,6 @@ export default function HomeHero() {
         <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base mb-1">★★★★★</span>
         <span className="font-light opacity-80">Trusted by</span>
         <span className="font-semibold text-sm text-[#f7f1e7] mt-0.5">300+ Reviews</span>
-      </div>
-
-      {/* Mobile Trust Badge (Static persistent overlay outside AnimatePresence) */}
-      <div className="absolute bottom-[4.5rem] left-0 right-0 z-[10] flex md:hidden flex-col items-center gap-[0.25rem] text-[rgba(255,246,232,0.85)] font-sans text-xs tracking-[0.15em] uppercase justify-center pointer-events-none">
-        <span className="text-[var(--gold-soft)] tracking-[0.1em] text-base">★★★★★</span>
-        <span className="font-light opacity-80">Trusted by</span>
-        <span className="font-semibold text-[#f7f1e7]">300+ Reviews</span>
       </div>
     </section>
   );
